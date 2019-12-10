@@ -11,7 +11,7 @@
  * 
  * if((x>y) ||(++y==x))    x=  y=
  * 
- * 
+ * llll
  */
 public class 단항연산자_부정연산자 {
 
