@@ -52,8 +52,8 @@ public class 오늘의문제 {
 		
       	
       	// 3번 예제.
-      	
-      	int first = 0, second = 0, third = 0;
+      	/*
+      	int first = second = third = 0;
       	int ave = (first+second+third)/3;
       
       	
@@ -81,7 +81,7 @@ public class 오늘의문제 {
       	if(ave < 60) {
       		System.out.println("F");
       	}
-      	
+      	*/
 	}
 
 }
