@@ -30,8 +30,9 @@ public class 배열14 {
 		for(int i=0; i<user.length;i++)
 		{
 			
-			String s = scan.next();
 			System.out.print((i+1)+ "번째 답 입력(O,X): ");
+			String s = scan.next();
+			
 			user[i]=s.charAt(0);    //   첫글자 가져오기
 			
 		}
@@ -51,10 +52,12 @@ public class 배열14 {
 		  {
 			  System.out.print(c + " ");
 		  }
-		    System.out.println("\n결과: ");
 		  
+		  
+		    System.out.println("\n결과: ");
 		    
 		  int count = 0;
+		  
 		  for(int i=0;i<dap.length;i++)
 		  {
 			  if(dap[i]==user[i])
