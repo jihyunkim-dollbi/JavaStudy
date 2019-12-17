@@ -13,10 +13,9 @@ public class 배열11 {
 	    int[] score = new int[5];
 	    int[] rank = new int[5];
 	    
-	    for(int i = 0; i < 5; i++) {
-	    	
-	    	score[i] = (int)(Math.random()*100)+1;
-	    	
+	    for(int i = 0; i < 5; i++) 
+	    {
+	     	score[i] = (int)(Math.random()*100)+1;
 	    }
 		
 	    
@@ -25,12 +24,11 @@ public class 배열11 {
 			rank[i] = 1;
 			for(int j = 0; j < 5; j++)
 			{
-				 
+								
+				if(score[i] < score[j])
 				
-				if(score[i] < score[j]) {
-					
-					rank[i]++;
-					
+				{
+						rank[i]++;
 				}
 			
 			}
@@ -39,20 +37,18 @@ public class 배열11 {
 		
 		
 		 for(int i:score)
-        {
-        	
-        	System.out.print(i + "  ");
-        	
-        }
+          {
+          	   System.out.print(i + "  ");
+          }
 		
-		 System.out.println();
+		     System.out.println();
 		 
 			for(int i:rank)
-           {
+             {
   				
-           	System.out.print( i + " 위 ");
+              	System.out.print( i + " 위 ");
           
-          }
+             }
 		
 		
 

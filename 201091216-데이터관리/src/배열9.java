@@ -127,7 +127,7 @@ public class ¹è¿­9 {
 			  
 		  {
 			  
-			  System.out.println(kor[i]+" "+eng[i]+ " " + math[1] + " " + total[i] + " " + avg[i] + " "+ score[i]);
+			  System.out.println(kor[i]+" "+eng[i]+ " " + math[i] + " " + total[i] + " " + avg[i] + " "+ score[i]);
 			  
 
 			  
