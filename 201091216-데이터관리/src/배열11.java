@@ -35,7 +35,6 @@ public class ¹è¿­11 {
 					
 		}
 		
-		
 		 for(int i:score)
           {
           	   System.out.print(i + "  ");
