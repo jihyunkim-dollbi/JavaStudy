@@ -97,43 +97,59 @@ class Food {
 /*
  * 
  * 
-          <ul class="list-type-ls type-column02">
-              <li>
-                <a href="/top_lists/2263_pasta2020" target="_blank"
-                ===
-                           손가락 표시됨 : 링크태그
-                   onclick="trackEvent('CLICK_RELATED_TOPLIST', {&quot;position&quot;:0,&quot;link_name&quot;:&quot;2263_pasta2020&quot;})">
-                  <figure class="ls-item">
-                    <div class="thumb">
-                      <div class="inner">
-                        <img class="center-crop portrait lazy"
-                             alt="2020 파스타 인기 맛집 TOP 50 사진"
-                             data-original="https://mp-seoul-image-production-s3.mangoplate.com/keyword_search/meta/pictures/jgosnw6h5oy6vya9.png?fit=around|738:738&amp;crop=738:738;*,*&amp;output-format=jpg&amp;output-quality=80"
-                             data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/kssf5eveeva_xlmy.jpg?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80"/>
-                      </div>
-                    </div>
+            <a class="inbound_banner only-mobile is_background" href="https://www.mangoplate.com/eat_deals" onclick="common_ga(&#39;PG_MAIN&#39;, &#39;CLICK_SALES_LOCAL&#39;)" style="background-image: url(https://mp-seoul-image-production-s3.mangoplate.com/web/resources/zanmofgd-kuncgxq.png)"></a>
 
-                    <figcaption class="info">
-                    
-                      <div class="info_inner_wrap">
-                        <span class="title">2020 파스타 인기 맛집 TOP 50</span>
-                        <p class="desc">"망고플레이트가 선정한 2020년에 꼭 가봐야 할 파스타 맛집"</p>
-                        
-                        <p class="hash">
-                          <span>#2020 파스타 인기 맛집 TOP 50</span>
-                        </p>
-                      </div>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>
-              <li>
+        <section class="module popular_top_list_wrap">
+  <div class="module_title_wrap">
+    <h2 class="title">믿고 보는 맛집 리스트</h2>
+      <a class="module_more" href="/top_lists"
+         onclick="trackEvent('CLICK_TOPLIST_LIST', {&quot;section_position&quot;:0,&quot;section_title&quot;:&quot;믿고 보는 맛집 리스트&quot;,&quot;more_link&quot;:&quot;/top_lists&quot;,&quot;more_label&quot;:&quot;리스트 더보기&quot;})">
+        리스트 더보기
+      </a>
+  </div>
+  <div class="slider-container toplist-slider">
+    <button class="btn-nav prev"></button>
+    <button class="btn-nav next"></button>
+
+    <div class="top_list_slide">
+        <ul class="list-toplist-slider" style="width: 531px;">
+            <li>
+              <img class="center-croping" alt="2020 제주 인기 맛집 TOP 60 사진"
+                   data-lazy="https://mp-seoul-image-production-s3.mangoplate.com/keyword_search/meta/pictures/7zsdxmpu4kauzpk7.jpg?fit=around|600:400&amp;crop=600:400;*,*&amp;output-format=jpg&amp;output-quality=80"/>
+
+              <a href="/top_lists/2264_jeju2020"
+                 onclick="trackEvent('CLICK_TOPLIST', {&quot;section_position&quot;:0,&quot;section_title&quot;:&quot;믿고 보는 맛집 리스트&quot;,&quot;position&quot;:0,&quot;link_key&quot;:&quot;PQQTL_E&quot;});">
+                <figure class="ls-item">
+                  <figcaption class="info">
+                    <div class="info_inner_wrap">
+                      <span class="title">2020 제주 인기 맛집 TOP 60</span>
+                      <p class="desc">"제주의 인기 맛집만 쏙쏙 골라 모았다!"</p>
+                      <p class="hash">
+                          <span>#제주도 </span>
+                          <span>#제주 </span>
+                          <span>#서귀포시 </span>
+                          <span>#제주시 </span>
+                          <span>#제주여행 </span>
+                          <span>#제주맛집 </span>
+                          <span>#고기국수 </span>
+                          <span>#돔베고기 </span>
+                          <span>#흑돼지 </span>
+                          <span>#고등어회 </span>
+                          <span>#갈치회 </span>
+                          <span>#몸국 </span>
+                          <span>#오겹살 </span>
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
  * 
  * 
  */
 public class FoodMain {
 	//한 클래스로는 불가능하다. 다른 클래스에서  
-	//12개 데이터 동시에 가져와 출력하기
+	//12개 데이터 동시에 가져와 출력하기. 1개의 퍼블릭 클래스가 있어야 한다.
 	Category[] foodCategoryData() throws Exception
 	{
 		Category[] cate= new Category[12];
