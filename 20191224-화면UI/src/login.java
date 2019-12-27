@@ -35,7 +35,7 @@ public class login extends JPanel {              // 구현이 안되는 선언부 이기때�
 	JPasswordField pf;     //pw표기란
 	JButton b1,b2;         //로그인 하기 버튼
 	
-	
+	// 7개의 변수! 사용자 정의 한 변수들.
 	
 	login(){  // 생성자 함수 에서 화면을 다 띄워야 호출할때 가져올 수 있음.
 		
