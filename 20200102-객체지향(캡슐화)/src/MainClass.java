@@ -14,8 +14,6 @@ class Data{
 	
 */
 	
-	
-	
 	static { // 초기화 블럭 = 대용량, data base를 사용할때.
 		
 		poster = "1.png";
@@ -28,7 +26,6 @@ class Data{
 		poster = "2.png";
 		
 	}
-	
 	
 	
 	
