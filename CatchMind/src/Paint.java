@@ -1,4 +1,5 @@
 import java.awt.BasicStroke;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -29,7 +30,7 @@ public class Paint extends JFrame {
 		// 연필, 지우개 선택 버튼
 		JButton pencil_bt, eraser_bt, colorRed, colorBlue, colorGreen, colorYellow, colorPink, colorViolet, colorOrange, colorBrown;
 		
-		
+		JButton allClear;
 				
 		
 		
@@ -101,59 +102,59 @@ public class Paint extends JFrame {
 	    	
 
 	    	//연필 버튼 생성  --> 추후에 연필 그림으로 수정예정
-	    	pencil_bt = new JButton(new ImageIcon("c:\\image\\black.jpg")); 
+	    	pencil_bt = new JButton(new ImageIcon("c:\\image\\black1.jpg")); 
 	    	
 	    	pencil_bt.setBorderPainted(false);
 	    	pencil_bt.setFocusPainted(false);
 	    	pencil_bt.setContentAreaFilled(false);
 	    	
 	    	
-	    	colorRed = new JButton(new ImageIcon("c:\\image\\red.jpg")); 
+	    	colorRed = new JButton(new ImageIcon("c:\\image\\red1.jpg")); 
 	    	
 	    	colorRed.setBorderPainted(false);
 	    	colorRed.setFocusPainted(false);
 	    	colorRed.setContentAreaFilled(false);
 	    	
 	    	
-	    	colorBlue = new JButton(new ImageIcon("c:\\image\\blue.jpg")); 
+	    	colorBlue = new JButton(new ImageIcon("c:\\image\\blue1.jpg")); 
 	    	
 	    	colorBlue.setBorderPainted(false);
 	    	colorBlue.setFocusPainted(false);
 	    	colorBlue.setContentAreaFilled(false);
 	    	
-	    	colorGreen = new JButton(new ImageIcon("c:\\image\\green.jpg")); 
+	    	colorGreen = new JButton(new ImageIcon("c:\\image\\green1.jpg")); 
 	    	
 	    	colorGreen.setBorderPainted(false);
 	    	colorGreen.setFocusPainted(false);
 	    	colorGreen.setContentAreaFilled(false);
 	    	
-	    	colorYellow = new JButton(new ImageIcon("c:\\image\\yellow.jpg")); 
+	    	colorYellow = new JButton(new ImageIcon("c:\\image\\yellow1.jpg")); 
 	    	
 	    	colorYellow.setBorderPainted(false);
 	    	colorYellow.setFocusPainted(false);
 	    	colorYellow.setContentAreaFilled(false);
 	    	
 	    	
-	    	colorPink = new JButton(new ImageIcon("c:\\image\\pink.jpg")); 
+	    	colorPink = new JButton(new ImageIcon("c:\\image\\pink1.jpg")); 
 	    	
 	    	colorPink.setBorderPainted(false);
 	    	colorPink.setFocusPainted(false);
 	    	colorPink.setContentAreaFilled(false);
 	    	
-	    	colorViolet = new JButton(new ImageIcon("c:\\image\\violet.jpg")); 
+	    	colorViolet = new JButton(new ImageIcon("c:\\image\\violet1.jpg")); 
 	    	
 	    	colorViolet.setBorderPainted(false);
 	    	colorViolet.setFocusPainted(false);
 	    	colorViolet.setContentAreaFilled(false);
 	    	
-	    	colorOrange = new JButton(new ImageIcon("c:\\image\\orange.jpg")); 
+	    	colorOrange = new JButton(new ImageIcon("c:\\image\\orange1.jpg")); 
 	    	
 	    	colorOrange.setBorderPainted(false);
 	    	colorOrange.setFocusPainted(false);
 	    	colorOrange.setContentAreaFilled(false);
 
 	    	
-	    	colorBrown = new JButton(new ImageIcon("c:\\image\\brown.jpg")); 
+	    	colorBrown = new JButton(new ImageIcon("c:\\image\\brown1.jpg")); 
 	    	
 	    	colorBrown.setBorderPainted(false);
 	    	colorBrown.setFocusPainted(false);
@@ -185,66 +186,80 @@ public class Paint extends JFrame {
 	    	
 	    	
 	    	
+	    	
+	    	allClear = new JButton("ALL");
+	    	allClear.setFont(new Font("함초롱돋움",Font.BOLD, 17));
+	    	
+	    	
+	    	
+	    	
 	    	colorSelect_bt = new JButton("색상");
 
-	//    	colorSelect_bt.setFont(new Font("함초롱돋움",Font.BOLD, 20));
+	    	colorSelect_bt.setFont(new Font("함초롱돋움",Font.BOLD, 17));
 
 	  //  	colorSelect_bt.setBackground(Color.WHITE);
 
 
-	    	colorSelect_bt.setBorderPainted(false);
-	    	colorSelect_bt.setFocusPainted(false);
-	    	colorSelect_bt.setContentAreaFilled(false);
+	    //	colorSelect_bt.setBorderPainted(false);
+	    //	colorSelect_bt.setFocusPainted(false);
+	    //	colorSelect_bt.setContentAreaFilled(false);
   	
 
-	    	thicknessInfo_label = new JLabel("색상");
+	    	thicknessInfo_label = new JLabel("크기");
 
 	    	thicknessInfo_label.setFont(new Font("함초롱돋움",Font.BOLD, 15));
 
+	    	
+	    	
 	    	//도구 굵기 입력 텍스트 창필드 생성
 
-	    	thicknessControl_tf = new JTextField("10", 5);
+	    	thicknessControl_tf = new JTextField("15", 10);
 
 	    	thicknessControl_tf.setHorizontalAlignment(JTextField.CENTER);
 
 	    	thicknessControl_tf.setFont(new Font("함초롱돋움",Font.BOLD, 20));
-
+	   // 	thicknessControl_tf.setBorderPainted(false);
+	   //	thicknessControl_tf.setFocusPainted(false);
+		    
+	   //	thicknessControl_tf.setContentAreaFilled(false);
+	  	
 	
 	    	
 	   // 	colorRed, colorBlue, colorGreen, colorYellow, colorPink, colorViolet, colorOrange, colorBrown;
 			
 	    	//연필버튼 위치지정
 
-	    	pencil_bt.setBounds(10, 10, 90, 50);
-	    	colorRed.setBounds(80, 10, 90, 50);
-	    	colorBlue.setBounds(150, 10, 90, 50);
-	    	colorGreen.setBounds(220, 10, 90, 50);
-	    	colorYellow.setBounds(290, 10, 90, 50);
+	    	pencil_bt.setBounds(30, 0, 80, 50);
+	    	colorRed.setBounds(130, 0, 80, 50);
+	    	colorBlue.setBounds(230, 0, 80, 50);
+	    	colorGreen.setBounds(330, 0, 80, 50);
+	    	colorYellow.setBounds(430, 0, 80, 50);
 	    	
-	    	colorPink.setBounds(10, 50, 90, 50);
-	    	colorViolet.setBounds(80, 50, 90, 50);
-	    	colorOrange.setBounds(150, 50, 90, 50);
-	    	colorBrown.setBounds(220, 50, 90, 50);
+	    	allClear.setBounds(530, 0, 70, 55);
+	    	
+	    	colorPink.setBounds(30, 55, 80, 50);
+	    	colorViolet.setBounds(130, 55, 80, 50);
+	    	colorOrange.setBounds(230, 55, 80, 50);
+	    	colorBrown.setBounds(330, 55, 80, 50);
 
-	    	
 
 	    	//지우개 위치지정
-	    	eraser_bt.setBounds(290, 50, 90, 50);
+	    	eraser_bt.setBounds(430, 50, 90, 50);
 
 	    	
 
 	    	//색상 라벨 위치 지정
-	    	colorSelect_bt.setBounds(600, 10, 90, 55);
+	    	colorSelect_bt.setBounds(620, 0, 70, 55);
 
 	    	
 
 	    	//도구굵기 라벨 위치 지정
-	    	thicknessInfo_label.setBounds(660, 10, 100, 55);
+	    	thicknessInfo_label.setBounds(720, 0, 80, 55);
 
 	    	
 
 	    	//도구 굻기 덱스트 필드 위치 지정
-	    	thicknessControl_tf.setBounds(720, 10, 50, 35);
+	    	thicknessControl_tf.setBounds(760, 0, 70, 55);
 
 	    	// (500, 0, 880, 100)
 
@@ -257,6 +272,7 @@ public class Paint extends JFrame {
 	    	gui_panel.add(colorBlue);
 	    	gui_panel.add(colorGreen);
 	    	gui_panel.add(colorYellow);
+	    	gui_panel.add(allClear);
 	    	gui_panel.add(colorPink);
 	    	gui_panel.add(colorViolet);
 	    	gui_panel.add(colorOrange);
@@ -265,7 +281,7 @@ public class Paint extends JFrame {
 	    	
 	    	gui_panel.add(eraser_bt);  //gui_panel에  지우개 버튼 추가
 
-	    	gui_panel.add(colorSelect_bt); //gui_panel에 색상 선책 추가
+	    	gui_panel.add(colorSelect_bt); //gui_panel에 색상 선택 추가
 
 	    	gui_panel.add(thicknessInfo_label); //gui_panel에 도구 굵기 라벨 추가
 
@@ -291,17 +307,10 @@ public class Paint extends JFrame {
 
 	    	paint_panel = new JPanel();
 
-	    	
-
 	    	paint_panel.setBackground(Color.WHITE); // 패널의 하얀 배경색
-
-	    	
+	
 
 	    	paint_panel.setLayout(null); // paint_panel의 레이아웃을 null해주고 패널 자체를 setBounds로 위치를 조정할 수 있다.
-
-	    	
-
-	    	
 
 	    	paint_panel.setBounds(0, 0, 880, 600);  //paint_panel 의 위치조정
 
@@ -323,8 +332,6 @@ public class Paint extends JFrame {
 
 	    	setVisible(true);
 
-	    	
-
 	    	graphics = getGraphics(); //그래픽 초기화
 
 	    	
@@ -343,14 +350,13 @@ public class Paint extends JFrame {
 
 	    	
 
+	
+	    	
 	    	
 
 	    	// 액션처리 부분//////////////////////////////////////////////////////////////////////
 
-	    	
-
-	    	
-
+	  
 	    	paint_panel.addMouseListener(new MouseListener(){
 
 
@@ -372,30 +378,18 @@ public class Paint extends JFrame {
 				public void mousePressed(MouseEvent e) {
 
 					// TODO Auto-generated method stub
-
 					
-
 					startX = e.getX(); //마우스 눌렀을때 X좌표값으로 초기화
-
 					startY = e.getY(); //마우스 눌렀을때 Y좌표값으로 초기화
-
-					
 
 				}
 
-
-
-				
-
-				
 
 				@Override
 
 				public void mouseReleased(MouseEvent e) {
 
 					// TODO Auto-generated method stub
-
-				    	
 
 				}
 
@@ -407,8 +401,6 @@ public class Paint extends JFrame {
 
 					// TODO Auto-generated method stub
 
-					
-
 				}
 
 
@@ -419,9 +411,7 @@ public class Paint extends JFrame {
 
 					// TODO Auto-generated method stub
 
-					
-
-				}
+						}
 
 	    		   		
 
@@ -438,9 +428,21 @@ public class Paint extends JFrame {
 	    	paint_panel.addMouseMotionListener(new PaintDraw());
 
 	    	//연필버튼처리
-
+//	     	colorRed, colorBlue, colorGreen, colorYellow, colorPink, colorViolet, colorOrange, colorBrown;
+			
 	    	pencil_bt.addActionListener(new ToolActionListener());
-
+	    	colorRed.addActionListener(new ToolActionListener());
+	    	colorBlue.addActionListener(new ToolActionListener());
+	    	colorGreen.addActionListener(new ToolActionListener());
+	    	colorYellow.addActionListener(new ToolActionListener());
+	    	allClear.addActionListener(new ToolActionListener());
+	    	
+	    	colorPink.addActionListener(new ToolActionListener());
+	    	colorViolet.addActionListener(new ToolActionListener());
+	    	colorOrange.addActionListener(new ToolActionListener());
+	    	colorBrown.addActionListener(new ToolActionListener());
+	    	
+	    	
 	    	//지우개 버튼 처리
 
 	    	eraser_bt.addActionListener(new ToolActionListener());
@@ -469,19 +471,14 @@ public class Paint extends JFrame {
 
 	    			
 
-	    			g.setColor(selectedColor);
+	    		//	g.setColor(selectedColor);
 
 	    			// 그려지는 펜의 색상을 selectedColor를 매개변수로 하여 지정
-
+	  			
 	    		
-
 	    		}
 
-	    		
-
 	    	});
-
-	    	
 
 	    }
 
@@ -515,23 +512,16 @@ public class Paint extends JFrame {
 
 	    		endY = e.getY();  //드래그 되는 시점에서 y좌표 저장
 
-	    		
-
-	    		
-
+	    	
 	    		g.setStroke(new BasicStroke(thickness, BasicStroke.CAP_ROUND,0));
 
-	    		
-
-	    		g.drawLine(startX+10, startY+121, endX+10,endY +121);
+	    		g.drawLine(startX, startY, endX,endY);
 
 	    		//라인이 그려지게 되는 부분
 
 	    		
 
 	    		startX = endX;   // 시작부분이 마지막에 드레그된 X좌표로 찍혀야 다음에 이어 그려질 수 있다.
-
-	    		
 
 	    		startY = endY;    // 시작부분이 마지막에 드레그된 Y좌표로 찍혀야 다음에 이어 그려질 수 있다.
 
@@ -545,37 +535,26 @@ public class Paint extends JFrame {
 
 	    	public void mouseMoved(MouseEvent e){
 
-	    		
-
-	    		
-
 	    	}
-
-	    	
-
-	    	
+    	
 
 	    }
 
 		
+//     	colorRed, colorBlue, colorGreen, colorYellow, colorPink, colorViolet, colorOrange, colorBrown;
 
 		
 
 		public class ToolActionListener implements ActionListener {
 
-			
-
-			
-
+		
 			public void actionPerformed(ActionEvent e){
-
-				
 
 				if(e.getSource() == pencil_bt){
 
 					
 
-					if(tf == false)g.setColor(Color.BLACK);
+					if(tf == false) g.setColor(Color.BLACK);
 
 					
 
@@ -583,22 +562,114 @@ public class Paint extends JFrame {
 
 					
 
-				}else if(e.getSource() == eraser_bt){
+				}else if(e.getSource() == colorRed){
+
+
+
+					if(tf == false) g.setColor(Color.RED);
 
 					
 
+					else g.setColor(selectedColor);
+
+
+				}else if(e.getSource() == colorBlue){
+
+
+
+					if(tf == false) g.setColor(Color.BLUE);
+
 					
+
+					else g.setColor(selectedColor);
+
+
+				}else if(e.getSource() == colorGreen){
+
+
+
+					if(tf == false) g.setColor(Color.GREEN);
+
+					
+
+					else g.setColor(selectedColor);
+
+
+				}else if(e.getSource() == colorYellow){
+
+
+
+					if(tf == false) g.setColor(Color.YELLOW);
+
+					
+
+					else g.setColor(selectedColor);
+
+
+				}else if(e.getSource() == colorPink){
+
+
+
+					if(tf == false) g.setColor(Color.PINK);
+
+					
+
+					else g.setColor(selectedColor);
+
+
+				}else if(e.getSource() == colorViolet){
+
+
+
+					if(tf == false) g.setColor(Color.MAGENTA);
+
+					
+
+					else g.setColor(selectedColor);
+
+
+				}else if(e.getSource() == colorOrange){
+
+
+
+					if(tf == false) g.setColor(Color.ORANGE);
+
+					
+
+					else g.setColor(selectedColor);
+
+
+				}else if(e.getSource() == colorBrown){
+
+
+
+					if(tf == false) g.setColor(Color.getHSBColor(153, 102, 51));
+
+					
+
+					else g.setColor(selectedColor);
+
+				}else if(e.getSource() == allClear){
+
+				
+				    g.setColor(Color.white);
+					g.fillRect(0, 0, 880, 450);
+					
+
+				}
+				
+				
+				else if(e.getSource() == eraser_bt){
+
 
 					g.setColor(Color.WHITE);
 
 				}
 
-				
 
 			}
 
 			
-
 		}
 
 		
