@@ -335,18 +335,18 @@ public class GrSketch extends JPanel {
     	setVisible(true);
 
     
-    	System.out.println(CatchMind.gp);
-    	graphics = CatchMind.gp; //그래픽 초기화
+    
+  //  	graphics = CatchMind.gp; //그래픽 초기화
 
     	
     	//기존의 graphics 변수를 2D 로 변환후 2D에 초기화함(2D를 사용하는 이유는 선의 굵기와 관련된 기능을 수행하기 위해. 2D클래스를 객체화함)
 	  	// System.out.println("나는 대입되는 graphics야 = " + graphics);
-    	g = (Graphics2D)graphics;
+  //  	g = (Graphics2D)graphics;
 
 
     	// 그려질 선의 색상을  selectedColor의 값으로 설정
     	// System.out.println("나는 set위에 g야 = " + g);
-    	g.setColor(selectedColor);
+  //  	g.setColor(selectedColor);
     	
 
 		

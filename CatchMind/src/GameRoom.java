@@ -83,7 +83,7 @@ public class GameRoom extends JPanel {
 		
 		grSketch.setLayout(null);
 		
-		sketchPanel.setBounds(280, 15, 880, 600);
+		sketchPanel.setBounds(0, 0, 880, 600);
 		
 		grSketch.add(sketchPanel);
 

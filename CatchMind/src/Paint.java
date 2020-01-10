@@ -352,12 +352,6 @@ public class Paint extends JFrame {
 	    	g.setColor(selectedColor);
 	    	
 
-    		
-    		
-
-	    	
-
-	
 	    	
 	    	
 
