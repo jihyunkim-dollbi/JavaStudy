@@ -343,7 +343,7 @@ public class Paint extends JFrame {
 	    	
 	    	//기존의 graphics 변수를 2D 로 변환후 2D에 초기화함(2D를 사용하는 이유는 선의 굵기와 관련된 기능을 수행하기 위해. 2D클래스를 객체화함)
     	  	
-    	  	System.out.println("나는 확인하는 g야" + graphics);
+    	  
 	    	g = (Graphics2D)graphics;
 
 
