@@ -24,15 +24,15 @@ import javax.swing.JTextField;
 
 public class Test1 extends JFrame {
 	
-	
-	JPanel Paint = new JPanel();
+	 
+	JPanel grSketch = new JPanel();
 	
 	Test1() {
 		
 	//	add("Pt", Paint);
-		add(new GameRoom());
-		//
-	//	setBounds(200,200, 1431+15, 809+15);
+    //	add(new GameRoom());
+		
+		setBounds(200,200, 1431+15, 809+15);
 	
 		
 		setVisible(true);

@@ -22,7 +22,7 @@ import javax.swing.JSlider;
 import javax.swing.JTextField;
 
 
-public class Paint extends JPanel {
+public class Paint extends JFrame {
 
 	
 		// gui구성 패널과, 그려지는 패널 총 2개의 패널이 있다.
@@ -82,13 +82,13 @@ public class Paint extends JPanel {
 	
 
 	    	//프레임의 타이틀
-	//    	setTitle(null);
+	    	setTitle(null);
 
 	    	//프레임 사이즈
-	//    	setSize(880, 600);
+	    	setSize(880, 600);
 
 	    	 //종료기능
-	//    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	    	
 
@@ -284,6 +284,7 @@ public class Paint extends JPanel {
 	    	
 	    	gui_panel.add(eraser_bt);  //gui_panel에  지우개 버튼 추가
 
+	
 	    	gui_panel.add(colorSelect_bt); //gui_panel에 색상 선택 추가
 
 	    	gui_panel.add(thicknessInfo_label); //gui_panel에 도구 굵기 라벨 추가
@@ -341,7 +342,8 @@ public class Paint extends JPanel {
 
 	    	
 	    	//기존의 graphics 변수를 2D 로 변환후 2D에 초기화함(2D를 사용하는 이유는 선의 굵기와 관련된 기능을 수행하기 위해. 2D클래스를 객체화함)
-
+    	  	
+    	  	System.out.println("나는 확인하는 g야" + graphics);
 	    	g = (Graphics2D)graphics;
 
 
@@ -636,15 +638,15 @@ public class Paint extends JPanel {
 			}
 
 			
-//		}
+	}
 
 		
 
 	
-//		public static void main(String[] args) {
-//		// TODO Auto-generated method stub
+		public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
-//		new Paint();
+		new Paint();
 		
 	}
 

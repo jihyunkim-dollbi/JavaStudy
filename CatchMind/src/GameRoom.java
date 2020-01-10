@@ -1,11 +1,13 @@
 
 import java.awt.BasicStroke;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Label;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
@@ -21,110 +23,69 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
-import java.awt.Color;
-
-import java.awt.Dimension;
-
-import java.awt.Font;
-
-import java.awt.GridLayout;
-
-import java.awt.Label;
-
-
-
 import javax.swing.JButton;
-
 import javax.swing.JLabel;
-
 import javax.swing.JPanel;
-
 import javax.swing.JProgressBar;
-
 import javax.swing.JScrollPane;
-
 import javax.swing.JTextField;
-
 import javax.swing.JTextPane;
 
 
 
 
-public class GameRoom extends JPanel{
+public class GameRoom extends JPanel {
 
 
 
 	/*
-
 	 * 구현예정기능
-
 	 *  1. 스케치북(파레트 포함) : 누나 
-
 	 *  2. 유저패널(캐릭터/ID/LV/방에서 정답맞힌갯수) : 승호 
-
 	 *  3. 라운드표시기 : 승호
-
 	 *  4. 차례표시기 : 승호 
-
 	 *  5. 정답글자수표시기 :승호 
-
 	 *  6. 채팅 : 홍선 
-
 	 *  7. 타이머(시계) : 홍선 
-
 	 *  8. 경험치바 : 승호 (실시간)
-
 	 *  9. 게임준비 : 홍선 
-
 	 *  10. 게임초대 : 홍선 
-
 	 *  11. 친구추가 : 홍선 
-
 	 *  12. 나가기 : 홍선
-
 	 */
 
 
 
 	JPanel grSketch = new JPanel();
-
 	JPanel[] userPanel = new JPanel[6];
-
 	JPanel exp = new JPanel();
-
 	JPanel timer = new JPanel();
-
 	JPanel turn = new JPanel();
-
 	JPanel answer = new JPanel();
-
 	JPanel round = new JPanel();
-
 	JButton[] b = new JButton[4];
-
 	JPanel p = new JPanel();
-
 	JTextField tf;
-
 	JProgressBar jb;
-
-
+	GrSketch sketchPanel = new GrSketch();
 	
 	GameRoom() {
 
 
 	
-		setLayout(null);
-	//	add(new Paint());
-
-	//	add("Pt", Paint);
-		
+		setLayout(null);	
 
 //1. 스케치북		
 
 		grSketch.setBounds(280, 15, 880, 600);
 
 		grSketch.setBackground(Color.BLACK);
+		
+		grSketch.setLayout(null);
+		
+		sketchPanel.setBounds(280, 15, 880, 600);
+		
+		grSketch.add(sketchPanel);
 
 		add(grSketch);
 
