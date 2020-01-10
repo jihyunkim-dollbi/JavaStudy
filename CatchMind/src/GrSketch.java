@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Canvas;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
@@ -27,7 +28,9 @@ public class GrSketch extends JPanel {
 
 
 	// gui구성 패널과, 그려지는 패널 총 2개의 패널이 있다.
-	JPanel gui_panel, paint_panel;
+	JPanel gui_panel;
+	
+	Canvas paint_panel;
 
 	// 연필, 지우개 선택 버튼
 	JButton pencil_bt, eraser_bt, colorRed, colorBlue, colorGreen, colorYellow, colorPink, colorViolet, colorOrange, colorBrown;
@@ -307,12 +310,12 @@ public class GrSketch extends JPanel {
 
     	// 그림이 그려질 도화지 패널 생성
 
-    	paint_panel = new JPanel();
+    	paint_panel = new Canvas();
 
     	paint_panel.setBackground(Color.WHITE); // 패널의 하얀 배경색
 
 
-    	paint_panel.setLayout(null); // paint_panel의 레이아웃을 null해주고 패널 자체를 setBounds로 위치를 조정할 수 있다.
+    //	paint_panel.setLayout(null); // paint_panel의 레이아웃을 null해주고 패널 자체를 setBounds로 위치를 조정할 수 있다.
 
     	paint_panel.setBounds(0, 0, 880, 450);  //paint_panel 의 위치조정
 
@@ -336,17 +339,17 @@ public class GrSketch extends JPanel {
 
     
     
-  //  	graphics = CatchMind.gp; //그래픽 초기화
+    	graphics = CatchMind.gp; //그래픽 초기화
 
     	
     	//기존의 graphics 변수를 2D 로 변환후 2D에 초기화함(2D를 사용하는 이유는 선의 굵기와 관련된 기능을 수행하기 위해. 2D클래스를 객체화함)
 	  	// System.out.println("나는 대입되는 graphics야 = " + graphics);
-  //  	g = (Graphics2D)graphics;
+    	g = (Graphics2D)graphics;
 
 
     	// 그려질 선의 색상을  selectedColor의 값으로 설정
     	// System.out.println("나는 set위에 g야 = " + g);
-  //  	g.setColor(selectedColor);
+    	g.setColor(selectedColor);
     	
 
 		
