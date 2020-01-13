@@ -37,7 +37,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.*;
 
-public class GrSketch2 extends JFrame {
+public class MyDrawing extends JFrame {
 
 	
 		// gui구성 패널과, 그려지는 패널 총 2개의 패널이 있다.
@@ -91,7 +91,7 @@ public class GrSketch2 extends JFrame {
 	    
 	    
 
-	    GrSketch2 (){
+	    MyDrawing (){
 	    //Paint 클래스의 디폴트(Default)생성자로 기본적인 GUI 구성, 조립하는 부분.
 
 	 
@@ -310,9 +310,6 @@ public class GrSketch2 extends JFrame {
 	    	gui_panel.add(thicknessControl_tf); // gui_panel에 도구굵기 텍스트필드 추가
 
 
-	    	
-	    	
-
 	    	gui_panel.setBounds(0, 450, 880, 150);  // gui_panel이 프레임 위에 배치될 위치 지정
 
 	    	
@@ -376,9 +373,15 @@ public class GrSketch2 extends JFrame {
 	    	paint_panel.add(can);
 	    	
 
-	    	// 액션처리 부분//////////////////////////////////////////////////////////////////////
+	    	MyHandler my = new MyHandler();
+	    	
+	    	can.addMouseMotionListener(my);
+	    	
+			// 액션처리 부분//////////////////////////////////////////////////////////////////////
 
-	  
+	    	
+	    
+	  /*
 	    	can.addMouseListener(new MouseListener(){
 
 	
@@ -401,8 +404,8 @@ public class GrSketch2 extends JFrame {
 
 					// TODO Auto-generated method stub
 					
-					startX = e.getX(); //마우스 눌렀을때 X좌표값으로 초기화
-					startY = e.getY(); //마우스 눌렀을때 Y좌표값으로 초기화
+				//	startX = e.getX(); //마우스 눌렀을때 X좌표값으로 초기화
+				//	startY = e.getY(); //마우스 눌렀을때 Y좌표값으로 초기화
 
 				}
 
@@ -440,12 +443,12 @@ public class GrSketch2 extends JFrame {
 	    	});
 
 	    	
-
+*/
 	   	 
 
 	    	//paint_panel에 마우스 모션리스너 추가
 
-	    	can.addMouseMotionListener(new PaintDraw());
+	 //   	can.addMouseMotionListener(new PaintDraw());
 
 	    	//색연필버튼처리
 			
@@ -468,12 +471,12 @@ public class GrSketch2 extends JFrame {
 	    	eraser_bt.addActionListener(new ToolActionListener());
 
 	    	
-
-	    	colorSelect_bt.addActionListener(new ActionListener(){
+	    	/*
+	  	colorSelect_bt.addActionListener(new ActionListener(){
 
 	    		//색상버튼 액션처리를 익명클래스로 작성
 
-	    		
+	    
 
 	    		public void actionPerformed(ActionEvent e){
 
@@ -498,12 +501,170 @@ public class GrSketch2 extends JFrame {
 	  			
 	    		
 	    		}
+	    		
+	    		
 
 	    	});
+	    	
+	    	
+	    	*/
 
 	    }
 
 		
+		class MyHandler implements MouseMotionListener, ActionListener{
+
+			
+
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				// TODO Auto-generated method stub
+				setTitle(" ");
+				
+				startX = e.getX(); //마우스 눌렀을때 X좌표값으로 초기화
+				startY = e.getY(); //마우스 눌렀을때 Y좌표값으로 초기화
+				
+			
+				can.repaint();
+				
+			}
+
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+				
+			}
+    		
+    		
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+
+	    		
+	    		Object o = e.getSource();
+	    		MyCanvas can2 = (MyCanvas)can;
+	    		//////////////////////////////////////////////////////////////////
+	    		
+	    		
+	    		
+	    		if(o == pencil_bt){
+
+	    			//		if(tf == false) g.setColor(Color.BLACK);
+	    			//		else g.setColor(selectedColor);
+	    			//	g.setColor(Color.BLACK);
+	    				can2.cr=Color.BLACK;	
+
+	    				}else if(o == colorRed){
+
+	    				//	if(tf == false) g.setColor(Color.RED);
+	    				//	else g.setColor(selectedColor);
+	    				//	g.setColor(Color.RED);
+	    					can2.cr=Color.red;
+
+	    				}else if(o == colorBlue){
+
+	    			//		if(tf == false) g.setColor(Color.BLUE);
+	    			//		else g.setColor(selectedColor);
+	    				//g.setColor(Color.BLUE);
+	    					
+	    					can2.cr=Color.blue;
+	    					
+
+	    				}else if(o == colorGreen){
+
+	    				//	if(tf == false) g.setColor(Color.GREEN);
+	    				//	else g.setColor(selectedColor);
+	    				//	g.setColor(Color.GREEN);
+	    					
+	    					
+	    					can2.cr=Color.GREEN;
+	    					
+
+	    				}else if(o == colorYellow){
+
+	    				//	if(tf == false) g.setColor(Color.YELLOW);
+	    				//	else g.setColor(selectedColor);
+	    				//	g.setColor(Color.YELLOW);
+	    					
+	    					can2.cr=Color.yellow;
+
+	    				}else if(o == colorPink){
+
+	    				//	if(tf == false) g.setColor(Color.PINK);
+	    				//	else g.setColor(selectedColor);
+	    				//	g.setColor(Color.PINK);
+
+	    					can2.cr=Color.PINK;
+
+	    				}else if(o == colorViolet){
+
+	    				//	if(tf == false) g.setColor(Color.MAGENTA);
+	    				//	else g.setColor(selectedColor);
+	    				//	g.setColor(Color.MAGENTA);
+
+	    					can2.cr=Color.MAGENTA;
+	    					
+	    					
+
+	    				}else if(o == colorOrange){
+
+	    				//	if(tf == false) g.setColor(Color.ORANGE);
+	    				//	else g.setColor(selectedColor);
+	    					
+	    				//	g.setColor(new Color(255,130,51));
+
+	    					can2.cr=Color.ORANGE;
+	    					
+
+	    				}else if(o == colorBrown){
+
+	    				//	if(tf == false) g.setColor(Color.getHSBColor(153, 102, 51));
+	    				//	else g.setColor(selectedColor);
+	    				//	g.setColor(new Color(194,113,81));
+
+	    					can2.cr=Color.black;
+	    					
+	    				}else if(o == allClear){
+
+	    					can2.cr=Color.WHITE;
+	    				//    g.setColor(Color.white);
+	    					g.fillRect(0, 0, 880 , 482);
+	    					
+
+	    				}else if(o == eraser_bt){
+
+	    					
+	    					Graphics g = can2.getGraphics();
+	    					g.clearRect(0, 0, can.getWidth(), can.getHeight());
+	    					
+	    					
+	    				//	g.setColor(Color.WHITE);
+
+	    				}else if(o == selectedColor) {
+	    					
+	    					Color selCr = JColorChooser.showDialog(null, "Color", Color.ORANGE);
+	    					can2.cr = selCr;
+	    				}
+
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+
+			}
+    		
+    		
+    		
+    	}
+	    
+	    
 
 	    
 
@@ -546,7 +707,8 @@ public class GrSketch2 extends JFrame {
 
 	    		startY = endY;    // 시작부분이 마지막에 드레그된 Y좌표로 찍혀야 다음에 이어 그려질 수 있다.
 
-	    		
+	    	
+	    	
 
 	    	}
 
@@ -556,6 +718,16 @@ public class GrSketch2 extends JFrame {
 
 	    	public void mouseMoved(MouseEvent e){
 
+	    		
+	    		Object o = e.getSource();
+	    		MyCanvas can2 = (MyCanvas)can;
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		
 	    	}
     	
 
@@ -571,81 +743,7 @@ public class GrSketch2 extends JFrame {
 		
 			public void actionPerformed(ActionEvent e){
 
-				if(e.getSource() == pencil_bt){
-
-			//		if(tf == false) g.setColor(Color.BLACK);
-			//		else g.setColor(selectedColor);
-					g.setColor(Color.BLACK);
-					
-
-				}else if(e.getSource() == colorRed){
-
-				//	if(tf == false) g.setColor(Color.RED);
-				//	else g.setColor(selectedColor);
-					g.setColor(Color.RED);
-					
-
-				}else if(e.getSource() == colorBlue){
-
-			//		if(tf == false) g.setColor(Color.BLUE);
-			//		else g.setColor(selectedColor);
-					g.setColor(Color.BLUE);
-
-				}else if(e.getSource() == colorGreen){
-
-				//	if(tf == false) g.setColor(Color.GREEN);
-				//	else g.setColor(selectedColor);
-					g.setColor(Color.GREEN);
-
-				}else if(e.getSource() == colorYellow){
-
-				//	if(tf == false) g.setColor(Color.YELLOW);
-				//	else g.setColor(selectedColor);
-					g.setColor(Color.YELLOW);
-					
-
-				}else if(e.getSource() == colorPink){
-
-				//	if(tf == false) g.setColor(Color.PINK);
-				//	else g.setColor(selectedColor);
-					g.setColor(Color.PINK);
-
-
-				}else if(e.getSource() == colorViolet){
-
-				//	if(tf == false) g.setColor(Color.MAGENTA);
-				//	else g.setColor(selectedColor);
-					g.setColor(Color.MAGENTA);
-
-
-				}else if(e.getSource() == colorOrange){
-
-				//	if(tf == false) g.setColor(Color.ORANGE);
-				//	else g.setColor(selectedColor);
-					
-					g.setColor(new Color(255,130,51));
-
-
-				}else if(e.getSource() == colorBrown){
-
-				//	if(tf == false) g.setColor(Color.getHSBColor(153, 102, 51));
-				//	else g.setColor(selectedColor);
-					g.setColor(new Color(194,113,81));
-
-				}else if(e.getSource() == allClear){
-
-				
-				    g.setColor(Color.white);
-					g.fillRect(0, 0, 880, 482);
-					
-
-				}else if(e.getSource() == eraser_bt){
-
-
-					g.setColor(Color.WHITE);
-
-				}
-
+			
 
 			}
 
@@ -658,7 +756,7 @@ public class GrSketch2 extends JFrame {
 		public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		new GrSketch2();
+		new MyDrawing();
 		
 	}
 

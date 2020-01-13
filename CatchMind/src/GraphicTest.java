@@ -1,5 +1,6 @@
 
 import javax.swing.JFrame;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
@@ -18,6 +19,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.*;
+
 public class GraphicTest extends JFrame implements ActionListener{
 
 	 JLabel x1L, y1L, x2L, y2L, z1L, z2L;
@@ -157,6 +159,8 @@ public class GraphicTest extends JFrame implements ActionListener{
 		 public void actionPerformed(ActionEvent e){ 
 		   can.repaint(); //update () -> paint() 순서로 호출
 		 }
+		 
+		 
 		 class DrCanvas extends Canvas {
 		  public  DrCanvas() {
 		   this.setBackground(new Color(255,255,100)); //바탕색 -연한노랑
