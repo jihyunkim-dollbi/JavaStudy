@@ -142,7 +142,7 @@ public class Server implements Runnable {  // 접속기능 - 메인서버
 			{
 				try
 				{
-	/*				//클라이언트가 전송한 메세지 읽기
+					//클라이언트가 전송한 메세지 읽기
 					String msg=in.readLine();
 					System.out.println("Client..." + msg);
 					//전체 접속한 클라이언트에 값을 전송
@@ -151,7 +151,7 @@ public class Server implements Runnable {  // 접속기능 - 메인서버
 						c.out.write((msg+"\n").getBytes());
 					}
 					
-		*/			
+				
 				}catch(Exception ex) {}
 				
 				
