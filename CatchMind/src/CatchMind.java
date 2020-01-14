@@ -32,7 +32,7 @@ public class CatchMind extends JFrame {
 
 	GameRoom gr = new GameRoom();
 
-	static Graphics gp;
+
 
 	CatchMind() {
 
@@ -51,7 +51,7 @@ public class CatchMind extends JFrame {
 
 		setVisible(true);
 
-		gp = this.getGraphics();
+		
 	}	
 
 	
