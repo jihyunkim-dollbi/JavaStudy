@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 
 
 
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -34,12 +35,12 @@ import javax.swing.JTextField;
 public class GrSketch extends JPanel {
 
 
-	// gui���� �гΰ�, �׷����� �г� �� 2���� �г��� �ִ�.
+	
 	JPanel gui_panel, paint_panel;
 	
 	MyCanvas can;
 
-	// ����, ���찳 ���� ��ư
+	
 	JButton pencil_bt, eraser_bt, colorRed, colorBlue, colorGreen, colorYellow, colorPink, colorViolet, colorOrange, colorBrown;
 	
 	JButton allClear;
@@ -47,22 +48,22 @@ public class GrSketch extends JPanel {
 	
 	
 
-	//������ ��ư
+
 	JButton colorSelect_bt;
 
-	//�������� ��
+
 	JLabel thicknessInfo_label;
 	
 
 
-	//���� ���Ⱑ ������ �ؽ�Ʈ�ʵ�
+
 	JTextField thicknessControl_tf;
 
-	//���� ���Ⱑ ������ �����̴�
+	
 	JSlider thicknessControl_slider;
 	
 	
-	//�÷����� - �һ����� �����ִ� ������ �Ű������� ����Ѵ�.
+	
 	Color selectedColor;
 
 	// Graphics2D Ŭ������ ����� ���� ����
@@ -210,7 +211,7 @@ public class GrSketch extends JPanel {
     
     	
     	
-    	colorSelect_bt = new JButton("����");
+    	colorSelect_bt = new JButton("Color");
 
     	colorSelect_bt.setFont(new Font("���ʷյ���",Font.BOLD, 17));
 
@@ -222,7 +223,7 @@ public class GrSketch extends JPanel {
     //	colorSelect_bt.setContentAreaFilled(false);
 	
 
-    	thicknessInfo_label = new JLabel("ũ��");
+    	thicknessInfo_label = new JLabel("");
 
     	thicknessInfo_label.setFont(new Font("���ʷյ���",Font.BOLD, 15));
 
