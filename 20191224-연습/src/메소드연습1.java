@@ -1,7 +1,7 @@
 
 public class 메소드연습1 {
 
-	static int arr (int a)
+	public static int arr (int a)
 	{
 		int total =20;
 		a = a*50;

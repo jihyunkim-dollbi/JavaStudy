@@ -1,5 +1,6 @@
 package com.sist.io2;
 import java.util.*;
+
 import java.io.*;
 import java.net.*;
 /*
@@ -26,6 +27,10 @@ import java.net.*;
  *   대부분 POJO가 많이 쓰임...
  *   
  *   서버 - 소켓 - 쓰레드 - 클라이언트....................
+ * 
+ * 
+ * UTF, EUC-KR?
+ * UTF-8....
  * 
  */
 

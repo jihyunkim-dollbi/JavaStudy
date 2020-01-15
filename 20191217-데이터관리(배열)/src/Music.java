@@ -32,5 +32,14 @@ public class Music {
 	
 	
 	
+	int apple = 131;
+	int sizebucket = 10;
+	int numberbucker = (apple/sizebucket + (apple%sizebucket +9)/10);
+				
+     
+	
+	
+	
+	
 	
 }

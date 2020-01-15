@@ -52,7 +52,7 @@ class MyThread extends Thread
 			try
 			{
 				
-				Thread.sleep(50);   //0.05√ 
+				Thread.sleep(200);   //0.05√ 
 				
 			}catch(Exception ex) {}
 			

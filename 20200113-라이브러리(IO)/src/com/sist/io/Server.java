@@ -81,6 +81,7 @@ public class Server implements Runnable{
 	}
 	
 	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -107,10 +108,11 @@ public class Server implements Runnable{
 				
 				Socket s= ss.accept(); //접속을 했다면, 접속동안 true로 무한, 접속 끝에 나감 // 접속자 클라잉언트 전화번호 받기 필요(Socket)
 				System.out.println("접속한 클라이언트의 IP: " + s.getInetAddress().getHostAddress());  //인터넷상의 가져옴
-				System.out.println("임시포트의 번호:" + s.getPort()); //접속한 사람들의 ip와 port를 들어오는 지 보려함.
+				 System.out.println("임시포트의 번호:" + s.getPort()); //접속한 사람들의 ip와 port를 들어오는 지 보려함.
 				System.out.println("==============");
 				
 				//ip를 받아놔야 (socket이 하는 일) 
+	
 				
 				
 			}catch(Exception ex) {}
@@ -119,5 +121,4 @@ public class Server implements Runnable{
 			
 		}
 	}
-
 }

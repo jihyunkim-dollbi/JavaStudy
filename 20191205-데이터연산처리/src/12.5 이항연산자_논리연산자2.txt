@@ -41,7 +41,7 @@ public class 이항연산자_논리연산자2 {
 		
         //   int a=(int)"10"
 		
-         
+        
 		
 		
 	}

@@ -36,7 +36,9 @@ public class 반복문8 {
 		    //String s=JOptionPane.showConfirmDialog("정수입력") --> 입력창 만들기
 		
     		int i = 1;
-    		while(i<=9) {
+    		while(i<=9) 
+    		
+    		{
     			System.out.printf("%2d * %2d = %2d \n", dan,i,dan*i);
     			i++;
     		}

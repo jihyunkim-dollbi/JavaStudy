@@ -1,4 +1,5 @@
 package com.sist.client;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -31,7 +32,19 @@ public class WaitRoom extends JPanel {
 		
 		String[] col1 = {"방이름","공개/비공개", "인원 "};
 		String[][] row1 =  new String[0][3];
-		model1 =  new DefaultTableModel(row1, col1);
+		
+		model1 =  new DefaultTableModel(row1, col1) {
+
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				// TODO Auto-generated method stub
+				return false;  //편집을 방지함 // 더블클릭하면 편집이 안되고 이벤트를 발생시킬수 있음.
+			}
+			
+			
+			
+		}; // 상속이 오버라이딩 만듬
+		
 		table1 = new JTable(model1);
 		JScrollPane js1 = new JScrollPane(table1);
 		
@@ -77,7 +90,13 @@ public class WaitRoom extends JPanel {
 		add(js3);
 		add(js1);
 		add(js2);
-	
+		
+	/*	
+		String[] data = {"빨리와","공개","1/6"};
+		model1.addRow(data);
+		
+	*/
+		
 	}
 
 	@Override
@@ -89,5 +108,18 @@ public class WaitRoom extends JPanel {
 	//	g.drawImage(back, 0, 0, getWidth(), getHeight(), this); 
 	}
 		
+	
+	  public Image getImageSizeChange(ImageIcon icon,int width,int height)
+
+      {
+
+      	Image img=icon.getImage();
+
+      	Image change=img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+      	return change;
+
+      }
+	
 	
 }

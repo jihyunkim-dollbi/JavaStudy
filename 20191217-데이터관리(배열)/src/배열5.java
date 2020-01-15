@@ -1,5 +1,5 @@
 /*
- *   관련된 내용을 묶어서 사용
+ *    관련된 내용을 묶어서 사용
  *   
  *    클래스는 값이 없는 경우 null -> 값이 없기까지는 주소값이 형성되지 않는다. 
  *    String a ="aaa"
@@ -26,7 +26,13 @@ public class 배열5 {
          c.length();
          
          
-         
+     	
+     	int apple = 123;
+     	int sizebucket = 10;
+     	int numberbucket = (apple/sizebucket + (apple%sizebucket +7)/10);
+     				
+        System.out.println(numberbucket);  
+     	
        
          
          

@@ -12,7 +12,7 @@ public class 선택조건문_예제1 {
 		// 0.0~0.99 = > 0.99 *101 ==> 100.~
 		System.out.println("score = " + score);
 		
-		//90이상 -> A 80-> B 70 ->C 60 ->D  60이하는 F 출력.
+		//90이상 -> A 80-> B 70 ->C 60 ->D  60 이하는 F 출력.
 		
 	//	if(score < 60) {
 	//		System.out.println("F학점입니다.");

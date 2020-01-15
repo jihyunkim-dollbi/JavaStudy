@@ -1,5 +1,6 @@
 package com.sist.io2;
-import java.awt.*;
+import java.awt.*
+;
 import java.awt.event.*;
 import javax.swing.*;
 

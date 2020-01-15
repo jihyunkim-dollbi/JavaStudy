@@ -32,9 +32,10 @@ public class 이항연산자_산술연산자 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        // byte b=127;
-         //byte c=10;
-         //byte d=byte(b+c);   
+       
+		//byte b=127;
+        //byte c=10;
+        //byte d=byte(b+c);   
   
        byte b=(byte)300;
        

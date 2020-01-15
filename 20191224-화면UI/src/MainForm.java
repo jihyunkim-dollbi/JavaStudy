@@ -6,9 +6,6 @@ public class MainForm extends JFrame implements ActionListener {
 	//                =======> extends를 android로 바꾸면? 모바일?
 
 	login Login  = new login();
-//	int    a     =  5;
-	
-	
 	WaitRoom wr = new WaitRoom();
 	CardLayout card = new CardLayout();
 	
@@ -16,8 +13,10 @@ public class MainForm extends JFrame implements ActionListener {
 		
 		
 		setLayout(card);
-		add("Login", Login);
+		add("Login", Login);  
+		//this.add("Login", Login);
 		add("WR", wr);
+		//this.add("WR", wr);
 		
 		setSize(1024,768);       // 1024,768
 		setVisible(true);     //윈도우를 보여라
@@ -35,7 +34,7 @@ public class MainForm extends JFrame implements ActionListener {
 			
 		}
 		catch(Exception e) {}
-		MainForm mf = new MainForm();
+		MainForm mf = new MainForm();  
 		
 	}
 
@@ -46,6 +45,7 @@ public class MainForm extends JFrame implements ActionListener {
 		if(e.getSource()==Login.b1)
 		{
 			card.show(getContentPane(), "WR");
+			
 			
 		}
 		

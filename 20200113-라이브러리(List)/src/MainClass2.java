@@ -22,6 +22,7 @@ public class MainClass2 {
 		Map map = new HashMap();
 		map.put("id","admin");
 		map.put("pwd","1234");
+
 		
 		System.out.println("ID: "+map.get("id"));
 		System.out.println("PASSWORD: "+ map.get("pwd"));

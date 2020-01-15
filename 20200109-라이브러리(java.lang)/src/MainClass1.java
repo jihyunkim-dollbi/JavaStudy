@@ -23,10 +23,12 @@
  * 		=System: 종료, 입/출력, GC
  * 		1) gc-메모리 
  * 		2) exit()
+ * 		3) println()
+ * 
  * 		=Object: 모든 클래스의 상위 클래스 => 객체의 생성과 소멸
  * 		1) clone() : 클래스 복제=> 메모리주소는 다르지만 값은 같게 만들어준다. A c = a.clone();
  *        싱글톤 - 하나의 메모리를 사용하는 것. 
- * 		2) finalize() : 소멸자
+ * 		2) finalize() : 소멸자 
  * 		=Math:수학관련
  * 		1) random()
  * 		2) ceil()
@@ -45,13 +47,14 @@
  *		
  * 		java.io
  * 		=Reader, Writer(2byte)
- * 		=InputStream, OutputStream(1byte)
- * 		=File
+ * 		=InputStream, OutputStream(1byte) - close()
+ * 		=File 
  * 		=ObjectInputStream, ObjectOutputStream
+ * 		= BufferReader
  * 
  * 		java.net
  * 		=Socket
- * 		=URL
+ * 		=URL(encoding) encode=> 2byte-> 1byte 변환해줌.
  * 
  * 
  */

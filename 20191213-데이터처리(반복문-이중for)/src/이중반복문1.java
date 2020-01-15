@@ -303,7 +303,9 @@ public class 이중반복문1 {
 		  
 		 */
 		/*
-		 * 
+		 */  //잘못된 코드
+		
+		
 		     char c = '*';
 		     int i = 1;
 		     boolean bCheck = true;
@@ -317,13 +319,14 @@ public class 이중반복문1 {
 		    	     System.out.println();
 		    		 bCheck = !bCheck;
 		    		     		 
-		    			    	 
-		     }while(i<=20);
+		    	 }  
+		    	 
+		     } while(i<=20);
 		   
-		     
+	  
 		     
 		    	
-		     */    	
+		       	
 		    	
 		     
 		
@@ -367,7 +370,7 @@ public class 이중반복문1 {
 		 */ 
 	  
 		
-		     
+
 		     
 	
 		

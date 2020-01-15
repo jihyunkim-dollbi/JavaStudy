@@ -13,12 +13,15 @@ import java.io.*;
 
 
 //이미 상속을 받은 상태에서는 인터페이스로 받기=> 인터페이스 여러개 가능!!
-public class MainForm extends JFrame implements ActionListener, Runnable  {
+public class MainForm extends JDialog implements ActionListener, Runnable, MouseListener  {   // 모든 이벤트는 메인에서 // 다중상속 인터페이스인 경우만!!
 	//                =======> extends를 android로 바꾸면? 모바일?
 
 	login Login  = new login();
 	WaitRoom wr = new WaitRoom();
+	GameRoom gr = new GameRoom();
+	MakeRoom mr = new MakeRoom();
 	CardLayout card = new CardLayout();
+	
 	//서버 연결과 관련된 라이브러리
 	Socket s; //서버와 연결된!
 	OutputStream out; //서버로 데이터 전송(요청)
@@ -29,21 +32,42 @@ public class MainForm extends JFrame implements ActionListener, Runnable  {
 	 * 3) 이벤트마다 번호부여하여 쓰레드가 처리할것 => 내부 프로토콜!
 	 */
 	
+	String myRoom;  // 메인폼이 끝날때까지 방이름을 기억해야한다. 
+	
+	
+	
 	MainForm(){
 			
 		setLayout(card);
-		add("Login", Login);  
-		//this.add("Login", Login);
+		
+		add("Login", Login); 
+		add("Game",gr); 
 		add("WR", wr);
+		// 상속받지 않으면 에러
+		
+		//this.add("Login", Login);
+	
 		//this.add("WR", wr);
-		//add("Game",gr);
 		
-		setSize(1024,768);       // 1024,768
+		
+		setBounds(448, 216, 1024, 768);       // 1024,768   // setsize는 0,0이 기본이고  // 셋 바운드는 윈도우창 위치를 만들 수 있다. 전체화면크기에서 위도우크기를 빼고 2로 나누기. 
 		setVisible(true);     //윈도우를 보여라
+		
+		
+		setResizable(false); // 최대화버튼 기능 없애고, 화면 사이즈 조절 x 
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);  // 대기실에서 x표 끄기 눌러도 꺼지지 않음. 
+		
 		Login.b1.addActionListener(this);
-		
-		
 		wr.tf.addActionListener(this); // (waitroom버튼에서 이벤트 처리)데이터 전송/출력 - 메인폼  , 데이터 처리 - server!!
+		wr.b6.addActionListener(this); // 나가기 버튼에 이벤트를 주려함.
+		wr.b1.addActionListener(this); 
+		
+		
+		mr.b1.addActionListener(this); //이것을 클릭했을떄 실제로방이 만들어짐
+		mr.b2.addActionListener(this); // 이미 만들어진 방(x- ok) or 새로 방 만들까?    // this는 mr
+		
+		
+		wr.table1.addMouseListener(this);   // this는 wr
 		
 	}
 	
@@ -140,16 +164,104 @@ public class MainForm extends JFrame implements ActionListener, Runnable  {
 			wr.tf.setText(""); //==> enter 시  이벤트 발생 후  공백으로 바로 바꿔줌
 			
 		}
+		else if(e.getSource() == wr.b6) //나가기(대기실) ==> 아예 나가기 때문에 백터를 지워야함
+		{
+			try
+			{
+				out.write((Function.EXIT+"|\n").getBytes());
+				/*
+				 * 나가기 => 요청
+				 * 		   ===
+				 * 			처리 ==> 서버
+				 * 			결과 출력 => 클라이언트
+				 */
+			}catch(Exception ex) {}
+			
+		}
+		else if(e.getSource()==wr.b1)  //방만들기 버튼 클릭
+		{
+			
+			// 초기화 작업
+			mr.tf.setText("");
+			mr.rb1.setSelected(true);
+			mr.box.setSelectedIndex(0);
+			mr.la4.setVisible(false);
+			mr.pf.setVisible(false);
+			mr.pf.setText("");
+			mr.tf.requestFocus();
+			mr.setVisible(true);
+		}
+		else if(e.getSource()==mr.b1)     // 방 만드는 경우
+		{
+			//1. 방이름 rn
+			String rn = mr.tf.getText();
+			if(rn.length()<1)
+			{
+				JOptionPane.showMessageDialog(this, "방이름을 입력하세요");
+				mr.tf.requestFocus();
+				return;
+				
+				
+			}
+			
+			for(int i=0; i< wr.model1.getRowCount();i++)
+			{
+				String roomName=wr.model1.getValueAt(i, 0).toString();
+				if(rn.equals(roomName))
+				{	
+					JOptionPane.showMessageDialog(this, "이미 존재하는 방입니다.\n 다시 입력하세요");
+					mr.tf.setText("");
+					mr.tf.requestFocus();
+					return;   // break안하고 return! // 중복체크 
+				}
+				
+			}
+			
+			// 공개, 비공개
+			String rs=""; //상태
+			String rp=""; //비밀번호
+			if(mr.rb1.isSelected()) //공개버튼이 선택됐다면
+			{
+				rs="공개";
+				rp=" ";
+				
+			}
+			else
+			{
+				rs = "비공개";
+				rp=String.valueOf(mr.pf.getPassword());
+			}
+			
+			// 인원체크
+			int inwon = mr.box.getSelectedIndex()+2;  // 인덱스 사용 
+			
+			
+			//서버로 전송
+			try
+			{
+				
+				out.write((Function.MAKEROOM+"|"+rn+"|"+rs+"|"+rp+"|"+inwon+"\n").getBytes());  // 테이블 위에 출력될 것임.
+				
+			}catch(Exception ex) {}
+			mr.setVisible(false);
+			
+		}
+		else if(e.getSource()==mr.b2)   // 방 안만드는 경우
+		{
+			mr.setVisible(false);
+		}
 		
 		
+	
 		
-		
-		
-		
-		
-		
-	}
+	} // 액션퍼폼 끝
 
+	
+	
+	
+	
+	
+	
 	public void connection(String userData)
 	{
 		try
@@ -224,15 +336,201 @@ public class MainForm extends JFrame implements ActionListener, Runnable  {
 						wr.tp.append(st.nextToken()+"\n");  // text area 에 바로바로 글 출력.
 						break;
 					}
+					case Function.EXIT:   // 남아있는 사람들의 화면 처리
+					{
+						
+						String id = st.nextToken(); // 서버가 나가는 사람의 id를 줘야함.
+						for(int i=0; i<wr.model2.getRowCount();i++) //getRowCount()   대기실 0,1,2 사용함.. 대기실의 사람수 /getRowCount(0) i가 0번째면 삭제..  
+						{
+							String mid = wr.model2.getValueAt(i, 0).toString();  //getValueAt 테이블에서 값을 읽어옴 , toString()-> object 형을 문자열 변환
+							//(String)wr.model2.getValueAt(i, 0)
+							if(mid.equals(id))
+							{
+								wr.model2.removeRow(i);  // i번째 줄 지우기
+								break;	
+							}
+						}
+						break;
+						
+					}
+					case Function.MYEXIT:  // 실제 나가는 사람 처리
+					{
+						dispose(); // 메모리회수
+						System.exit(0); // 프로그램 종료
+						
+					}
+					case Function.MAKEROOM:
+					{
+						String[] data= {
+								st.nextToken(),  //방이름 
+								st.nextToken(),  //상태(공개/비공개)
+								st.nextToken()   // 1/6
+						};
+						wr.model1.addRow(data);  //가변형이기 때문에 addrow할때마다 한개씩 추가됨.
+						break;
+						
+						
+					}
+					case Function.ROOMIN:
+					{
+						//messegeTo(Function.ROOMIN+"|"+room.roomName+"|"+id+"|"+sex+"|"+avata);
+						myRoom=st.nextToken();
+						String id = st.nextToken();
+						String sex = st.nextToken();
+						String avata = st.nextToken();
+						
+						String temp="";
+						if(sex.equals("남자"))
+						{
+							temp="m"+avata; //m1.png m2.png
+	
+						}else
+						{
+							temp = "w"+avata; //w1.png w2.png..
+						}
+						
+						//화면 이동
+						card.show(getContentPane(), "Game");  //R게임으로 이동해라
+						
+						
+						for(int i=0; i<6;i++)
+						{
+							if(gr.sw[i]==false) // 빈공백이 false // false일때만 수행하게 만듬.
+							{
+								gr.sw[i]=true; //들어감
+								gr.pans[i].removeAll(); // 패널위에 검정색 라벨들 올라간것을 지울 것임// 라벨위에 라벨은 안올라감.
+								gr.pans[i].setLayout(new BorderLayout());
+ 							    gr.pans[i].add("Center",new JLabel(new ImageIcon(gr.getImageSizeChange(new ImageIcon("c:\\image\\"+temp+"+.png"), 150, 120))));
+ 							    gr.pans[i].validate();   // 재배치  ==>  + removeAll() 항상 함께!
+ 							    gr.ids[i].setText(id);   // 텍스트필드에 아이디를 넣음.
+ 							    break;
+								
+							}
+						}
+						
+						break;
+					}
+					case Function.ROOMADD:  // 상대방 정보를 출력해줌
+					{
+						
+						String id = st.nextToken();
+						String sex = st.nextToken();
+						String avata = st.nextToken();
+						
+						String temp="";
+						if(sex.equals("남자"))
+						{
+							temp="m"+avata; //m1.png m2.png
+	
+						}else
+						{
+							temp = "w"+avata; //w1.png w2.png..
+						}
+						
+						//화면 이동  // 이미 들어와있는 상태이기 때문에 화면이동 필요 x
+					//	card.show(getContentPane(), "Game");  //R게임으로 이동해라
+						
+						
+						for(int i=0; i<6;i++)
+						{
+							if(gr.sw[i]==false) // 빈공백이 false // false일때만 수행하게 만듬.
+							{
+								gr.sw[i]=true; //들어감
+								gr.pans[i].removeAll(); // 패널위에 검정색 라벨들 올라간것을 지울 것임// 라벨위에 라벨은 안올라감.
+								gr.pans[i].setLayout(new BorderLayout());
+ 							    gr.pans[i].add("Center",new JLabel(new ImageIcon(gr.getImageSizeChange(new ImageIcon("c:\\image\\"+temp+"+.png"), 150, 120))));
+ 							    gr.pans[i].validate();   // 재배치  ==>  + removeAll() 항상 함께!
+ 							    gr.ids[i].setText(id);   // 텍스트필드에 아이디를 넣음.
+ 							    break;
+								
+							}
+						}
+						
+						
+						break;
+					}
+					case Function.ROOMCHAT:
+					{
+						gr.ta.append(st.nextToken()+"\n");  // 입장 알림
+						break;
+						
+					}
+					
+					
+					
 					
 				}
-				
 			}
 			
 			
 		}catch(Exception ex) {}
 		
 		
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource()==wr.table1)
+		{
+			if(e.getClickCount()==2) //더블클릭 이벤트
+			{
+				//방이름 
+				int row=wr.table1.getSelectedRow();  // 몇번째 줄을 선택했나? 선택한 줄 가져오기.
+				String rn = wr.model1.getValueAt(row, 0).toString();     //칸 0번째 / 내가 클릭한 위치의 방번호 읽기, 방이름
+				String inwon = wr.model1.getValueAt(row, 2).toString();  // 칸 2번째 /인원수 체크가 먼저 than state보다!!
+				//String state = wr.model1.getValueAt(row, 1).toString();  // 칸 1번째 / 공개/ 비공개 체크 
+				StringTokenizer st = new StringTokenizer(inwon,"/");
+				
+				// 1/5  ==> 자르기
+				int no1= Integer.parseInt(st.nextToken());   // 1  
+				int no2= Integer.parseInt(st.nextToken());   // 5
+				if(no1==no2)  // 인원이 찬 상태
+				{
+					
+					// 방에 들어갈 수 없다.
+					JOptionPane.showMessageDialog(this, "이미 방이 찼습니다.\n다른 방을 선택하세요.");
+					
+					
+				}else   // 방에 들어갈 수 있다 //인원이 차지 않은 상태 ==> 공개/비공개 여부 연결
+				{
+					
+					try
+					{
+						out.write((Function.ROOMIN+"|"+rn+"\n").getBytes());
+						
+					}catch(Exception ex) {}
+					
+					
+				}
+				
+			}
+			
+		}
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 

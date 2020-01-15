@@ -64,9 +64,6 @@ public class WaitRoom extends JPanel {
 		add(tf);
 		
 		
-		
-		
-		
 		JPanel p = new JPanel();
 		p.setLayout(new GridLayout(3,2,5,5));
 		p.add(b1);p.add(b2);
@@ -78,8 +75,7 @@ public class WaitRoom extends JPanel {
 		add(js3);
 		add(js1);
 		add(js2);
-		
-		
+	
 	}
 
 	@Override

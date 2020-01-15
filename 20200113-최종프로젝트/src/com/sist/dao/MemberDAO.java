@@ -95,6 +95,8 @@ public class MemberDAO {
 				String mpwd=rs.getString(2);
 				String name=rs.getString(3);
 				String sex=rs.getString(4);
+				//아바타 번호 추가 필요
+				int avata=rs.getInt(5);
 				
 			//	System.out.println(name);
 				
@@ -104,7 +106,7 @@ public class MemberDAO {
 				if(mpwd.equals(pwd))
 				{
 					//로그인 상태
-					result=id+"|"+name+"|"+sex;
+					result=id+"|"+name+"|"+sex+"|"+avata;
 					//StringTokenizer로 자르기
 					
 				}

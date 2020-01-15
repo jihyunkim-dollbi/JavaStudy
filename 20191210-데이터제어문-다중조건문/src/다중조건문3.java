@@ -36,7 +36,7 @@ public class 다중조건문3 {
 		int num2 = scan.nextInt();
  	    
 		System.out.println("연산자(+,-,*,/):");
-		String op = scan.next();// 리턴형 - 값을 보내주고 다시 받음. 
+		String op =scan.next();// 리턴형 - 값을 보내주고 다시 받음. 
 	    
 		//처리
 		// 결과값 출력	

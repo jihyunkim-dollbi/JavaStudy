@@ -33,6 +33,7 @@ public class 반복문2 {
 	    boolean bCheck = true;
 	    while(i <= 26) {
 	    	
+	    	
 	    	if(bCheck == true)
 	    	System.out.print(c + "\t");
 	    	else
@@ -46,6 +47,7 @@ public class 반복문2 {
 	    	    	
 	    	i++;
 	    	c++;
+	    
 	    }
 	
 	}

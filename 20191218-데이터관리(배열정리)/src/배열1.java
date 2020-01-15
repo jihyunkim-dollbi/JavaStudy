@@ -1,3 +1,5 @@
+// 달력 만들기
+
 import java.util.Scanner;
 
 /*
@@ -72,7 +74,7 @@ public class 배열1 {
 		// TODO Auto-generated method stub
 
 			
-		// 달력 만들기
+
 /*       1) 년, 월, 일 입력 받는다.
  *       2) 1일자의 요일을 알고 있어야 한다.
  *       3) 마지막 날의 숫자
@@ -109,8 +111,8 @@ public class 배열1 {
 		int m = cal.get(cal.MONTH)+1;
 		int d = cal.get(cal.DATE);
 		int w = cal.get(cal.DAY_OF_WEEK);
+		char[] strWeek = {'일','월','화','수','목','금','토'};	
 				
-		char[] strWeek = {'일','월','화','수','목','금','토'};		
 	/*	System.out.println(cal.get(cal.YEAR));
 		System.out.println(cal.get(cal.MONTH));
 		System.out.println(cal.get(cal.DATE));
@@ -139,12 +141,16 @@ public class 배열1 {
 	*/	
 		
 		
+		// 프린팅
 		
+	
 		
 		for(int i = 0; i < 7 ; i++)
 		{
 			System.out.print(strWeek[i] + "\t");
 		}
+		
+		
 		
 		// 1일자의 요일을 구한다.
 		// 전년도의 12/31까지의 총 합을 구한다
@@ -176,6 +182,16 @@ public class 배열1 {
 		
 		int week =total%7;  // 일요일의 인덱스  일요일은 0, 월요일은 1, 화요일은 2 // 요일별 인덱스 준 곳.
 		 // 마지막 날짜를 배열로 잡는다.
+		
+		
+		
+		
+		
+		
+		
+		
+		// lastday 찾기
+		
 		System.out.println();
 		for(int i = 1; i <=lastDay[month-1]; i++)  // 1일부터 시작할때 첫째줄이다. 따라서 week만큼 공백을 띄어라.
 		{

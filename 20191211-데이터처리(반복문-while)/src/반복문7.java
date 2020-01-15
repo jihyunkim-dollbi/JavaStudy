@@ -1,9 +1,23 @@
+ /*  while  형식
+ *  ==========
+ *  
+ *  초기값
+ *  while(조건문)
+ *  {
+ *    ============
+ *     반복 실행문장
+ *     
+ *    ============
+ *     증감식 
+ *    ===========
+ */   
+
+
+
 import java.util.Scanner;
 import org.jsoup.Jsoup;     // import 붙이기 --> Scan 아래에 쓰고->  ctrl+space
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-
-
 
 public class 반복문7 {
 

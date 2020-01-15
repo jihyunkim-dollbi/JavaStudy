@@ -37,6 +37,7 @@ public class Function {
 	public static final int WAITUPDATE=250;  // 실시간 정보를 갱신하기
 	public static final int POSCHANGE=260;   // 방 들어가면 대기실을 방 이름으로 바꿔줌..
 	public static final int WAITCHAT=270;
+	public static final int ROOMCHAT=280;  //방에서 채팅
 	public static final int EXIT=900;     //  
 	public static final int MYEXIT=910;  // 기존의 사람에게 리뉴얼된 접속자 명단 보여줌.. 
 	
