@@ -18,6 +18,7 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -30,6 +31,7 @@ import javax.swing.JTextField;
 import javax.swing.JPanel;
 
 public class GameRoom extends JPanel{
+	
 
 	  JPanel[] pans=new JPanel[6];
 
@@ -50,7 +52,7 @@ public class GameRoom extends JPanel{
 	   
 	   boolean[] sw = new boolean[6]; // 빈공백을 찾는다.. 들어가면 true(있는공간) 나가면 false(빈공간)   ==> false면 값을 채워라. 채워지면 true가 된다.
 	   
-	   
+	   JComboBox box = new JComboBox();
 	   
 
 	   public GameRoom()
@@ -58,7 +60,7 @@ public class GameRoom extends JPanel{
 	   {
 		   
 		   
-		//    grSketch.setBounds(280, 15, 880, 600);
+		//  grSketch.setBounds(280, 15, 880, 600);
 
 		//	grSketch.setBackground(Color.BLACK);
 			
@@ -200,36 +202,32 @@ public class GameRoom extends JPanel{
 		   
 
 		   JScrollPane js=new JScrollPane(ta);
+		   ta.setEditable(false); // 편집이 안되게 막아줌
 
+		   
 		   js.setBounds(10, 510, 830, 180);
-
 		   add(js);
 
 		   
 
 		   tf.setBounds(10, 695, 830, 30);
-
 		   add(tf);
 
 		   
 
 		   b1=new JButton("초대하기");
-
 		   b2=new JButton("강퇴하기");
-
 		   b3=new JButton("게임준비");
-
 		   b4=new JButton("게임시작");
-
 		   b5=new JButton("나가기");
-
+		   box.addItem("강퇴선택");
 		   
 
 		   JPanel p=new JPanel();
 
-		   p.setLayout(new GridLayout(5,1,5,5));
+		   p.setLayout(new GridLayout(6,1,5,5)); //6개 버튼
 
-		   p.add(b1);p.add(b2);p.add(b3);p.add(b4);p.add(b5);
+		   p.add(b1);p.add(box); p.add(b2);p.add(b3);p.add(b4);p.add(b5);  // 버튼 순서
 
 		   p.setBounds(850, 510, 150, 210);
 

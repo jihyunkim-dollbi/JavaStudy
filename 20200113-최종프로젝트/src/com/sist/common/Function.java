@@ -38,6 +38,12 @@ public class Function {
 	public static final int POSCHANGE=260;   // 방 들어가면 대기실을 방 이름으로 바꿔줌..
 	public static final int WAITCHAT=270;
 	public static final int ROOMCHAT=280;  //방에서 채팅
+	
+	public static final int KANG = 300;     // 강퇴
+	public static final int INVITE = 310;
+	public static final int INVITE_YES = 320;
+	public static final int INVITE_NO = 330;
+	
 	public static final int EXIT=900;     //  
 	public static final int MYEXIT=910;  // 기존의 사람에게 리뉴얼된 접속자 명단 보여줌.. 
 	

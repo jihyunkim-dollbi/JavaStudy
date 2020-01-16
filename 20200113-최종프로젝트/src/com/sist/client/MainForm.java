@@ -32,7 +32,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 	 * 3) 이벤트마다 번호부여하여 쓰레드가 처리할것 => 내부 프로토콜!
 	 */
 	
-	String myRoom;  // 메인폼이 끝날때까지 방이름을 기억해야한다. 
+	String myRoom, myId;  // 메인폼이 끝날때까지 방이름을 기억해야한다. myId방에 있는 사람들 
 	
 	
 	
@@ -41,8 +41,9 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 		setLayout(card);
 		
 		add("Login", Login); 
-		add("Game",gr); 
 		add("WR", wr);
+		add("Game",gr); 
+		
 		// 상속받지 않으면 에러
 		
 		//this.add("Login", Login);
@@ -67,7 +68,13 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 		mr.b2.addActionListener(this); // 이미 만들어진 방(x- ok) or 새로 방 만들까?    // this는 mr
 		
 		
-		wr.table1.addMouseListener(this);   // this는 wr
+		wr.table1.addMouseListener(this);   // this는 wr을 가리킨다.
+		
+		
+		gr.tf.addActionListener(this); // 방 안에서 채팅하는 이벤트 등록
+		gr.b5.addActionListener(this); // 나가기 버튼 이벤트 등록
+		gr.b2.addActionListener(this); //강퇴하기에 이벤트 등록 // 서버로 값을 보내러 고고 액션 퍼폼에서 서버로 값을 보내기
+		
 		
 	}
 	
@@ -137,10 +144,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 			{
 				connection(result);
 			}
-			
-			
-			
-			
+		
 		}
 		else if(e.getSource()==wr.tf) { //대기실 채팅
 			
@@ -171,7 +175,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 				out.write((Function.EXIT+"|\n").getBytes());
 				/*
 				 * 나가기 => 요청
-				 * 		   ===
+				 * 		   === 
 				 * 			처리 ==> 서버
 				 * 			결과 출력 => 클라이언트
 				 */
@@ -250,7 +254,53 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 		{
 			mr.setVisible(false);
 		}
-		
+		else if(e.getSource()==gr.tf)
+		{
+			
+			String msg = gr.tf.getText(); //입력한 글자를 가져와
+			if(msg.length()<1)
+			return; //밑에 있는 문장 수행 x
+			
+			try
+			{
+				//서버로 msg 값이 넘어감 ==> 해당 방 안에 있는 유저에게 값이 넘어가야함...따라서 방이름이 넘어가야함..String myRoom, ROOMIN에서 myRoom저장해 놓음 ,, 방안에 userVt가 있으니까 그 안에 사람들에게 간다..
+				// ex )귓속말할 대상의 id필요..
+			
+				out.write((Function.ROOMCHAT+"|"+myRoom+"|"+msg +"\n").getBytes());
+				
+			}catch(Exception ex) {}
+			
+			gr.tf.setText(""); // 공백문자로 리셋.
+			
+			
+			
+		}
+		else if(e.getSource()==gr.b5) // 방나가기 버튼 눌렀다면~~
+		{
+			
+			try
+			{
+				//서버한테 방 이름을 넘어겨야햠
+				out.write((Function.ROOMOUT+"|"+myRoom+"\n").getBytes());				
+				//처리하는 곳은 쓰레드 ==>쓰레드로 고고씽 case!!
+				
+			}catch(Exception ex) {}
+			
+			
+			
+			
+		}
+		else if(e.getSource() == gr.b2)
+		{
+			
+			String youId = gr.box.getSelectedItem().toString();
+			try
+			{
+				out.write((Function.KANG+"|"+myRoom+"|"+youId+"\n").getBytes());
+				
+			}catch(Exception ex) {}
+			
+		}
 		
 	
 		
@@ -371,13 +421,14 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						
 						
 					}
-					case Function.ROOMIN:
+					case Function.ROOMIN:   // 내가 방에 있는 것. 내정보 처리
 					{
 						//messegeTo(Function.ROOMIN+"|"+room.roomName+"|"+id+"|"+sex+"|"+avata);
 						myRoom=st.nextToken();
 						String id = st.nextToken();
 						String sex = st.nextToken();
 						String avata = st.nextToken();
+						myId = id;     //해당 방 안에있는 id들..
 						
 						String temp="";
 						if(sex.equals("남자"))
@@ -410,7 +461,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						
 						break;
 					}
-					case Function.ROOMADD:  // 상대방 정보를 출력해줌
+					case Function.ROOMADD:  // 상대방 정보를 출력해줌  // 방에 있는 상대방들을 처리할 수 있는....
 					{
 						
 						String id = st.nextToken();
@@ -445,6 +496,8 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 								
 							}
 						}
+						gr.box.addItem(id);
+						
 						
 						
 						break;
@@ -455,20 +508,159 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						break;
 						
 					}
-					
+					case Function.WAITUPDATE:
+					{
+						/*
+						 * messegeAll(Function.WAITUPDATE+"|"+room.roomName+"|"+room.current+"|"+room.maxcount+"|"+id+"|"+pos);
+						 * 받아야되는 값 4개
+						 */
+						
+						String rn=st.nextToken();
+						String current = st.nextToken();
+						String maxcount = st.nextToken();
+						String id = st.nextToken();
+						String pos = st.nextToken();
+						
+						//테이블에서 방찾기 // 같은 줄에 있으면 수정하라.
+						for(int i=0; i<wr.model1.getRowCount();i++)
+						{
+							String roomName = wr.model1.getValueAt(i,0).toString();
+							if(rn.equals(roomName)) //i번째와 같음
+							{
+								if(Integer.parseInt(current)==0)
+								{
+									wr.model1.removeRow(i);   // i번째 삭제
+									
+									
+								}
+								else
+								{
+									//현재인원한테 바꿔줌
+									wr.model1.setValueAt(current+"/"+maxcount, i, 2);  // 그 위치에 값을 이걸로 바꿔라
+									
+								}
+								break;
+								
+							}
+							
+							
+						}
+						// 접속자 목록 변경 
+						// model2의 '위치'변경하기 - 뒤에들어오는 사람은 바뀌는데, 앞에 있던 사람을 바꿔줘야함.
+						for(int i=0; i<wr.model2.getRowCount();i++)
+						{
+							String mid = wr.model2.getValueAt(i, 0).toString();
+							if(mid.equals(id))
+							{
+								wr.model2.setValueAt(pos, i, 3);
+								break; 
+							}
+							
+						}
+						
+						break;
+					}
+					case Function.POSCHANGE:
+					{
+						
+						String id=st.nextToken();
+						String pos=st.nextToken();
+						
+						for(int i=0; i<wr.model2.getRowCount();i++)
+						{
+							String mid = wr.model2.getValueAt(i, 0).toString();
+							if(mid.equals(id))
+							{
+								wr.model2.setValueAt(pos, i, 3);
+								break; 
+							}				
+						}
+						break;
+						
+						
+					}
+					case Function.ROOMOUT:
+					{  
+						// 방에 있던 사람들한테는 아바타만 디폴트로 바꿔주기
+						
+						String id=st.nextToken();
+						
+						for(int i=0; i<6; i++)
+						{
+							String mid=gr.ids[i].getText();  //i번째와 같은 건 지우기
+							
+							if(id.equals(mid))
+							{
+								gr.sw[i]=false; // 
+								gr.pans[i].removeAll(); // 패널위에 검정색 라벨들 올라간것을 지울 것임// 라벨위에 라벨은 안올라감.
+								gr.pans[i].setLayout(new BorderLayout());
+								gr.pans[i].add("Center",new JLabel(new ImageIcon(gr.getImageSizeChange(new ImageIcon("c:\\image\\def.png"), 150, 120))));  //검은색으로 초기화
+								gr.pans[i].validate();   // 재배치  ==>  + removeAll() 항상 함께!
+								gr.ids[i].setText("");   // 공백으로 바꿔줌
+								break;
+								
+							}
+						}
+						
+				  		break;
+						
+					}
+					case Function.MYROOMOUT:
+					{
+						//실제 나가는 사람 동작 => 창이 갱신되어야함--> 게임방에서 대기실로==>창을 대기실로 바꿔라 
+						//방 객체는 한개를 이미 만들었기 때문에 다시 새로운 방에 들어갈 경우 값이 그대로 들어가 있음==> 따라서 새로운 방을 들어갈때마다 초기화 시켜줘야함
+						//전역변수는 한번 생성되면 값이 안지워짐.==> 초기화해주기가 어렵다..
+						
+						//초기화= 아바타 /아이디 모두 지우기
+						for(int i=0; i<6;i++)
+						{	
+							gr.sw[i]=false; // 
+							gr.pans[i].removeAll(); // 패널위에 검정색 라벨들 올라간것을 지울 것임// 라벨위에 라벨은 안올라감.
+							gr.pans[i].setLayout(new BorderLayout());
+							gr.pans[i].add("Center",new JLabel(new ImageIcon(gr.getImageSizeChange(new ImageIcon("c:\\image\\def.png"), 150, 120))));  //검은색으로 초기화
+							gr.pans[i].validate();   // 재배치  ==>  + removeAll() 항상 함께!
+							gr.ids[i].setText("");   // 공백으로 바꿔줌
+						}
+						
+						gr.ta.setText("");
+						gr.tf.setText("");
+						card.show(getContentPane(), "WR");
+						break;
+						
+					}
+					case Function.KANG:
+					{
+						String rn = st.nextToken();  // 방이름 전송
+						JOptionPane.showMessageDialog(this, rn+"방에서 강퇴되었습니다.");
+						out.write((Function.ROOMOUT+"|"+rn+"\n").getBytes());   //서버 처리하러 고고
+						break;
+					}
 					
 					
 					
 				}
 			}
 			
-			
 		}catch(Exception ex) {}
 		
 		
 		
 	}
-
+/*
+ * switch(no)
+ * {
+ * 		case 1:
+ * 		{
+ * 			int num=3;
+ * 			break;        ==> 스위치 케이크 한 블럭안에 동일한 변수가 있으면 에러
+ *		 }				 ==> 블럭을 케이스마다 줘서 블록변수로 사용해야한다.
+ * 		case 2:
+ * 		{
+ * 			int num=5;
+ * 			break;
+ * 		}
+ * }
+ */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -495,7 +687,6 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 					
 				}else   // 방에 들어갈 수 있다 //인원이 차지 않은 상태 ==> 공개/비공개 여부 연결
 				{
-					
 					try
 					{
 						out.write((Function.ROOMIN+"|"+rn+"\n").getBytes());
@@ -504,6 +695,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 					
 					
 				}
+				
 				
 			}
 			

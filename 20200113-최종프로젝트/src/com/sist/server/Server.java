@@ -215,9 +215,11 @@ public class Server implements Runnable {
 							messegeAll((Function.MAKEROOM + "|" + room.roomName + "| "+ room.roomState + "|"+ room.current + "/" + room.maxcount));	
 							
 							// 방에 들어가게 만든다. messegeto => 한 명한테만 간다.
-							messegeTo(Function.ROOMIN+"|"+room.roomName+"|"+id+"|"+sex+"|"+avata);
+							messegeTo(Function.ROOMIN+"|"+room.roomName+"|"+id+"|"+sex+"|"+avata);///////////////////////////////////
 					
-							
+							//model2 대기실의 방정보 변경해주기 - 방이 만들어지면 이미 대기실에 있던 사람에게 방정보가 바뀌게 보여줘야한다. 
+							messegeAll(Function.POSCHANGE+"|"+id+"|"+pos);  //아이디를 찾아서 위치를 변경해라.
+								
 							break;
 						}
 						case Function.ROOMIN:
@@ -247,7 +249,7 @@ public class Server implements Runnable {
  									
  									// 방에 들어와있는 사람에게 뿌림
  									for(Client user:room.userVc)// 이 안에는 내가 포함되어있지 않다. 
- 									{
+ 									{ 
  										
  										user.messegeTo(Function.ROOMADD+"|"+id+"|"+sex+"|"+avata);  //방에 아바타를 추가해줌
  										user.messegeTo(Function.ROOMCHAT+"|[알림 ☞]"+id+"님이 입장하셨습니다.");  //  2.입장메세지전송
@@ -266,15 +268,134 @@ public class Server implements Runnable {
  											messegeTo(Function.ROOMADD+"|"+user.id+"|"+user.sex+"|"+user.avata);  // .user => 상대방 정보  내 것은 this가 생략된 것임.
  											
  										}
- 										
- 										
+ 									
  									}
+ 									
+ 								// 대기실 갱신 
+ 									messegeAll(Function.WAITUPDATE+"|"+room.roomName+"|"+room.current+"|"+room.maxcount+"|"+id+"|"+pos);
+ 									
+ 									
  									
  								}
  							}
 							
+ 							/////
+ 							/////
+ 							/////
+ 							
+ 							
+ 							
+ 							
+ 							
+ 							
+ 							
 							break;
 						}
+						case Function.ROOMCHAT:
+						{
+							String rn=st.nextToken();
+							String strMsg = st.nextToken();  // mgs를 위에서 사용했기 때문에 사용x 
+							//방을 찾는다
+							for(Room room:roomVc)
+							{
+								if(rn.equals(room.roomName))  // 해당 방정보
+								{
+									for(Client user:room.userVc)  // 해당 방에 있는 user정보
+									{
+										user.messegeTo(Function.ROOMCHAT+"|["+name+"] "+strMsg);
+										
+										
+									}
+									
+									
+								}
+								
+								
+							}
+							
+							
+							break;
+						}
+						case Function.ROOMOUT:
+						{
+							
+							 //방 나가는 사람을 대기실로 
+							String rn=st.nextToken();
+							for(int i=0;i<roomVc.size();i++) // 인덱스번호 사용
+							{
+								Room room = roomVc.get(i);
+								if(rn.equals(room.roomName))
+								{
+									pos="대기실"; //방나간 사람은 대기실로 옴
+									room.current--; //현재인원 감소시키기
+									
+									// 방에 남아있는 사람들한테 전송
+									for(Client user:room.userVc)
+									{
+										if(!user.id.equals(id)) //id가 나가는 사람이 아니라면
+										{
+											
+											user.messegeTo(Function.ROOMOUT+"|"+id);
+											user.messegeTo(Function.ROOMCHAT+"|[알림☞ ] " +name+"님이 퇴장하셨습니다");
+											
+										}
+										
+									}
+									// 실제 나가는 사람한테 전송
+									for(int j=0; j<room.userVc.size();j++)
+									{
+										Client user = room.userVc.get(j); //j번재가 본인
+										if(id.equals(user.id))  //나한테만 보냄
+										{
+											//userVc에서 제거 ==> 방을 나가라
+											room.userVc.remove(j);
+											messegeTo(Function.MYROOMOUT+"|");
+											break;
+											
+										}
+										
+																			
+									}
+									// 대기실을 변경하기
+									messegeAll(Function.WAITUPDATE+"|"+room.roomName+"|"+room.current+"|"+room.maxcount+"|"+id+"|"+pos);
+									if(room.current ==0)
+									{
+										roomVc.remove(i); //i는roomVc j는 ....
+										break;
+							
+									}
+									
+								}
+								
+								
+							}
+							
+							
+							break;
+						}
+						case Function.KANG:
+						{
+							String rn=st.nextToken();
+							String yid = st.nextToken();
+							for(Client user:waitVc)
+							{
+								if(yid.equals(user.id))
+								{
+									user.messegeTo(Function.KANG+"|"+rn);
+									break;
+									
+									
+								}
+								
+								
+							}
+							
+							
+							
+						}
+						
+						
+						
 					}
 					
 				}
