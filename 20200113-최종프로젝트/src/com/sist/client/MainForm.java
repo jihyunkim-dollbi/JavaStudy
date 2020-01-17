@@ -1,11 +1,13 @@
 package com.sist.client;
-import java.awt.*;
 
+import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
 import com.sist.common.Function;
 import com.sist.dao.*;  // 패키지가 다를때 불러오기
+
+
 // 서버 연결
 import java.util.*;
 import java.net.*;
@@ -32,8 +34,8 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 	 * 3) 이벤트마다 번호부여하여 쓰레드가 처리할것 => 내부 프로토콜!
 	 */
 	
-	String myRoom, myId;  // 메인폼이 끝날때까지 방이름을 기억해야한다. myId방에 있는 사람들 
-	
+	String myRoom, myId;  // 메인폼이 끝날때까지 방이름을 기억해야한다. myId 방에 있는 사람들 
+	int imageNo=1;
 	
 	
 	MainForm(){
@@ -60,17 +62,17 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 		
 		Login.b1.addActionListener(this);
 		wr.tf.addActionListener(this); // (waitroom버튼에서 이벤트 처리)데이터 전송/출력 - 메인폼  , 데이터 처리 - server!!
-		wr.b6.addActionListener(this); // 나가기 버튼에 이벤트를 주려함.
-		wr.b1.addActionListener(this); 
+		wr.b6.addActionListener(this); // 나가기  // 버튼에 이벤트를 주려함.
+		wr.b1.addActionListener(this);  // 방 만들기
 		
 		
-		mr.b1.addActionListener(this); //이것을 클릭했을떄 실제로방이 만들어짐
+		mr.b1.addActionListener(this); // 이것을 클릭했을떄 실제로방이 만들어짐
 		mr.b2.addActionListener(this); // 이미 만들어진 방(x- ok) or 새로 방 만들까?    // this는 mr
 		
 		
 		wr.table1.addMouseListener(this);   // this는 wr을 가리킨다.
 		
-		
+		// 방안에서 채팅 등록
 		gr.tf.addActionListener(this); // 방 안에서 채팅하는 이벤트 등록
 		gr.b5.addActionListener(this); // 나가기 버튼 이벤트 등록
 		gr.b2.addActionListener(this); //강퇴하기에 이벤트 등록 // 서버로 값을 보내러 고고 액션 퍼폼에서 서버로 값을 보내기
@@ -168,6 +170,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 			wr.tf.setText(""); //==> enter 시  이벤트 발생 후  공백으로 바로 바꿔줌
 			
 		}
+		// 나가기 (대기실)
 		else if(e.getSource() == wr.b6) //나가기(대기실) ==> 아예 나가기 때문에 백터를 지워야함
 		{
 			try
@@ -204,8 +207,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 				JOptionPane.showMessageDialog(this, "방이름을 입력하세요");
 				mr.tf.requestFocus();
 				return;
-				
-				
+			
 			}
 			
 			for(int i=0; i< wr.model1.getRowCount();i++)
@@ -227,17 +229,17 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 			if(mr.rb1.isSelected()) //공개버튼이 선택됐다면
 			{
 				rs="공개";
-				rp=" ";
+				rp=" ";    // 공개하기를 클릭했으니까 비번은 공백으로...?
 				
 			}
 			else
 			{
 				rs = "비공개";
-				rp=String.valueOf(mr.pf.getPassword());
+				rp=String.valueOf(mr.pf.getPassword());  // 입력받기
 			}
 			
 			// 인원체크
-			int inwon = mr.box.getSelectedIndex()+2;  // 인덱스 사용 
+			int inwon = mr.box.getSelectedIndex()+2;  // 인덱스 사용 // 2명 이상부터 가능! 
 			
 			
 			//서버로 전송
@@ -247,14 +249,15 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 				out.write((Function.MAKEROOM+"|"+rn+"|"+rs+"|"+rp+"|"+inwon+"\n").getBytes());  // 테이블 위에 출력될 것임.
 				
 			}catch(Exception ex) {}
+			
 			mr.setVisible(false);
 			
 		}
-		else if(e.getSource()==mr.b2)   // 방 안만드는 경우
+		else if(e.getSource()==mr.b2)   // 방 안만드는 경우 (b2 => 취소버튼)
 		{
 			mr.setVisible(false);
 		}
-		else if(e.getSource()==gr.tf)
+		else if(e.getSource()==gr.tf)  // 채팅입력란???
 		{
 			
 			String msg = gr.tf.getText(); //입력한 글자를 가져와
@@ -304,7 +307,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 		
 	
 		
-	} // 액션퍼폼 끝
+	} // ActionPerformed end
 
 	
 	
@@ -327,9 +330,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 			
 			//로그인 데이터 보내기 => funtion이 갖고 있는 번호주기
 			//100 | hong | 홍길동 | 남자 \n     ==> 문자열로 묶어서 한번에 보낸다. 2byte로 변환함.   디코딩 => 원래 대로의 문자를 가져옴.
-			out.write((Function.LOGIN+ "|" + userData + "\n").getBytes());
-			
-			
+			out.write((Function.LOGIN+"|"+userData+"\n").getBytes());
 			
 		}catch(Exception ex) {}
 		// 서버로부터 데이터를 읽기 시작해라
@@ -392,7 +393,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						String id = st.nextToken(); // 서버가 나가는 사람의 id를 줘야함.
 						for(int i=0; i<wr.model2.getRowCount();i++) //getRowCount()   대기실 0,1,2 사용함.. 대기실의 사람수 /getRowCount(0) i가 0번째면 삭제..  
 						{
-							String mid = wr.model2.getValueAt(i, 0).toString();  //getValueAt 테이블에서 값을 읽어옴 , toString()-> object 형을 문자열 변환
+							String mid = wr.model2.getValueAt(i,0).toString();  //getValueAt 테이블에서 값을 읽어옴 , toString()-> object 형을 문자열 변환
 							//(String)wr.model2.getValueAt(i, 0)
 							if(mid.equals(id))
 							{
@@ -428,6 +429,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						String id = st.nextToken();
 						String sex = st.nextToken();
 						String avata = st.nextToken();
+						String bang = st.nextToken();
 						myId = id;     //해당 방 안에있는 id들..
 						
 						String temp="";
@@ -435,7 +437,8 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						{
 							temp="m"+avata; //m1.png m2.png
 	
-						}else
+						}
+						else
 						{
 							temp = "w"+avata; //w1.png w2.png..
 						}
@@ -467,16 +470,19 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						String id = st.nextToken();
 						String sex = st.nextToken();
 						String avata = st.nextToken();
+						String bang = st.nextToken();
 						
 						String temp="";
 						if(sex.equals("남자"))
 						{
 							temp="m"+avata; //m1.png m2.png
 	
-						}else
+						}
+						else
 						{
 							temp = "w"+avata; //w1.png w2.png..
 						}
+						
 						
 						//화면 이동  // 이미 들어와있는 상태이기 때문에 화면이동 필요 x
 					//	card.show(getContentPane(), "Game");  //R게임으로 이동해라
@@ -496,6 +502,7 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 								
 							}
 						}
+						
 						gr.box.addItem(id);
 						
 						
@@ -627,6 +634,9 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						card.show(getContentPane(), "WR");
 						break;
 						
+					
+						
+						
 					}
 					case Function.KANG:
 					{
@@ -635,6 +645,50 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 						out.write((Function.ROOMOUT+"|"+rn+"\n").getBytes());   //서버 처리하러 고고
 						break;
 					}
+					case Function.START:
+					{
+
+						  //JOptionPane.showMessageDialog(this, st.nextToken());
+
+						  gr.ta.append(st.nextToken()+"\n");
+
+				//		  gr.games.setImage(1);
+
+						  gr.games.repaint();
+
+						  new ProgressThread().start();
+
+						  break;
+
+					  }
+
+					  case Function.NEXT:
+
+					  {
+
+						  
+
+						  
+						  //games -> 
+				//		  gr.games.setImage(Integer.parseInt(st.nextToken()));
+
+						  gr.games.repaint();
+
+						  gr.bar.setValue(0);
+
+						  new ProgressThread().start();
+
+						  break;
+
+					  }
+
+					  case Function.END:
+
+					  {
+
+						  JOptionPane.showMessageDialog(this, "게임이 종료되었습니다");
+
+					  }
 					
 					
 					
@@ -725,5 +779,56 @@ public class MainForm extends JDialog implements ActionListener, Runnable, Mouse
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	
+	class ProgressThread extends Thread
+
+	{
+
+		public void run()
+
+		{
+
+			try
+
+			{
+
+				for(int i=0;i<=100;i++)
+
+				{
+
+					gr.bar.setValue(i);
+
+					Thread.sleep(100);
+
+					
+
+					if(i==100)
+
+					{
+
+						out.write((Function.NEXT+"|"+myRoom+"|"+(++imageNo)+"\n").getBytes());
+
+						break;
+
+					}
+
+				}
+
+				
+
+				
+
+				//imageNo++;
+
+			}catch(Exception ex) {}
+
+		}
+
+	}
+	
+	
+	
 
 }

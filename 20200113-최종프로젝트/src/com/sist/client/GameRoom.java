@@ -22,6 +22,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
@@ -53,6 +54,11 @@ public class GameRoom extends JPanel{
 	   boolean[] sw = new boolean[6]; // 빈공백을 찾는다.. 들어가면 true(있는공간) 나가면 false(빈공간)   ==> false면 값을 채워라. 채워지면 true가 된다.
 	   
 	   JComboBox box = new JComboBox();
+	   
+	   JLabel la = new JLabel("정답입력");
+	   JProgressBar bar = new JProgressBar();
+	   JTextField dapTf = new JTextField(15);
+	   
 	   
 
 	   public GameRoom()
@@ -188,10 +194,17 @@ public class GameRoom extends JPanel{
 		   
 		   
 		   
-		   
-		   
+		   bar.setBackground(Color.white);
 
-		   
+		   bar.setForeground(Color.pink);
+
+		   bar.setMaximum(100);
+
+		   bar.setMinimum(0);
+
+		   bar.setStringPainted(true);
+
+		   	   
 
 		  //  games.setBackground(Color.white);
 
@@ -199,6 +212,15 @@ public class GameRoom extends JPanel{
 
 		   add(games);
 
+		   
+		   JPanel pp = new JPanel();
+		   pp.add(la);
+		   pp.add(dapTf);
+		   pp.setBounds(170,425,670,35);
+		   add(pp);
+		   
+		   bar.setBounds(170, 465,670, 30);
+		   add(bar);
 		   
 
 		   JScrollPane js=new JScrollPane(ta);

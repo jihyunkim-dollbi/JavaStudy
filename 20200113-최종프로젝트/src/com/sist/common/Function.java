@@ -47,6 +47,9 @@ public class Function {
 	public static final int EXIT=900;     //  
 	public static final int MYEXIT=910;  // 기존의 사람에게 리뉴얼된 접속자 명단 보여줌.. 
 	
+	public static final int START=500;
+	public static final int NEXT=510;
+	public static final int END=520;
 	
 	
 	
