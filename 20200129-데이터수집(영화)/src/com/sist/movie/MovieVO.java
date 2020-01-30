@@ -21,6 +21,8 @@ public class MovieVO {
 	private String actor;
 	private String story;
 	private int type;
+	
+	
 	public int getMno() {
 		return mno;
 	}
