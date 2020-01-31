@@ -57,7 +57,7 @@ public class login extends JPanel {              // 구현이 안되는 선언부 이기때�
 		        // 배치하기
 		        	
 		        la1.setBounds(390, 330,80,30);   // 내가 원하는 위치에 놓기
-		        tf.setBounds(475,330,150,30);  
+		        tf.setBounds(475,330,150,30);   
 		        // setBounds
 		        
 		      	
