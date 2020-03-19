@@ -21,7 +21,7 @@
  *   			==========						    =======
  * 					|									|
  * 				==========						  ============
- * 		InputStream   OutputStream				Reader		Writer
+ * 		InputStream(중요)   OutputStream				Reader		Writer
  * 
  * FileInputStream								FileReader
  * FileOutputStream								FileWiter
@@ -30,6 +30,8 @@
  * 
  * 보조장치 : 임시로 한번에 저장해 놓는 공간.
  * BufferedInputStream							BufferedReader
+ * (======)
+ * (전체데이터제어시 buffer(임시로저장해놓고(저장:commit)시작.임시기억)- 속도빠르게)
  * BufferedOutputStream							BufferedWriter
  * 
  * 

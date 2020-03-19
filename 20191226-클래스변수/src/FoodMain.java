@@ -32,16 +32,16 @@ import org.jsoup.select.Elements;
  * 		 private 변수=> get method, set method 만들어 메소드를 통해 통신. 
  * 		 ==> 롬복? ==> 자동으로 get/set 메소드 만들어줌.  ==> 이클립스 기능 있음.
  * 	 
- */ 
+ */
+
+//카테고리 클래스
 class Category {  
 	
-	int cateno;  //cno 카테고리넘버- 숨겨진 변수 -primary key - 중복이 없는 
-	//카테고리의 진짜 변수.
+	int cateno;  //cno 카테고리넘버- 숨겨진 변수 -primary key - 중복이 없는 카테고리의 진짜 변수. 
 	String poster;
 	String title;
 	String subTitle;
 	String link;
-	
 }
 /*
  * 마구로쇼쿠도 4.5 
@@ -74,11 +74,14 @@ class Category {
  * 
  * 
  */
+
+// food클래스
 class Food {
 	
-	int cateno;  //fall in key? 중복 있되............ 클래스끼리는 연결되는 변수가 있을수 있는것.
-	int no;   // 소분류자체 넘버
-	String[] poster = new String[4];  // 모든 소분류 사진개수가 동일하게 4개==> 고정 가능함
+	int cateno;  //foreign key - 중복x, category클래스 참조!
+	
+	int no;   //primary key - 카테고리 안에 소분류로 상세보기 객체 넘버!
+	String[] poster = new String[4];  // 모든 소분류 사진개수가 동일하게 4개==> 고정 가능함 => 고정이 불가능한 경우 arraylist로 가져온다.
 	String title;
 	double score;
 	String addr;
@@ -92,7 +95,6 @@ class Food {
 	int good;
 	int soso;
 	int bad;
-	
 }
 /*
  * 
@@ -147,10 +149,13 @@ class Food {
  * 
  * 
  */
+
+// foodmain클래스
 public class FoodMain {
 	//한 클래스로는 불가능하다. 다른 클래스에서  
 	//12개 데이터 동시에 가져와 출력하기. 1개의 퍼블릭 클래스가 있어야 한다.
 	Category[] foodCategoryData() throws Exception
+	
 	{
 		Category[] cate= new Category[12];
 		Document doc = Jsoup.connect("http://www.mangoplate.com/").get();  //서버로 부터 정보 가져오기

@@ -41,24 +41,26 @@ public class GameRoom extends JPanel {
 
 
 	/*
-	 * �����������
-	 *  1. ����ġ��(�ķ�Ʈ ����) : ���� 
-	 *  2. �����г�(ĳ����/ID/LV/�濡�� �����������) : ��ȣ 
-	 *  3. ����ǥ�ñ� : ��ȣ
-	 *  4. ����ǥ�ñ� : ��ȣ 
-	 *  5. ������ڼ�ǥ�ñ� :��ȣ 
-	 *  6. ä�� : ȫ�� 
-	 *  7. Ÿ�̸�(�ð�) : ȫ�� 
-	 *  8. ����ġ�� : ��ȣ (�ǽð�)
-	 *  9. �����غ� : ȫ�� 
-	 *  10. �����ʴ� : ȫ�� 
-	 *  11. ģ���߰� : ȫ�� 
-	 *  12. ������ : ȫ��
+	 * 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占�
+	 *  1. 占쏙옙占쏙옙치占쏙옙(占식뤄옙트 占쏙옙占쏙옙) : 占쏙옙占쏙옙 
+	 *  2. 占쏙옙占쏙옙占싻놂옙(캐占쏙옙占쏙옙/ID/LV/占썸에占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占�) : 占쏙옙호 
+	 *  3. 占쏙옙占쏙옙표占시깍옙 : 占쏙옙호
+	 *  4. 占쏙옙占쏙옙표占시깍옙 : 占쏙옙호 
+	 *  5. 占쏙옙占쏙옙占쏙옙靡占실ο옙챰占� :占쏙옙호 
+	 *  6. 채占쏙옙 : 홍占쏙옙 
+	 *  7. 타占싱몌옙(占시곤옙) : 홍占쏙옙 
+	 *  8. 占쏙옙占쏙옙치占쏙옙 : 占쏙옙호 (占실시곤옙)
+	 *  9. 占쏙옙占쏙옙占쌔븝옙 : 홍占쏙옙 
+	 *  10. 占쏙옙占쏙옙占십댐옙 : 홍占쏙옙 
+	 *  11. 친占쏙옙占쌩곤옙 : 홍占쏙옙 
+	 *  12. 占쏙옙占쏙옙占쏙옙 : 홍占쏙옙
 	 */
 
 
 
 	JPanel grSketch = new JPanel();
+	GrSketch sketchPanel = new GrSketch();
+	
 	JPanel[] userPanel = new JPanel[6];
 	JPanel exp = new JPanel();
 	JPanel timer = new JPanel();
@@ -69,7 +71,7 @@ public class GameRoom extends JPanel {
 	JPanel p = new JPanel();
 	JTextField tf;
 	JProgressBar jb;
-	GrSketch sketchPanel = new GrSketch();
+	
 	
 	GameRoom() {
 
@@ -77,7 +79,7 @@ public class GameRoom extends JPanel {
 	
 		setLayout(null);	
 
-//1. ����ġ��		
+//1. 占쏙옙占쏙옙치占쏙옙		
 
 		grSketch.setBounds(280, 15, 880, 600);
 
@@ -93,7 +95,7 @@ public class GameRoom extends JPanel {
 
 		
 
-//2. �����г�		
+//2. 占쏙옙占쏙옙占싻놂옙		
 
 	    for (int i = 0; i < 6; i++) {
 
@@ -139,7 +141,7 @@ public class GameRoom extends JPanel {
 
 		
 
-//3.����ǥ�ñ�
+//3.占쏙옙占쏙옙표占시깍옙
 
 		timer.setBounds(15, 630, 250, 150);
 
@@ -149,7 +151,7 @@ public class GameRoom extends JPanel {
 
 		
 
-//4.����ǥ�ñ�
+//4.占쏙옙占쏙옙표占시깍옙
 
 		turn.setBounds(280, 630, 250, 105);
 
@@ -159,7 +161,7 @@ public class GameRoom extends JPanel {
 
 		
 
-//5.������ڼ�ǥ�ñ�		
+//5.占쏙옙占쏙옙占쏙옙靡占실ο옙챰占�		
 
 		answer.setBounds(545, 630, 250, 105);
 
@@ -169,7 +171,7 @@ public class GameRoom extends JPanel {
 
 		
 
-//7.Ÿ�̸�		
+//7.타占싱몌옙		
 
 		round.setBounds(810, 630, 350, 70);
 
@@ -179,7 +181,7 @@ public class GameRoom extends JPanel {
 
 		
 
-//6.ä��	
+//6.채占쏙옙	
 
 		tf = new JTextField();
 
@@ -189,7 +191,7 @@ public class GameRoom extends JPanel {
 
 		
 
-//8.����ġ��
+//8.占쏙옙占쏙옙치占쏙옙
 
 		jb = new JProgressBar(0,100);
 
@@ -203,11 +205,11 @@ public class GameRoom extends JPanel {
 
 		
 
-//��ư		
+//占쏙옙튼		
 
 		    
 
-		p.setLayout(new GridLayout(4, 1, 0, 10)); //ĭ ĭ�� ���� �¿찣�� ���Ʒ����� 
+		p.setLayout(new GridLayout(4, 1, 0, 10)); //칸 칸占쏙옙 占쏙옙占쏙옙 占승우간占쏙옙 占쏙옙占싣뤄옙占쏙옙占쏙옙 
 
 		p.setBounds(1175, 630, 250, 150);
 
@@ -217,13 +219,13 @@ public class GameRoom extends JPanel {
 
 		for(int i=0; i<1; i++) {
 
-			b[i] = new JButton("�����غ�");
+			b[i] = new JButton("占쏙옙占쏙옙占쌔븝옙");
 
-			b[i+1] = new JButton("�����ʴ�");
+			b[i+1] = new JButton("占쏙옙占쏙옙占십댐옙");
 
-			b[i+2] = new JButton("ģ���߰�");
+			b[i+2] = new JButton("친占쏙옙占쌩곤옙");
 
-			b[i+3] = new JButton("������");
+			b[i+3] = new JButton("占쏙옙占쏙옙占쏙옙");
 
 		}
 
@@ -231,13 +233,13 @@ public class GameRoom extends JPanel {
 
 		for (int i=0;i<1;i++)
 
-		{   /* b1. �����غ� 
+		{   /* b1. 占쏙옙占쏙옙占쌔븝옙 
 
-			 * b2. �����ʴ�
+			 * b2. 占쏙옙占쏙옙占십댐옙
 
-			 * b3. ģ���߰�
+			 * b3. 친占쏙옙占쌩곤옙
 
-			 * b4. ������
+			 * b4. 占쏙옙占쏙옙占쏙옙
 
 			 */
 
@@ -253,7 +255,7 @@ public class GameRoom extends JPanel {
 
 		
 
-// ��
+// 占쏙옙
 
 		Label[] label = new Label[24];	
 
@@ -261,7 +263,7 @@ public class GameRoom extends JPanel {
 
 		for (int i = 0; i < 6; i++) {
 
-			label[i] = new Label("�ƹ�Ÿ");			
+			label[i] = new Label("占싣뱄옙타");			
 
 			label[i].setBounds(10, 15, 120, 160);
 
@@ -291,7 +293,7 @@ public class GameRoom extends JPanel {
 
 			
 
-			label[18+i] = new Label("�����");			
+			label[18+i] = new Label("占쏙옙占쏙옙占�");			
 
 			label[18+i].setBounds(135, 125, 105, 50);
 

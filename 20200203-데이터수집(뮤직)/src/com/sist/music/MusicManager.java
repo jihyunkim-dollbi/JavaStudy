@@ -18,9 +18,6 @@ import org.jsoup.select.Elements;
 public class MusicManager {
 	
 	
-	
-
-	
 	public ArrayList<MusicVO> musicAllData()  // vo가 200개 이기 때문에.. 한줄만 가져오면 나머지 199는 동일하게 가져올 것임..
 	{
 		
@@ -45,10 +42,7 @@ public class MusicManager {
 			
 			int rank =1; //1부터 200까지 갈 것임
 			
-			
 			MusicDAO dao=new MusicDAO();
-			
-			
 			
 			
 			

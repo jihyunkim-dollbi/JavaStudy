@@ -20,6 +20,7 @@
 
 
 class Data{   
+	
 	// 클래스 안에서는 선언만 할 수 있다.(구현 => 연산처리, 제어문, 메소드호출==> 메소드나 블럭안에 들어가야 함. { })
 	int a = 100;    // 0
 	float f;   // 0.0f
@@ -30,9 +31,7 @@ class Data{
 	String s;   // null => "주소가 없다." default값.
 	String ss="";
 	static int aa;   // new로 주소를 생성안해도 바로 주소값이 생성됨.
-	
-	
-		
+
 }
 
 public class MainClass2 { 

@@ -2,6 +2,7 @@ package com.sist.movie;
 //사이트에서 데이터를 긁는 아이!!
 import java.util.*;
 
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

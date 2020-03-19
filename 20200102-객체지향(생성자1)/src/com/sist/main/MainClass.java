@@ -24,14 +24,6 @@ public class MainClass {
 	public static void main(String[] args) {  // 다른 패키지에서 호출할 것이기 때문에 public이 되어야한다. 
 		// TODO Auto-generated method stub
 
-		Board b = new Board(1, "게시판", "2020-01-02");  // 폴더가 다른 경우 디폴드를 사용 못한다. 따라서 Board 생성자를 public으로 만들어줘야함.
-	
-		
-		
-		  
-		
-		
-		
+		Board b = new Board(1, "게시판", "2020-01-02");  // 폴더가 다른 경우 디폴드를 사용 못한다. 따라서 Board 생성자를 public으로 만들어줘야함.		
 	}
-
 }

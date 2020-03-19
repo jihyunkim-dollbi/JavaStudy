@@ -25,9 +25,6 @@ package com.sist.movie;
  */
 
 import java.util.*;
-
-
-
 import java.sql.*;
  
 public class MovieDAO { //오라클에 연결하는 클래스 

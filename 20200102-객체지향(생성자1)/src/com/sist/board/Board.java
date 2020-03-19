@@ -30,10 +30,18 @@ public class Board {
 	// 생성자1
 	public Board(int no, String name, String regdate) // 지역변수들.
 	{	
-		this.no=no; // ==>int no; 에 값을 대입하겠다는 의미. no 전역변수를 사용가능함.
+		this.no=no; // ==> int no; 에 값을 대입하겠다는 의미. no 전역변수를 사용가능함.
 		this.name=name;
 		this.regdate=regdate;	
 	}
+	
+	public Board() // 지역변수들.
+	{	
+	
+		System.out.println("jello");
+		
+	}
+	
 	
 	// 메소드1
 	public void boardList()  // public으로 클래스를 만들어야 다른 클래스에서 사용 가능하다. 
@@ -42,8 +50,5 @@ public class Board {
 		System.out.println("이름: " + name);
 		System.out.println("등록일: " + regdate);
 	}
-	
-	
-	
 
 }
