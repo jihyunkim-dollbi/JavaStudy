@@ -1,59 +1,62 @@
-
-public class ¹®Á¦Ç®±â {
+//ìˆ˜ì • UTF-8
+public class ë¬¸ì œí’€ê¸° {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
          
-		// ¹®Á¦2¹ø
-		 int a=1500000;
+	// ë¬¸ì œ2ë²ˆ
+	 int a=1500000;
          int b=55000;
          double c=a*0.1;
          
-         System.out.println("½Ç¼ö·É¾×="+(a+b-c)+"¿ø"+"\n");
+         System.out.println("ì‹¤ìˆ˜ë ¹ì•¡="+(a+b-c)+"ì›"+"\n");
          
-         // ¹®Á¦3¹ø
+         // ë¬¸ì œ3ë²ˆ
          
-         String name="È«±æµ¿";
-         String department="°³¹ßºÎ";
-         String position="´ë¸®";
+         String name="í™ê¸¸ë™";
+         String department="ê°œë°œë¶€";
+         String position="ëŒ€ë¦¬";
          int sal=1500000;
         		 
-         System.out.println("ÀÌ¸§:"+name);
-         System.out.printf("ºÎ¼­:%10s",department);
-         System.out.print("Á÷À§:"+position);
-         System.out.println("±Ş¿©:"+sal+"\n");
+         System.out.println("ì´ë¦„:"+name);
+         System.out.printf("ë¶€ì„œ:%10s",department);
+         System.out.print("ì§ìœ„:"+position);
+         System.out.println("ê¸‰ì—¬:"+sal+"\n");
        
-        // System.out.printf("Æò±Õ:%.2f",avg);
+        // System.out.printf("í‰ê· :%.2f",avg);
          
 		
-		// ¹®Á¦ 4¹ø
-         
+	// ë¬¸ì œ 4ë²ˆ
+		
+         //ë³€ìˆ˜ ì„ ì–¸
          int kor,eng,mat;
          double avg;
          
-         String name1="¹Îµé·¹";
+	//ì´ˆê¸°í™”
+         String name1="ë¯¼ë“¤ë ˆ";
          kor=90;
          eng=70;
          mat=75;
          
-         int total=kor+eng+mat;
+	// ë³€ìˆ˜ ì„ ì–¸ê³¼ í•¨ê»˜ ì´ˆê¸°í™”	
+         int total=kor+eng+mat;	
          avg=total/3.0;
          
-         System.out.println("ÀÌ¸§1:"+name1);
-         System.out.println("ÇÕ°èÁ¡¼ö:"+(kor+eng+mat));
-         System.out.printf("Æò±ÕÁ¡¼ö:%.1f",avg);
-        		 
-         // ¹®Á¦ 6
-         
+         System.out.println("ì´ë¦„1:"+name1);
+         System.out.println("í•©ê³„ì ìˆ˜:"+(kor+eng+mat));  //totalë¡œ ì ì–´ë„ ok!
+         System.out.printf("í‰ê· ì ìˆ˜:%.1f",avg);
+        	
+		
+         // ë¬¸ì œ 6
          int a11=123;
          int b11=10;
          int c11=((a11/(b11-1)));
          
        // Math.ceil(10/3) => 4
          
-         System.out.println("\n"+"ÇÊ¿äÇÑ ¹Ù±¸´ÏÀÇ ¼ö:"+c11);
+         System.out.println("\n"+"í•„ìš”í•œ ë°”êµ¬ë‹ˆì˜ ìˆ˜:"+c11);
          
-         System.out.println("³ª¸ÓÁö:"+(int)((a11%b11)/10));
+         System.out.println("ë‚˜ë¨¸ì§€:"+(int)((a11%b11)/10));
          
         
          
