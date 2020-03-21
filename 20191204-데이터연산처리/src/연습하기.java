@@ -1,5 +1,5 @@
-
-public class ¿¬½ÀÇÏ±â {
+//ìˆ˜ì • UTF-8
+public class ì—°ìŠµí•˜ê¸° {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,7 +16,7 @@ public class ¿¬½ÀÇÏ±â {
 		int b=3;
 		
 		int bb='A';		
-		// ¿¹¿ÜÀûÀ¸·Î char´Â int ·Î ÀÚµ¿Çüº¯È¯µÊ
+		// ì˜ˆì™¸ì ìœ¼ë¡œ charëŠ” int ë¡œ ìë™í˜•ë³€í™˜ë¨
 		System.out.println(bb);
 		
 		
