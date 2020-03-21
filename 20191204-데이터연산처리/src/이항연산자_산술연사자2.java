@@ -1,79 +1,79 @@
 import java.util.*;// Scanner => scanf (c)
-/*
- * ÀÚ¹Ù / C
+/*ìˆ˜ì • UTF-8
+ * ìë°” / C
  * 
- * ÀÚ¹Ù => Å¬·¡½º
- * C => ÇÔ¼ö´ÜÀ§
+ * ìë°” => í´ë˜ìŠ¤
+ * C => í•¨ìˆ˜ë‹¨ìœ„
  * 
  * 
  */
 
 
-public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»çÀÚ2 {
+public class ì´í•­ì—°ì‚°ì_ì‚°ìˆ ì—°ì‚¬ì2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        // º¯¼ö => °ªÀ» ¼³Á¤ => Á÷Á¢ÀÔ·Â  int a=10
+        // ë³€ìˆ˜ => ê°’ì„ ì„¤ì • => ì§ì ‘ì…ë ¥  int a=10
 		/*
-		 * int a; //  ¼±¾ğ
-		   a=10
+		 * int a; //  ì„ ì–¸
+		   a=10   // ì´ˆê¸°í™”
 				
-		 * int a=10; //¼±¾ğ°ú µ¿½Ã¿¡ °ªÀ» ´ëÀÔ
+		 * int a=10; //ì„ ì–¸ê³¼ ë™ì‹œì— ê°’ì„ ëŒ€ì…
 		 * 
-		 * ÀÔ·ÂÇÑ °ªÀ» ¹Ş¾Æ¼­ ÀúÀå
-		 * ·£´ı(³­¼ö) => ÀÓÀÇÀÇ ¼ö¸¦ ÀúÀå
+		 * ì…ë ¥í•œ ê°’ì„ ë°›ì•„ì„œ ì €ì¥
+		 * ëœë¤(ë‚œìˆ˜) => ì„ì˜ì˜ ìˆ˜ë¥¼ ì €ì¥
 		 * 
 		 */
 		/*
          int a=(int)(Math.random()*100)+1;
-         // Math.random() => 0.0 ~ 0.99 ==> 0.0 ~99.0   => Á¤¼öÇü  0~99 + 1 ==> 1~100
+         // Math.random() => 0.0 ~ 0.99 ==> 0.0 ~99.0   => ì •ìˆ˜í˜•  0~99 + 1 ==> 1~100
          System.out.println("a="+a);
  
          
-         // System.in => Å°º¸µå ÀÔ·Â°ªÀ» ¹Ş´Â´Ù.
+         // System.in => í‚¤ë³´ë“œ ì…ë ¥ê°’ì„ ë°›ëŠ”ë‹¤.
          Scanner scan=new Scanner(System.in);
-         System.out.print("Á¤¼ö ÀÔ·Â:");
+         System.out.print("ì •ìˆ˜ ì…ë ¥:");
          int b=scan.nextInt();   //int b=scan.nextdouble();
          System.out.println("b="+b);
          
       
           */
          
-        // »ê¼ú¿¬»êÀÚ==> +, /
-		// ±¹¾î, ¿µ¾î, ¼öÇĞ Á¡¼ö¸¦ ¹Ş¾Æ¼­ ÃÑÁ¡ , Æò±Õ=> ¼Ò¼öÁ¡ µÎÀÚ¸® Ãâ·Â
+        // ì‚°ìˆ ì—°ì‚°ì==> +, /
+		// êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ë°›ì•„ì„œ ì´ì  , í‰ê· => ì†Œìˆ˜ì  ë‘ìë¦¬ ì¶œë ¥
 		
 		int kor,eng,math,total;
 		double avg;
-		// ¼±¾ğÇÏ°í ÀúÀå°ø°£À» ¹Ì¸® ¸¸µé¾î³õÀ½
+		// ì„ ì–¸í•˜ê³  ì €ì¥ê³µê°„ì„ ë¯¸ë¦¬ ë§Œë“¤ì–´ë†“ìŒ
 		
-		//ÀÔ·ÂÇÒ ¼ö ÀÖ´Â ±â´ÉÀÇ Å¬·¡½º °¡Áö°í ¿Â´Ù.
+		//ì…ë ¥í•  ìˆ˜ ìˆëŠ” ê¸°ëŠ¥ì˜ í´ë˜ìŠ¤ ê°€ì§€ê³  ì˜¨ë‹¤.
 		
-		  Scanner scan=new Scanner(System.in);
+		  Scanner scan=new Scanner(System.in); // scanner ê°ì²´ ìƒì„±!
 		  
-		  System.out.print("±¹¾îÁ¡¼ö:");
+		  System.out.print("êµ­ì–´ì ìˆ˜:");
 		  kor=scan.nextInt();
 		
-		  System.out.print("¿µ¾îÁ¡¼ö:");
+		  System.out.print("ì˜ì–´ì ìˆ˜:");
 		  eng=scan.nextInt();
 				  
-		  System.out.print("¼öÇĞÁ¡¼ö:");
+		  System.out.print("ìˆ˜í•™ì ìˆ˜:");
 		  math=scan.nextInt();
 		  
-		  // ÃÑÁ¡
+		  // ì´ì 
 		  
 		  total=kor+eng+math;
 		  
-		  //Æò±Õ
+		  //í‰ê· 
 		  
 		  avg=total/3.0;
 		  
 		  
-		  // °á°úÃâ·Â
-		 System.out.println("±¹¾îÁ¡¼ö:"+kor);
-		 System.out.println("¿µ¾îÁ¡¼ö:"+eng);
-		 System.out.println("¼öÇĞÁ¡¼ö:"+math);
-		 System.out.println("ÃÑÁ¡:"+total);
-		 System.out.printf("Æò±Õ:%.2f",avg);
+		  // ê²°ê³¼ì¶œë ¥
+		 System.out.println("êµ­ì–´ì ìˆ˜:"+kor);
+		 System.out.println("ì˜ì–´ì ìˆ˜:"+eng);
+		 System.out.println("ìˆ˜í•™ì ìˆ˜:"+math);
+		 System.out.println("ì´ì :"+total);
+		 System.out.printf("í‰ê· :%.2f",avg);
 		 
 		 
 		 
