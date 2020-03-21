@@ -1,6 +1,6 @@
-/*
- *  »ê¼ú¿¬»êÀÚ (+,-,/,*,%) : ´Ù¸¥ µ¥ÀÌÅÍÇüÀ» »ç¿ëÇßÀ» °æ¿ì
- *      1) int ÀÌÇÏ µ¥ÀÌÅÍÇü(byte, short, char) => ¿¬»êÃ³¸®°¡ µÇ¸é ==> int°¡ µÈ´Ù
+/* utf-8
+ *  ì‚°ìˆ ì—°ì‚°ìž (+,-,/,*,%) : ë‹¤ë¥¸ ë°ì´í„°í˜•ì„ ì‚¬ìš©í–ˆì„ ê²½ìš°
+ *      1) int ì´í•˜ ë°ì´í„°í˜•(byte, short, char) => ì—°ì‚°ì²˜ë¦¬ê°€ ë˜ë©´ ==> intê°€ ëœë‹¤
  *      
  *     byte + byte => int
  *     char + byte => int
@@ -10,7 +10,7 @@
  *     byte+int => int
  *     short+char+int => int
  *  
- *     short+ char+double => double    => String ÀÌ ´õ Å©´Ù.
+ *     short+ char+double => double    => String ì´ ë” í¬ë‹¤.
  *     ""+77 ==> "77"
  *     
  *     ""+7.5  ==>"7.5"
@@ -19,7 +19,7 @@
  *     
  *     
  *     
- *     °¡Àå Å« µ¥ÀÌÅÍ Çü °ªÀ¸·Î ¹Þ¾Æ¾ß ÇÑ´Ù.
+ *     ê°€ìž¥ í° ë°ì´í„° í˜• ê°’ìœ¼ë¡œ ë°›ì•„ì•¼ í•œë‹¤.
  * 
  * 
  * 789 => 7 8 9
@@ -28,7 +28,7 @@
 
       
        
-public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»êÀÚ {
+public class ì´í•­ì—°ì‚°ìž_ì‚°ìˆ ì—°ì‚°ìž {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -52,11 +52,11 @@ public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»êÀÚ {
        
        /*300
         * 
-        * 100101100  ->  1 ÀÚ¸§ 00101100
+        * 100101100  ->  1 ìžë¦„ 00101100
         *                     32 8 4 ==> 44
         *                     
-        *                     ¹ÙÀÌÆ®´Â 8°³ÀÇ ºñÆ®°¡ ÀÖÀ¸¹Ç·Î 300Àº 9°³ÀÇ ºñÆ®¼öÀÌ´Ù . µû¶ó¼­ µÚ¿¡¼­ºÎÅÍ 8°³¸¸ Àß¶ó¼­ °è»êÇÑ´Ù.
-        *                     byte´Â ÃÊ°ú½Ã int·Î ³Ñ¾î°¡¹Ç·Î int·Î Àâ¾ÆÁÜ.
+        *                     ë°”ì´íŠ¸ëŠ” 8ê°œì˜ ë¹„íŠ¸ê°€ ìžˆìœ¼ë¯€ë¡œ 300ì€ 9ê°œì˜ ë¹„íŠ¸ìˆ˜ì´ë‹¤ . ë”°ë¼ì„œ ë’¤ì—ì„œë¶€í„° 8ê°œë§Œ ìž˜ë¼ì„œ ê³„ì‚°í•œë‹¤.
+        *                     byteëŠ” ì´ˆê³¼ì‹œ intë¡œ ë„˜ì–´ê°€ë¯€ë¡œ intë¡œ ìž¡ì•„ì¤Œ.
         * 
         */
 	}
