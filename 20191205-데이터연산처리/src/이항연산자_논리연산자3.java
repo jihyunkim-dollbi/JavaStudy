@@ -1,9 +1,9 @@
-// if
-public class ÀÌÇ×¿¬»êÀÚ_³í¸®¿¬»êÀÚ3 {
+// utf-8
+public class ì´í•­ì—°ì‚°ì_ë…¼ë¦¬ì—°ì‚°ì3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        // °á°ú°ª ==> boolean
+        // ê²°ê³¼ê°’ ==> boolean
 		
 		boolean b1=(6<7) && (7==7); // true
 			//    true     true  ==> &&
@@ -27,7 +27,7 @@ public class ÀÌÇ×¿¬»êÀÚ_³í¸®¿¬»êÀÚ3 {
 		//true(||)
 		
 		
-		// º¸°­!
+		// ë³´ê°•!
 		
 		
 	}
