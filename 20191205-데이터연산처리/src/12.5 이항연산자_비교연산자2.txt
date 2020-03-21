@@ -1,19 +1,19 @@
-// »ç¿ëÀÚÀÇ ÀÔ·Â°ªÀ»(¹«Á¶°Ç ½ºÄ³³Ê) ¹Ş¾Æ¼­ (Â¦¼ö, È¦¼ö) ¸¦ Á¤ÇÏ±â
+// ì‚¬ìš©ìì˜ ì…ë ¥ê°’ì„(ë¬´ì¡°ê±´ ìŠ¤ìºë„ˆ) ë°›ì•„ì„œ (ì§ìˆ˜, í™€ìˆ˜) ë¥¼ ì •í•˜ê¸°
 import java.util.Scanner;
-public class ÀÌÇ×¿¬»êÀÚ_ºñ±³¿¬»êÀÚ2 {
+public class ì´í•­ì—°ì‚°ì_ë¹„êµì—°ì‚°ì2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
        Scanner scan=new Scanner(System.in);
-       System.out.println("Á¤¼öÀÔ·Â:");
+       System.out.println("ì •ìˆ˜ì…ë ¥:");
        int num=scan.nextInt();
-       //Â¦¼ö, È¦¼ö µÎ°³ÀÇ ¹®ÀÚÀÌ¹Ç·Î ½ºÆ®¸µÀ¸·Î ¹Ş¾Æ¾ßÇÑ´Ù.
+       //ì§ìˆ˜, í™€ìˆ˜ ë‘ê°œì˜ ë¬¸ìì´ë¯€ë¡œ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°›ì•„ì•¼í•œë‹¤.
        
-       String result=num%2==00?"Â¦¼ö":"È¦¼ö";
+       String result=num%2==0?"ì§ìˆ˜":"í™€ìˆ˜";
        
        
        
-       System.out.println(num+"´Â (Àº)"+result+"ÀÔ´Ï´Ù.");
+       System.out.println(num+"ëŠ” (ì€)"+result+"ì…ë‹ˆë‹¤.");
 	}
 
 }
