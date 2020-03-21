@@ -1,35 +1,35 @@
-// % => ³ª¸ÓÁö ¿¬»êÀÚ
+// % => ë‚˜ë¨¸ì§€ ì—°ì‚°ìž
 /*
- * 
- * ¿¬»êÀÚ ==> Çüº¯È¯(¿¬½À¸¹ÀÌÇÊ)
- *          »ê¼ú : / , % 
- *               / => 0À¸·Î ³ª´­ ¼ö ¾ø´Ù.
- *               Á¤¼ö/Á¤¼ö = Á¤¼ö
+ * UTD-8 
+ * ì—°ì‚°ìž ==> í˜•ë³€í™˜(ì—°ìŠµë§Žì´í•„)
+ *          ì‚°ìˆ  : / , % 
+ *               / => 0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ë‹¤.
+ *               ì •ìˆ˜/ì •ìˆ˜ = ì •ìˆ˜
  *               
- *               % => ¿ÞÂÊÆí °ªÀÇ ºÎÈ£¸¦ µû¶ó°£´Ù
- *                    ¾ç¼ö%¾ç¼ö(or À½¼ö) ==> ¾ç¼ö
- *                    À½¼ö%À½¼ö(or ¾ç¼ö) ==> À½¼ö
+ *               % => ì™¼ìª½íŽ¸ ê°’ì˜ ë¶€í˜¸ë¥¼ ë”°ë¼ê°„ë‹¤
+ *                    ì–‘ìˆ˜%ì–‘ìˆ˜(or ìŒìˆ˜) ==> ì–‘ìˆ˜
+ *                    ìŒìˆ˜%ìŒìˆ˜(or ì–‘ìˆ˜) ==> ìŒìˆ˜
  *                    
  *                    
  *                    
  */
-public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»êÀÚ3 {
+public class ì´í•­ì—°ì‚°ìž_ì‚°ìˆ ì—°ì‚°ìž3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         // int a=30;
         // int b=7;
         // int c=a/b;
-        // System.out.println("c="+c); // Á¤¼ö/Á¤¼ö´Â ¼Ò¼öÁ¡ ÀÌÇÏ °ªÀº »ç¶óÁü.
+        // System.out.println("c="+c); // ì •ìˆ˜/ì •ìˆ˜ëŠ” ì†Œìˆ˜ì  ì´í•˜ ê°’ì€ ì‚¬ë¼ì§.
         
         int a=30;
         double b=4.0;
-        double c=a/b;   			     // a°¡ int Áö¸¸ ¿ÞÂÊ¿¡ ´õºí·Î ¹Þ¾ÆÁá±â ¶§¹®¿¡ ±¦ÂúÀ½.
-        System.out.println("c = " + c);  // ¹®ÀÚ´Â Á¤¼ö°ªÀÌ´Ù. µû¶ó¼­ ½Ç¼ö¿Í ¹®ÀÚ¿­ Áß¿¡´Â ½Ç¼ö°¡ Å«°ÍÀÌ´Ù.  
-        							     // Á¤¼ö°ª¿¡´Â ÀÏ¹ÝÁ¤¼ö¿Í ¹®ÀÚ¿­°ªµµ ÀÖ´Ù.
+        double c=a/b;   			     // aê°€ int ì§€ë§Œ ì™¼ìª½ì— ë”ë¸”ë¡œ ë°›ì•„ì¤¬ê¸° ë•Œë¬¸ì— ê´œì°®ìŒ.
+        System.out.println("c = " + c);  // ë¬¸ìžëŠ” ì •ìˆ˜ê°’ì´ë‹¤. ë”°ë¼ì„œ ì‹¤ìˆ˜ì™€ ë¬¸ìžì—´ ì¤‘ì—ëŠ” ì‹¤ìˆ˜ê°€ í°ê²ƒì´ë‹¤.  
+        							     // ì •ìˆ˜ê°’ì—ëŠ” ì¼ë°˜ì •ìˆ˜ì™€ ë¬¸ìžì—´ê°’ë„ ìžˆë‹¤.
         
-        //  ³ª¸ÓÁö °ª ±¸ÇÏ±â
-        // ¿©±â¼­ Æ÷ÀÎÆ®´Â °á°ú°ªÀÇ ºÎÈ£´Â Ç×»ó ¿ÞÂÊÀÇ ºÎÈ£¸¦ µû¸¥´Ù. ¿À¸¥ÂÊ ºÎÈ£¿Í ¹«°üÇÏ´Ù.
+        // ë‚˜ë¨¸ì§€ ê°’ êµ¬í•˜ê¸°
+        // ì—¬ê¸°ì„œ í¬ì¸íŠ¸ëŠ” ê²°ê³¼ê°’ì˜ ë¶€í˜¸ëŠ” í•­ìƒ ì™¼ìª½ì˜ ë¶€í˜¸ë¥¼ ë”°ë¥¸ë‹¤. ì˜¤ë¥¸ìª½ ë¶€í˜¸ì™€ ë¬´ê´€í•˜ë‹¤.
         int d1=5%2;     //1
         int d2=-5%2;    //-1
         int d3=-5%-2;   //-1
@@ -43,25 +43,25 @@ public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»êÀÚ3 {
         System.out.println("d3="+d3);
         System.out.println("d4="+d4);
         
-        // µû¶ó¼­ ¿ÞÆíÀÇ ºÎÈ£¸¦ µû¶ó°¨.
-        // 345667 ¸¦ 3,4,5,6,6,7 ·Î ³ª´­¶§ ÇÊ¿ä, ¶Ç´Â ¹è¼ö¸¦ ±¸ÇÒ¶§ ÇÊ¿ä. 
+        // ë”°ë¼ì„œ ì™¼íŽ¸ì˜ ë¶€í˜¸ë¥¼ ë”°ë¼ê°.
+        // 345667 ë¥¼ 3,4,5,6,6,7 ë¡œ ë‚˜ëˆŒë•Œ í•„ìš”, ë˜ëŠ” ë°°ìˆ˜ë¥¼ êµ¬í• ë•Œ í•„ìš”. 
         
         
         
-        //369ÀÇ ¼ýÀÚ°¡ ÁÖ¾îÁö°í
-        //°¢ ÀÚ¸´¼öÀÇ °³¼ö ±¸ÇÏ±â
+        //369ì˜ ìˆ«ìžê°€ ì£¼ì–´ì§€ê³ 
+        //ê° ìžë¦¿ìˆ˜ì˜ ê°œìˆ˜ êµ¬í•˜ê¸°
         int e=369;
         
         int h100=e/100;
         int h10=(e%100)/10;
         int h1=e%10;
         
-        System.out.println("100ÀÚ¸®:"+h100);
-        System.out.println("10ÀÚ¸®:"+h10);
-        System.out.println("1ÀÚ¸®:"+h1);
+        System.out.println("100ìžë¦¬:"+h100);
+        System.out.println("10ìžë¦¬:"+h10);
+        System.out.println("1ìžë¦¬:"+h1);
         
      
-        // 65430ÀÇ °¢ ÀÚ¸®¼öÀÇ °³¼ö´Â ¸î°³ÀÎ°¡?   
+        // 65430ì˜ ê° ìžë¦¬ìˆ˜ì˜ ê°œìˆ˜ëŠ” ëª‡ê°œì¸ê°€?   
         int r=65430;
         
         
@@ -72,11 +72,11 @@ public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»êÀÚ3 {
         int k1=(r%10)/1;
         
         System.out.println("\n"+65430+"\n");
-        System.out.println("10000ÀÚ¸® °³¼ö="+k10000);
-        System.out.println("1000ÀÚ¸® °³¼ö="+k1000);
-        System.out.println("100ÀÚ¸® °³¼ö="+k100);
-        System.out.println("10ÀÚ¸® °³¼ö="+k10);
-        System.out.println("1ÀÚ¸® °³¼ö="+k1);
+        System.out.println("10000ìžë¦¬ ê°œìˆ˜="+k10000);
+        System.out.println("1000ìžë¦¬ ê°œìˆ˜="+k1000);
+        System.out.println("100ìžë¦¬ ê°œìˆ˜="+k100);
+        System.out.println("10ìžë¦¬ ê°œìˆ˜="+k10);
+        System.out.println("1ìžë¦¬ ê°œìˆ˜="+k1);
         
         
         int num = 587274;
@@ -87,11 +87,11 @@ public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»êÀÚ3 {
 		int n100 = (a%1000)/100;
 		int n10 = (a%100)/10;
 		
-		System.out.println("100000ÀÇ ÀÚ¸®¼ö °³¼ö: " + n100000 + "°³");
-		System.out.println("10000ÀÇ ÀÚ¸®¼ö °³¼ö: " + n10000 + "°³");
-		System.out.println("1000ÀÇ ÀÚ¸®¼ö °³¼ö: " + n1000 + "°³");
-		System.out.println("100ÀÇ ÀÚ¸®¼ö °³¼ö: " + n100 + "°³");
-		System.out.println("10ÀÇ ÀÚ¸®¼ö °³¼ö: " + n10 + "°³");
+		System.out.println("100000ì˜ ìžë¦¬ìˆ˜ ê°œìˆ˜: " + n100000 + "ê°œ");
+		System.out.println("10000ì˜ ìžë¦¬ìˆ˜ ê°œìˆ˜: " + n10000 + "ê°œ");
+		System.out.println("1000ì˜ ìžë¦¬ìˆ˜ ê°œìˆ˜: " + n1000 + "ê°œ");
+		System.out.println("100ì˜ ìžë¦¬ìˆ˜ ê°œìˆ˜: " + n100 + "ê°œ");
+		System.out.println("10ì˜ ìžë¦¬ìˆ˜ ê°œìˆ˜: " + n10 + "ê°œ");
 		
         
         
@@ -100,7 +100,7 @@ public class ÀÌÇ×¿¬»êÀÚ_»ê¼ú¿¬»êÀÚ3 {
                
         // 110.5+"" -> "110.5"+'A' => "110.5A"+10
         // "110.5A10"+100  =>"110.5A10100
-        // ¾Õ¿¡´Â °è»ê, ¿¬»êÀÌ µÇ°í µÚ¿¡´Â ¹®ÀÚ¿­ÀÌ ºÙ´Â´Ù.
+        // ì•žì—ëŠ” ê³„ì‚°, ì—°ì‚°ì´ ë˜ê³  ë’¤ì—ëŠ” ë¬¸ìžì—´ì´ ë¶™ëŠ”ë‹¤.
         System.out.println(cc);
        
         
