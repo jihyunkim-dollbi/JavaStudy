@@ -1,36 +1,36 @@
-
-public class ¹è¿­3 {
+//ìˆ˜ì • - UTF-8
+public class ë°°ì—´3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int com = (int)(Math.random()*3); // 0 , 1 , 2 °¡À§ ¹ÙÀ§ º¸
+		int com = (int)(Math.random()*3); // 0 , 1 , 2 ê°€ìœ„ ë°”ìœ„ ë³´
 		
 /*		if (com == 0)
 		{
-			System.out.println("°¡À§");
+			System.out.println("ê°€ìœ„");
 		}
 		else if(com == 1)
 		{
-			System.out.println("¹ÙÀ§");
+			System.out.println("ë°”ìœ„");
 		}
 		else if(com == 2)
 		{
-			System.out.println("º¸");
+			System.out.println("ë³´");
 		}
 */		
 		
-		// À§ÀÇ ÄÚµùÀ» ¾Æ·¡ Ã³·³ ÁÙ¿©º¸¾Ò´Ù.
+		// ìœ„ì˜ ì½”ë”©ì„ ì•„ëž˜ ì²˜ëŸ¼ ì¤„ì—¬ë³´ì•˜ë‹¤.
 		
-		String[] res = {"°¡À§", "¹ÙÀ§", "º¸"};
+		String[] res = {"ê°€ìœ„", "ë°”ìœ„", "ë³´"};
 		System.out.println(res[com]);
-		                 //========> res ÀÇ com ¹øÂ°!
+		                 //========> res ì˜ com ë²ˆì§¸!
 		
-		// ¾î¶³¶§ ÁÙÀÌ´Â°¡? ¾î¶² µ¥ÀÌÅÍ°¡ 0ºÎÅÍ ½ÃÀÛÇÒ¶§, ÀÔ·ÂÇÏ´Â °ªÀÌ ¸¹À»¶§ for¹®À» µ¹·Á¼­ ¹è¿­ »ç¿ëÇÏ±â.
+		// ì–´ë–¨ë•Œ ì¤„ì´ëŠ”ê°€? ì–´ë–¤ ë°ì´í„°ê°€ 0ë¶€í„° ì‹œìž‘í• ë•Œ, ìž…ë ¥í•˜ëŠ” ê°’ì´ ë§Žì„ë•Œ forë¬¸ì„ ëŒë ¤ì„œ ë°°ì—´ ì‚¬ìš©í•˜ê¸°.
 		
 		
-		int user = (int)(Math.random()*5); //0*5 ~ 0.99*5 ==> 0~4.999 ==>Á¤¼ö·Î ¹Þ´Â´Ù => 0~4±îÁö => 0,1,2,3,4
-		                                   //µû¶ó¼­ Math.random ¸Þ¼Òµå¸¦ »ç¿ëÇßÀ»¶§, °öÇÑ °ª 5 ¿Í µ¿ÀÏÇÑ ¹è¿­ °³¼ö¸¦ ¾ðÀ½.
+		int user = (int)(Math.random()*5); //0*5 ~ 0.99*5 ==> 0~4.999 ==>ì •ìˆ˜ë¡œ ë°›ëŠ”ë‹¤ => 0~4ê¹Œì§€ => 0,1,2,3,4
+		                                   //ë”°ë¼ì„œ Math.random ë©”ì†Œë“œë¥¼ ì‚¬ìš©í–ˆì„ë•Œ, ê³±í•œ ê°’ 5 ì™€ ë™ì¼í•œ ë°°ì—´ ê°œìˆ˜ë¥¼ ì–¸ìŒ.
 		
 		
 		
