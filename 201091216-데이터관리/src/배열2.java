@@ -1,29 +1,30 @@
+//ìˆ˜ì • - UTF-8
 import java.util.Scanner;
 
-public class ¹è¿­2 {
+public class ë°°ì—´2 { 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		
 		int [] arr = new int[3];
-		                 // ===  : 3ÀÇ ÀÇ¹Ì´Â Ä­ÀÌ »ı±è!
+		                 // ===  : 3ì˜ ì˜ë¯¸ëŠ” ì¹¸ì´ ìƒê¹€!
 		                    		
-		Scanner scan = new Scanner(System.in);  // ¹è¿­ ¾È¿¡ µé¾î°¡´Â °ªÀ» Å°º¸µå·Î ÀÔ·ÂÇÏ±â.
+		Scanner scan = new Scanner(System.in);  // ë°°ì—´ ì•ˆì— ë“¤ì–´ê°€ëŠ” ê°’ì„ í‚¤ë³´ë“œë¡œ ì…ë ¥í•˜ê¸°.
 		
 		int max = 0;
 		
-		for(int i=0; i<arr.length; i++)   // 0ºÎÅÍ ½ÃÀÛÇØ¼­ 1,2 ±îÁö ÃÑ 3¹ø µ¹¾Æ°¨ = > ÀÌÀ¯´Â ¹è¿­ÀÇ 3Ä­À» À§¿¡¼­ ¼±¾ğÇÔ!
+		for(int i=0; i<arr.length; i++)   // 0ë¶€í„° ì‹œì‘í•´ì„œ 1,2 ê¹Œì§€ ì´ 3ë²ˆ ëŒì•„ê° = > ì´ìœ ëŠ” ë°°ì—´ì˜ 3ì¹¸ì„ ìœ„ì—ì„œ ì„ ì–¸í•¨!
 		{
 		
-			System.out.println((i+1)+"¹øÂ° Á¤¼ö ÀÔ·Â: ");
+			System.out.println((i+1)+"ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥: ");
 		   
 			arr[i] = scan.nextInt();
 		    if(arr[i]>max)
 			   max=arr[i];
 		 
 		}
-		System.out.println("°¡Àå Å«°ª: "+max);
+		System.out.println("ê°€ì¥ í°ê°’: "+max);
 		
 		
 		
