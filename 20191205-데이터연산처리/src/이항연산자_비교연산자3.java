@@ -1,20 +1,22 @@
-// 1,2 => ³­¼ö¸¦ ¹ß»ı½ÃÅ´ => È¦ÀÌ³Ä 1, Â¦ÀÌ³Ä2
+// 1,2 => ë‚œìˆ˜ë¥¼ ë°œìƒì‹œí‚´ => í™€ì´ëƒ 1, ì§ì´ëƒ2
 
 import java.util.Scanner;
-public class ÀÌÇ×¿¬»êÀÚ_ºñ±³¿¬»êÀÚ3 {
+public class ì´í•­ì—°ì‚°ì_ë¹„êµì—°ì‚°ì3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//(Math.random()  => 0.0~0.99 = > 0.0~1.999 °öÇÏ±â ¾Æ¸é ÀÌ·¸°Ô ³ª¿À´Âµ¥ INT·Î ¹Ù²å±â ¶§¹®¿¡ 0~1, ±×¸®°í +1 Ãß°¡ÇØ¼­ 1~2»çÀÌ°¡ ³ª¿È
+		//(Math.random()  => 0.0~0.99 = > 0.0~1.999 ê³±í•˜ê¸° ì•„ë©´ ì´ë ‡ê²Œ ë‚˜ì˜¤ëŠ”ë° INTë¡œ ë°”ê¿¨ê¸° ë•Œë¬¸ì— 0~1, 
+		//ê·¸ë¦¬ê³  +1 ì¶”ê°€í•´ì„œ 1~2ì‚¬ì´ê°€ ë‚˜ì˜´
+		
        int com=(int)(Math.random()*2)+1;
        Scanner scan=new Scanner(System.in);
-       System.out.println("ÀÔ·Â(È¦,Â¦):");
+       System.out.println("ì…ë ¥(í™€,ì§):");
        String input=scan.next();
        
-       String result=com%2==0?"Â¦":"È¦";
-       String dap=input.equals(result)?"Á¤´ä":"¿À´ä";
-       //¹®ÀÚÀÇ ºñ±³´Â == ¾Æ´Ï°í equals(ºñ±³ ¿¬»êÀÚ)·Î ÇØ¾ßÇÑ´Ù.
+       String result=com%2==0?"ì§":"í™€";
+       String dap=input.equals(result)?"ì •ë‹µ":"ì˜¤ë‹µ";
+       //ë¬¸ìì˜ ë¹„êµëŠ” == ì•„ë‹ˆê³  equals(ë¹„êµ ì—°ì‚°ì)ë¡œ í•´ì•¼í•œë‹¤.
        System.out.println("com="+com);
        System.out.println("dap="+dap);
        
