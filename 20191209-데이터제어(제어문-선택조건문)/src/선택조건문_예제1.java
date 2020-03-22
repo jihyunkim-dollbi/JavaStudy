@@ -1,9 +1,7 @@
 /*
- * ³­¼ö = > ÄÄÇ»ÅÍ¿¡¼­ ÀÓÀÇÀÇ ¼ö¸¦ ÃßÃâ ÇÏ´Â °Í.
- * 
- * 
+ * ë‚œìˆ˜ = > ì»´í“¨í„°ì—ì„œ ì„ì˜ì˜ ìˆ˜ë¥¼ ì¶”ì¶œ í•˜ëŠ” ê²ƒ.
  */
-public class ¼±ÅÃÁ¶°Ç¹®_¿¹Á¦1 {
+public class ì„ íƒì¡°ê±´ë¬¸_ì˜ˆì œ1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -12,48 +10,48 @@ public class ¼±ÅÃÁ¶°Ç¹®_¿¹Á¦1 {
 		// 0.0~0.99 = > 0.99 *101 ==> 100.~
 		System.out.println("score = " + score);
 		
-		//90ÀÌ»ó -> A 80-> B 70 ->C 60 ->D  60 ÀÌÇÏ´Â F Ãâ·Â.
+		//90ì´ìƒ -> A 80-> B 70 ->C 60 ->D  60 ì´í•˜ëŠ” F ì¶œë ¥.
 		
 	//	if(score < 60) {
-	//		System.out.println("FÇĞÁ¡ÀÔ´Ï´Ù.");
+	//		System.out.println("Fí•™ì ì…ë‹ˆë‹¤.");
 	//	}
 	//	else {
 	//		if(score >= 90)
-	//				System.out.println("AÇĞÁ¡");
+	//				System.out.println("Aí•™ì ");
 	//		if(score >= 80)
-	//			System.out.println("BÇĞÁ¡");
+	//			System.out.println("Bí•™ì ");
 	//		if(score >= 70)
-	//			System.out.println("CÇĞÁ¡");
+	//			System.out.println("Cí•™ì ");
 	//		if(score >= 60)
-	//			System.out.println("DÇĞÁ¡");
+	//			System.out.println("Dí•™ì ");
 			
 	//	}
 		
-		/// À§¿Í °°Àº ¹æ¹ıÀ¸·Î ÇßÀ» °æ¿ì, 70 ÇĞÁ¡ÀÎ »ç¶÷Àº D,C ÇĞÁ¡ÀÌ ¸ğµÎ ³ª¿À±â ¶§¹®¿¡ ÀÌ°æ¿ì´Â ¼ıÀÚÀÇ ¹üÀ§¸¦ Àâ¾ÆÁÖ¾î¾ßÇÑ´Ù.
+		/// ìœ„ì™€ ê°™ì€ ë°©ë²•ìœ¼ë¡œ í–ˆì„ ê²½ìš°, 70 í•™ì ì¸ ì‚¬ëŒì€ D,C í•™ì ì´ ëª¨ë‘ ë‚˜ì˜¤ê¸° ë•Œë¬¸ì— ì´ê²½ìš°ëŠ” ìˆ«ìì˜ ë²”ìœ„ë¥¼ ì¡ì•„ì£¼ì–´ì•¼í•œë‹¤.
 		
 		     if (score >= 90 && score <= 100) {
-		    	 System.out.println("AÇĞÁ¡");
+		    	 System.out.println("Aí•™ì ");
 		     }
 		     else 
 		     {
-		    	 // ÁßÃ¸ if => ÀÌÁß Á¶°Ç¹®
-		    	 // if¹® ¿©·¯°³¸¦ »ç¿ëÇßÀ» °æ¿ì¿¡´Â Á¶°Ç ¸Â´Â ¸ğµç ¹®ÀåÀ» ¼öÇàÇÒ ¼öÀÖ´Ù.
+		    	 // ì¤‘ì²© if => ì´ì¤‘ ì¡°ê±´ë¬¸
+		    	 // ifë¬¸ ì—¬ëŸ¬ê°œë¥¼ ì‚¬ìš©í–ˆì„ ê²½ìš°ì—ëŠ” ì¡°ê±´ ë§ëŠ” ëª¨ë“  ë¬¸ì¥ì„ ìˆ˜í–‰í•  ìˆ˜ìˆë‹¤.
 		    	 
 		    	if(score >= 80 && score < 90)     
-		    	 System.out.println("BÇĞÁ¡");
+		    	 System.out.println("Bí•™ì ");
 		     
 		        if (score >= 70 && score < 80)
-		    	 System.out.println("CÇĞÁ¡");
+		    	 System.out.println("Cí•™ì ");
 		     
 		        if (score >= 60 && score < 70)
-		    	 System.out.println("DÇĞÁ¡");
+		    	 System.out.println("Dí•™ì ");
 		        if (score <60)
-		        	System.out.println("FÇĞÁ¡");
+		        	System.out.println("Fí•™ì ");
 		     }
 		     
 		
-		  //   10À¸·Î ³ª´²ÁÖ°í Ã³¸®ÇÏ¸é ´õ ÆíÇÒ ¼öµµ ÀÖ´Ù. 
-		  //   Á¶°Ç¹® ¿·¿¡ ; ¸¦ ÂïÀ¸¸é ½ÇÇà¾ÈµÊ.
+		  //   10ìœ¼ë¡œ ë‚˜ëˆ ì£¼ê³  ì²˜ë¦¬í•˜ë©´ ë” í¸í•  ìˆ˜ë„ ìˆë‹¤. 
+		  //   ì¡°ê±´ë¬¸ ì˜†ì— ; ë¥¼ ì°ìœ¼ë©´ ì‹¤í–‰ì•ˆë¨.
 		     
 		     
 		
