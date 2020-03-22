@@ -2,38 +2,39 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-// ±¸±¸´Ü  ==> danÀ» ÀÔ·Â ¹Þ¾Æ¼­
+// êµ¬êµ¬ë‹¨  ==> danì„ ìž…ë ¥ ë°›ì•„ì„œ
 /*
- * ¸Þ¼Òµå¸¦ ¸¸µé°í Àç»ç¿ë °¡´ÉÇÔ.(Á¦¾î¹® + ¿¬»êÀÚ!!)
+ * ë©”ì†Œë“œë¥¼ ë§Œë“¤ê³  ìž¬ì‚¬ìš© ê°€ëŠ¥í•¨.(ì œì–´ë¬¸ + ì—°ì‚°ìž!!)
  * 
- *    ÇÁ·Î±×·¥
+ *    í”„ë¡œê·¸ëž¨
  *    ======
- *    »ç¿ëÀÚÁ¤ÀÇ + java ¶óÀÌºê·¯¸® + ¿ÜºÎ ¿ÀÇÂ¼Ò½º(mvnrepository.com)
+ *    ì‚¬ìš©ìžì •ì˜ + java ë¼ì´ë¸ŒëŸ¬ë¦¬ + ì™¸ë¶€ ì˜¤í”ˆì†ŒìŠ¤(mvnrepository.com)
  *    ====================================================
- *                          Á¶¸³.
+ *                          ì¡°ë¦½.
  *        
- *    //mybatis ¶óÀÌºê·¯¸®
- *    //jsoup - html ¹ø¿ª±â
+ *    //mybatis ë¼ì´ë¸ŒëŸ¬ë¦¬
+ *    //jsoup - html ë²ˆì—­ê¸°
  *    
  *    
  *    
- *    ·çÇÁº¯¼ö -> ¾îµð¼­ºÎÅÍ ¾îµð±îÁö ¹Ýº¹ÇÏ°Ô µÇ´Â º¯¼ö 
+ *    ë£¨í”„ë³€ìˆ˜ -> ì–´ë””ì„œë¶€í„° ì–´ë””ê¹Œì§€ ë°˜ë³µí•˜ê²Œ ë˜ëŠ” ë³€ìˆ˜ 
  *    
- *    2*1=2¿¡¼­ ·çÇÁº¯¼ö´Â 1ÀÌ´Ù. 
- */    //= µÚ¿¡´Â º¯¼ö°¡ ¾Æ´Ï´Ù!!
+ *    2*1=2ì—ì„œ ë£¨í”„ë³€ìˆ˜ëŠ” 1ì´ë‹¤. 
+ */    //= ë’¤ì—ëŠ” ë³€ìˆ˜ê°€ ì•„ë‹ˆë‹¤!!
 
-public class ¹Ýº¹¹®8 {
+public class ë°˜ë³µë¬¸8 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         
     		Scanner scan = new Scanner(System.in);
     		
-    		System.out.println("´Ü ÀÔ·Â:");
+    		System.out.println("ë‹¨ ìž…ë ¥:");
     		int dan = scan.nextInt();
     		
-    		//Ã³¸®
-		    //String s=JOptionPane.showConfirmDialog("Á¤¼öÀÔ·Â") --> ÀÔ·ÂÃ¢ ¸¸µé±â
+    		//ì²˜ë¦¬
+		//String s=JOptionPane.showConfirmDialog("ì •ìˆ˜ìž…ë ¥") --> ìž…ë ¥ì°½ ë§Œë“¤ê¸°
+		
 		
     		int i = 1;
     		while(i<=9) 
@@ -43,6 +44,22 @@ public class ¹Ýº¹¹®8 {
     			i++;
     		}
     		
+		
+		
+		// forë¬¸ ë²„ì „
+		
+		System.out.println("ì›í•˜ëŠ” êµ¬êµ¬ë‹¨ì„ ìž…ë ¥í•˜ì„¸ìš”!");
+		int dan1 = scan.nextInt();
+		
+		
+		for(int j=1; j<=9; j++)
+		{
+			
+			System.out.println(dan1 + "x" + j + "=" + dan1*j);
+			
+		}
+		
+
 		
 	}
 
