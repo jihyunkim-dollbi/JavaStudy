@@ -1,54 +1,49 @@
 import java.util.Scanner;
 
 /*
- * Á¤¼ö¸¦ ÀÔ·Â ¹ŞÀ½ => 1,2,3,4
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ * ì •ìˆ˜ë¥¼ ì…ë ¥ ë°›ìŒ => 1,2,3,4
+   ì…ë ¥ë°›ì€ ì •ìˆ˜ì— ë”°ë¼ x, yê°’ì„ ë³€ê²½í•˜ì—¬ ì¶•ì—ì„œ ì ì„ ë³€ê²½í•´ì¤€ë‹¤. (ì†ë„, ìœ„ì¹˜ ë³€ê²½ ê°€ëŠ¥ í”„ë¡œê·¸ë¨!)
  */
-public class Á¦¾î¹®_Á¶°Ç¹®5 {
+public class ì œì–´ë¬¸_ì¡°ê±´ë¬¸5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// »ó¼ö´Â ´ë¹®ÀÚ·Î ¹ŞÀ½--> º¯°æÀÌ ¾ÈµÇ´Â °ª. + FINAL ÇØ¼­ »ó¼ö·Î ¸¸µé¾îÁÜ.
-        final int UP = 1;
+	
+	// ìƒìˆ˜ëŠ” ëŒ€ë¬¸ìë¡œ ë³€ìˆ˜ëª… ì„¤ì •! --> ë³€ê²½ì´ ì•ˆë˜ëŠ” ê°’ + FINAL í•´ì„œ ìƒìˆ˜ë¡œ ë§Œë“¤ì–´ì¤Œ.
+		
+        final int UP=1;
         final int DOWN=2;
         final int LEFT=3;
         final int RIGHT=4;
         
-        int x = 0, y = 800;   // 0ÀÌ À§´Ù.
-        Scanner scan = new Scanner(System.in);   // ctrl +space  ¾²±â!
-        System.out.println("Å°º¸µå ÀÔ·Â(À§:1, ¾Æ·¡:2, ¿ŞÂÊ:3, ¿À¸¥ÂÊ:4):");
+	// xì¶• - ê°€ë¡œ
+        int x = 0;
+	// yì¶• -ì„¸ë¡œ
+	int y = 800;   
+		
+        Scanner scan = new Scanner(System.in);   // ctrl +space  ì“°ê¸°!
+        System.out.println("í‚¤ë³´ë“œ ì…ë ¥(ìœ„:1, ì•„ë˜:2, ì™¼ìª½:3, ì˜¤ë¥¸ìª½:4):");
         
         int input = scan.nextInt();
         
         if(input == UP) {
-        	System.out.println("À§ÂÊÀ¸·Î ¿Ã¶ó°£´Ù!!");
+        	System.out.println("ìœ„ìª½ìœ¼ë¡œ ì˜¬ë¼ê°„ë‹¤!!");
         	y +=5;
-        	
-         
         }
         if(input == DOWN) {
-        	System.out.println("¾Æ·¡ÂÊÀ¸·Î ³»·Á°£´Ù!!");
+        	System.out.println("ì•„ë˜ìª½ìœ¼ë¡œ ë‚´ë ¤ê°„ë‹¤!!");
         	y -=5;
         }
         if(input == LEFT) {
-        	System.out.println("¿ŞÂÊÀ¸·Î °£´Ù!!");
+        	System.out.println("ì™¼ìª½ìœ¼ë¡œ ê°„ë‹¤!!");
         	x -=5;
         }
          if(input == RIGHT) {
-        	 System.out.println("¿À¸¥ÂÊÀ¸·Î °£´Ù!!");
+        	 System.out.println("ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê°„ë‹¤!!");
         	 x +=5;
          }
         
-        
-        
+		
 	}
 
 }
