@@ -1,11 +1,10 @@
 /*
- * °¡À§ ¹ÙÀ§ º¸  == 5¹ø!
- * ==> 1½Â, 3ÆĞ , 1¹«
- * 
- *   
+ * ê°€ìœ„ ë°”ìœ„ ë³´  == 5ë²ˆ!
+ * ==> 1ìŠ¹, 3íŒ¨ , 1ë¬´
+
  */
 import java.util.Scanner;
-public class ¹İº¹¹®3 {
+public class ë°˜ë³µë¬¸3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,24 +13,24 @@ public class ¹İº¹¹®3 {
 		int win=0, lose=0, same=0;
 		 
 		// com-user  
-		// com °¡À§  -0,-1,2
-		//     ¹ÙÀ§  1,0,-1
-		//     º¸     2,1,0
+		// com ê°€ìœ„  -0,-1,2
+		//     ë°”ìœ„  1,0,-1
+		//     ë³´     2,1,0
 		
 		
-		// »ç¿ëÀÚ ÀÌ±æ°æ¿ì=> -1,2
+		// ì‚¬ìš©ì ì´ê¸¸ê²½ìš°=> -1,2
 		// com =>1,-2
 		Scanner scan = new Scanner(System.in);
 		while(i<=5) {
 			
-			// °¡À§¹ÙÀ§º¸ °ÔÀÓ
-			// ÄÄÇ»ÅÍ => °¡À§¹ÙÀ§º¸
+			// ê°€ìœ„ë°”ìœ„ë³´ ê²Œì„
+			// ì»´í“¨í„° => ê°€ìœ„ë°”ìœ„ë³´
 			int com=(int)(Math.random()*3);
-			// »ç¿ëÀÚ=> ÀÔ·Â
-			System.out.print("°¡À§(0)¹ÙÀ§(1)º¸(2):");
+			// ì‚¬ìš©ì=> ì…ë ¥
+			System.out.print("ê°€ìœ„(0)ë°”ìœ„(1)ë³´(2):");
 			
 			int user = scan.nextInt();
-			//ºñ±³
+			//ë¹„êµ
 			
 			int res = com-user;
 			
@@ -40,11 +39,11 @@ public class ¹İº¹¹®3 {
 					
 			
 			/*if (res == -1 || res == 2) {
-				// »ç¿ëÀÚ win
+				// ì‚¬ìš©ì win
 				win++;
 				
 			}else if(res == 1 || res == -2) {
-				// ÄÄÇ»ÅÍ win
+				// ì»´í“¨í„° win
 				lose++;
 				
 			}
@@ -68,9 +67,9 @@ public class ¹İº¹¹®3 {
 			i++;
 		}
 			
-		// ½Â ¹« ÆĞ
+		// ìŠ¹ ë¬´ íŒ¨
 		
-		System.out.println("»ç¿ëÀÚ Á¤Àû:"+ win+ "½Â "+ same + "¹«" + lose+ "ÆĞ");
+		System.out.println("ì‚¬ìš©ì ì •ì :"+ win+ "ìŠ¹ "+ same + "ë¬´" + lose+ "íŒ¨");
 		
 		
 	}
