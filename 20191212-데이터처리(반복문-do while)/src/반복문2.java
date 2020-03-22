@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 /*
  * 
- *  1) 3¸íÀÇ ÇĞ»ıÀÇ => ±¹¾î , ¿µ¾î, ¼öÇĞ Á¡¼ö => Æò±Õ, ÃÑÁ¡, ÇĞÁ¡
+ *  1) 3ëª…ì˜ í•™ìƒì˜ => êµ­ì–´ , ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ => í‰ê· , ì´ì , í•™ì 
  *     
- *     Ãâ·Â ¼ø ±¹¾î ¿µ¾î ¼öÇĞ ÃÑÁ¡ Æò±Õ ÇĞÁ¡
+ *     ì¶œë ¥ ìˆœ êµ­ì–´ ì˜ì–´ ìˆ˜í•™ ì´ì  í‰ê·  í•™ì 
  *   1        80 80 80 240 80  C 
  *   2
  *   3
  */
 
-public class ¹İº¹¹®2 {
+public class ë°˜ë³µë¬¸2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -37,13 +37,13 @@ public class ¹İº¹¹®2 {
 		do
 		{ 
 			
-			 System.out.print("±¹¾î Á¡¼ö : ");
+			 System.out.print("êµ­ì–´ ì ìˆ˜ : ");
 			 kor1  = scan.nextInt();
 			
-			 System.out.print("¿µ¾î Á¡¼ö: ");
+			 System.out.print("ì˜ì–´ ì ìˆ˜: ");
 			 eng1  = scan.nextInt();
 			 
-			 System.out.print("¼öÇĞ Á¡¼ö: ");
+			 System.out.print("ìˆ˜í•™ ì ìˆ˜: ");
 			 math1  = scan.nextInt();
 			 
 
@@ -58,7 +58,7 @@ public class ¹İº¹¹®2 {
 		
 		*/
 		
-		
+		 
 	}
 
 }
