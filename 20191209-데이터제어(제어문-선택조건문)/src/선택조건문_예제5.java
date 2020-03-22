@@ -1,14 +1,14 @@
 import java.util.Scanner;
-public class ¼±ÅÃÁ¶°Ç¹®_¿¹Á¦5 {
+public class ì„ íƒì¡°ê±´ë¬¸_ì˜ˆì œ5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         
-		// Á¤¼ö µÎ°³¿Í ¿¬»êÀÚ¸¦ ¹Ş¾Æ¼­ »çÄ¢ ¿¬»ê
+		// ì •ìˆ˜ ë‘ê°œì™€ ì—°ì‚°ìë¥¼ ë°›ì•„ì„œ ì‚¬ì¹™ ì—°ì‚°
 		/*
-		Ã¹¹øÂ° Á¤¼ö ÀÔ·Â : 10
-		µÎ¹øÂ° Á¤¼ö ÀÔ·Â : 20
-		¿¬»êÀÚ ÀÔ·Â : +    ==> Á¶°Ç) String op=scan.next()
+		ì²«ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥ : 10
+		ë‘ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥ : 20
+		ì—°ì‚°ì ì…ë ¥ : +    ==> ì¡°ê±´) String op=scan.next()
 		                        char c=op.charAt()
 		
 		==> 10+20 = 30
@@ -22,13 +22,13 @@ public class ¼±ÅÃÁ¶°Ç¹®_¿¹Á¦5 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("Ã¹¹øÂ° Á¤¼ö ÀÔ·Â: ");
+		System.out.print("ì²«ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥: ");
 		firstNum = scan.nextInt();
 		
-		System.out.print("µÎ¹øÂ° Á¤¼ö ÀÔ·Â: ");
+		System.out.print("ë‘ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥: ");
 		secondNum = scan.nextInt();
 		
-		System.out.print("¿¬»êÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì—°ì‚°ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String op = scan.next();
 		char c=op.charAt(0);
 		
@@ -45,6 +45,26 @@ public class ¼±ÅÃÁ¶°Ç¹®_¿¹Á¦5 {
 			System.out.println(firstNum + "*" + secondNum + "=" + (firstNum * secondNum));
 		}
 	
+		
+		//2020 3 22 - ë‹¤ì‹œ ê³„ì‚°ê¸° ë§Œë“¤ì–´ë´„
+		
+		System.out.println("ì²«ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+		int num1=scan.nextInt();
+		System.out.println("ë‘ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+		int num2=scan.nextInt();
+		
+		System.out.println("+,-,*,/ ì¤‘ í•œê°œì˜ ì‚¬ì¹™ ì—°ì‚°ì„ ì…ë ¥í•˜ì„¸ìš”: ");
+		String op=scan.next();
+		
+		if(op.equals("+"))
+			System.out.println(num1+num2);
+		if(op.equals("-"))
+			System.out.println(num1-num2);
+		if(op.equals("*"))
+			System.out.println(num1*num2);
+		if(op.equals("/"))
+			System.out.println((int)num1/num2);
+		
 		
 		
 		
