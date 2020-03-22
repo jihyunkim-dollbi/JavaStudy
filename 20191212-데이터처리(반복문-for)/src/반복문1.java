@@ -1,73 +1,70 @@
 import java.util.Scanner;
 
 /*
- * for: ¹Ýº¹¹®(¹Ýº¹È½¼ö°¡ ÁöÁ¤µÇ¾îÀÖ´Â °æ¿ì ¸¹ÀÌ ¾²ÀÓ.º¯¼öÇü°ú ¸í·É¹®ÀÌ °°À¸¸é µ¹¸±¼öÀÖ´Ù. µ¥ÀÌÅÍ°ªÀº ´Þ¶óµµ µÊ.)
- * ====            <-->  while¹®Àº ÀÓÀÇÀÇ ¼ö¿¡ ¾²ÀÓ.// ÀÚ¹Ù¿¡¼± -1ÀÌ ¹®ÀåÀÇ ³¡À¸·Î º»´Ù. ¹®ÀÚ ÀÐ¾î¿Ã¶§ ¾²ÀÓ.
+ * for: ë°˜ë³µë¬¸(ë°˜ë³µíšŸìˆ˜ê°€ ì§€ì •ë˜ì–´ìžˆëŠ” ê²½ìš° ë§Žì´ ì“°ìž„.ë³€ìˆ˜í˜•ê³¼ ëª…ë ¹ë¬¸ì´ ê°™ìœ¼ë©´ ëŒë¦´ìˆ˜ìžˆë‹¤. ë°ì´í„°ê°’ì€ ë‹¬ë¼ë„ ë¨.)
+ * ====            <-->  whileë¬¸ì€ ìž„ì˜ì˜ ìˆ˜ì— ì“°ìž„.// ìžë°”ì—ì„  -1ì´ ë¬¸ìž¥ì˜ ëìœ¼ë¡œ ë³¸ë‹¤. ë¬¸ìž ì½ì–´ì˜¬ë•Œ ì“°ìž„.
  *     
  * 
- * ÇÁ·ÐÆ®  - for
- * ¹é¿£µå  - while
+ * í”„ë¡ íŠ¸  - for
+ * ë°±ì—”ë“œ  - while
  * 
- * ÀÚ¹Ù½ºÆ®¸³Æ® ¶óÀÌºê·¯¸® - Á¦ÀÌÄõ¸®, ½Ç½Ã°£-ajax, ¼Óµµ react, Vue
+ * ìžë°”ìŠ¤íŠ¸ë¦½íŠ¸ ë¼ì´ë¸ŒëŸ¬ë¦¬ - ì œì´ì¿¼ë¦¬, ì‹¤ì‹œê°„-ajax, ì†ë„ react, Vue
  *  
- * Çâ»óµÈ for(JDK1.5ÀÌ»ó) : ¹è¿­, ÄÃ·º¼Ç(µ¥ÀÌÅÍº£ÀÌ½º)-³ªÁß¿¡!
+ * í–¥ìƒëœ for(JDK1.5ì´ìƒ) : ë°°ì—´, ì»¬ë ‰ì…˜(ë°ì´í„°ë² ì´ìŠ¤)-ë‚˜ì¤‘ì—!
  * 
- * ÀÏ¹Ý for : 
- *    (Çü½Ä)
- *         for(ÃÊ±â°ª;Á¶°Ç½Ä;Áõ°¡½Ä)
- *             ½ÇÇà¹®Àå
+ * ì¼ë°˜ for : 
+ *    (í˜•ì‹)
+ *         for(ì´ˆê¸°ê°’;ì¡°ê±´ì‹;ì¦ê°€ì‹)
+ *             ì‹¤í–‰ë¬¸ìž¥
  *             
  *             
- *            ¼ø¼­ : ÃÊ±â°ª -> Á¶°Ç½Ä -> ½ÇÇà¹®Àå -> Áõ°¡½Ä -> agian -> Á¶°Ç½Ä
+ *            ìˆœì„œ : ì´ˆê¸°ê°’ -> ì¡°ê±´ì‹ -> ì‹¤í–‰ë¬¸ìž¥ -> ì¦ê°€ì‹ -> agian -> ì¡°ê±´ì‹
  *                           true - go on!
  *                           false -stop!
  *            
- *          ** Áß¿ä : ÃÊ±â°ª ¼³Á¤  --> 0ºÎÅÍ ½ÃÀÛ or not
- *           		 ½ÇÇà¹®Àå ¹üÀ§ ¼³Á¤
- *                    ===========> ÇÑ¹®Àå{}(o,x),¿©·¯¹®Àå{}o
- *                    Áõ°¡½Ä ==> 1°³¾¿ ÀÌ°Å³ª 
- *                             º¯¼ö°¡ ÇÑ°³ÀÌ»ó ÀÌ°Å³ª
+ *          ** ì¤‘ìš” : ì´ˆê¸°ê°’ ì„¤ì •  --> 0ë¶€í„° ì‹œìž‘ or not
+ *           		 ì‹¤í–‰ë¬¸ìž¥ ë²”ìœ„ ì„¤ì •
+ *                    ===========> í•œë¬¸ìž¥{}(o,x),ì—¬ëŸ¬ë¬¸ìž¥{}o
+ *                    ì¦ê°€ì‹ ==> 1ê°œì”© ì´ê±°ë‚˜ 
+ *                             ë³€ìˆ˜ê°€ í•œê°œì´ìƒ ì´ê±°ë‚˜
  *                            1. for(int i=0, j=1; i<1 && j>=1; ...)
  *                                     ======================
- *                            2. for(int i=0;......) => Áö¿ªº¯¼ö i´Â for ¾È¿¡¼­¸¸ »ç¿ë!
+ *                            2. for(int i=0;......) => ì§€ì—­ë³€ìˆ˜ iëŠ” for ì•ˆì—ì„œë§Œ ì‚¬ìš©!
  *                             
  *                                     	
  *             
  * 
  * 
  * =====
- * ¸Þ¼Òµå(ÀÏ¹Ý¸Þ¼Òµå, ¶÷´Ù½Ä(ÇÔ¼öÆ÷ÀÎÅÍ):JDK1.8)
+ * ë©”ì†Œë“œ(ì¼ë°˜ë©”ì†Œë“œ, ëžŒë‹¤ì‹(í•¨ìˆ˜í¬ì¸í„°):JDK1.8)
  *  
  * 
  * 
  */
 
 
-public class ¹Ýº¹¹®1 {
+public class ë°˜ë³µë¬¸1 {
 
-	static public void main(String[] Java) {    /// ->main method-> jvm¿¡¼­ ÀÚµ¿À¸·Î È£Ãâ½ÃÅ´.  main->main1·Î º¯°æ½Ã ÀúÀåÀÌ ¾ÈµÊ. ½ÇÇàÀÌ ¾ÈµÊ.
-		// TODO Auto-generated method stub      /// static°ú publicÀº ÀÚ¸®°¡ ¹Ù²î¾îµµ ok!! 
-                                                /// void -> ³Ñ°ÜÁÙ °ªÀÌ ¾øÀ»¶§ ±âÀÔ
-		 /// µû¶ó¼­ ¸Þ¼Òµå¸¦ °¡Á®¿Ã¶© °¡Á®¿Ã °ªÀÌ ÀÖ´ÂÁö È®ÀÎÇØ¾ßÇÔ ¸¶¿ì½º´ë±â! 
+	static public void main(String[] Java) {    /// ->main method-> jvmì—ì„œ ìžë™ìœ¼ë¡œ í˜¸ì¶œì‹œí‚´.  main->main1ë¡œ ë³€ê²½ì‹œ ì €ìž¥ì´ ì•ˆë¨. ì‹¤í–‰ì´ ì•ˆë¨.
+		// TODO Auto-generated method stub      /// staticê³¼ publicì€ ìžë¦¬ê°€ ë°”ë€Œì–´ë„ ok!! 
+                 /// void -> ë„˜ê²¨ì¤„ ê°’ì´ ì—†ì„ë•Œ ê¸°ìž…, returnê°’ì´ ì—†ë‹¤.
+		 /// ë”°ë¼ì„œ ë©”ì†Œë“œë¥¼ ê°€ì ¸ì˜¬ë• ê°€ì ¸ì˜¬ ê°’ì´ ìžˆëŠ”ì§€ í™•ì¸í•´ì•¼í•¨ ë§ˆìš°ìŠ¤ëŒ€ê¸°! 
         
          Scanner scan = new Scanner(System.in);
-         scan.nextInt();  // ´õ Å«°ÍÀ¸·Î ¹ÞÀ» ¼öµµ ÀÖ´Ù.  --> longÀ¸·Îµµ ¹ÞÀ» ¼ö ÀÖ´Ù.!
-         scan.nextDouble();   // ´õºíÀº ´õºí·ç
-         scan.nextBoolean();  // ºÒ¸°Àº ºÒ¸°À¸·Î
-         scan.next();  // ½ºÆ®¸µÀ¸·Î ¹Þ±â!
+         scan.nextInt();  	// ë” í°ê²ƒìœ¼ë¡œ ë°›ì„ ìˆ˜ë„ ìžˆë‹¤.  --> longìœ¼ë¡œë„ ë°›ì„ ìˆ˜ ìžˆë‹¤.!
+         scan.nextDouble();     // ë”ë¸”ì€ ë”ë¸”ë£¨
+         scan.nextBoolean();    // ë¶ˆë¦°ì€ ë¶ˆë¦°ìœ¼ë¡œ
+         scan.next();           // ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°›ê¸°!
          
-         //  ¸ðµÎ ¸®ÅÏÇü! ¸Þ¼Òµå °¡Á®¿Ã½Ã ¸¶¿ì½º ´ë°í VOIDÀÖ´ÂÁö ¾ø´ÂÁö È®ÀÎ!
-         int i=1;
+         //  ëª¨ë‘ ë¦¬í„´í˜•! ë©”ì†Œë“œ ê°€ì ¸ì˜¬ì‹œ ë§ˆìš°ìŠ¤ ëŒ€ê³  VOIDìžˆëŠ”ì§€ ì—†ëŠ”ì§€ í™•ì¸!
+
+	 int i;
          for(i=1; i<=10; i++)
          {
-        	 
-        	System.out.println("1=" + i);
-        	 
-         }
-         
+        	System.out.println("i=" + i);	 
+	 }
          System.out.println("i=" + i);
          
-        
 	}
 
 }
