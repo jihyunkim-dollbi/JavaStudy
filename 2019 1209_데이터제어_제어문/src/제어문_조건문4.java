@@ -23,7 +23,7 @@ public class 제어문_조건문4 {
        int year = scan.nextInt();
        // 윤년조건
        if((year%4 == 0) && (year%100 != 0) || year%400 == 0) {
-    	   
+    	    
     	  System.out.println(year + "년도는 윤년입니다."); 
     	       	   
        }
