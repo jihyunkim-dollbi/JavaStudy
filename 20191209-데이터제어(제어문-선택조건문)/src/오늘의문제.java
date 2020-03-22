@@ -1,69 +1,70 @@
 /*
  * 1. if~else
- *    Á¤¼ö¸¦ ÇÑ°³ ÀÔ·Â¹Ş¾Æ¼­ Â¦¼ö/È¦¼ö
+ *    ì •ìˆ˜ë¥¼ í•œê°œ ì…ë ¥ë°›ì•„ì„œ ì§ìˆ˜/í™€ìˆ˜
  *    
- * 2. ÀÓÀÇÀÇ ¾ËÆÄºªÀ» ¹Ş¾Æ¼­ ´ë¹®ÀÚÀÎÁö, ¼Ò¹®ÀÚÀÎÁö (if~else)
+ * 2. ì„ì˜ì˜ ì•ŒíŒŒë²³ì„ ë°›ì•„ì„œ ëŒ€ë¬¸ìì¸ì§€, ì†Œë¬¸ìì¸ì§€ (if~else)
  *    ====
  *    char a = 'A'
  *    
- * 3. Á¤¼ö 3°³¸¦ ÀÔ·Â¹Ş¾Æ¼­ Æò±ÕÀ» ³»°í, Æò±ÕÀÌ 90 ÀÌ»óÀÌ¸é 'A'
- *                                  80 ÀÌ»óÀÌ¸é 'B'
- *                                  70 ÀÌ»óÀÌ¸é 'C'
- *                                  60 ÀÌ»óÀÌ¸é 'D'
- * 									ÀÌÇÏ¸é         'F'
- * 
- * 
+ * 3. ì •ìˆ˜ 3ê°œë¥¼ ì…ë ¥ë°›ì•„ì„œ í‰ê· ì„ ë‚´ê³ , í‰ê· ì´ 90 ì´ìƒì´ë©´ 'A'
+ *                                  80 ì´ìƒì´ë©´ 'B'
+ *                                  70 ì´ìƒì´ë©´ 'C'
+ *                                  60 ì´ìƒì´ë©´ 'D'
+ * 				       ì´í•˜ë©´   'F'
  */
 import java.util.Scanner;
-public class ¿À´ÃÀÇ¹®Á¦ {
+
+public class ì˜¤ëŠ˜ì˜ë¬¸ì œ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-      
 		
-		
-	//   1¹ø ¿¹Á¦.
-		
-		
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	//1ë²ˆ ì˜ˆì œ.
+	Scanner scan = new Scanner(System.in);
+	System.out.println("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
       	int a = scan.nextInt();
       	
       	if(a%2 == 0) {
-      		System.out.println("Â¦¼öÀÔ´Ï´Ù.");
+      		System.out.println("ì§ìˆ˜ì…ë‹ˆë‹¤.");
       	}
       	else
-      		System.out.println("È¦¼öÀÔ´Ï´Ù");
+      		System.out.println("í™€ìˆ˜ì…ë‹ˆë‹¤");
       	
-      	// 2¹ø ¿¹Á¦.
-      	
-      	System.out.println("¾ËÆÄºªÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
+		
+      	//2ë²ˆ ì˜ˆì œ.
+      	System.out.println("ì•ŒíŒŒë²³ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
       	
       	String op = scan.next();
-		char c=op.charAt(0);
-      	
+	char c=op.charAt(0);  //Stringì„ charë¡œ ë³€í™˜!
+      	//charë¡œ í™˜í•œí•˜ëŠ” ì´ìœ ëŠ” charëŠ” ê°’ì´ ì•„ìŠ¤í‚¤ ê°’ìœ¼ë¡œ ë˜ì–´ìˆê¸°ë•Œë¬¸ì— ëª¨ë“  ë¬¸ìì—´ì´ ìˆ«ìë¡œ ì •ì˜ë˜ì–´ìˆë‹¤.
+	// ë”°ë¼ì„œ ë¹„êµ ê°€ëŠ¥í•¨!
+		
+		
       	if(c >= 'A' && c <= 'Z') {
-      		System.out.println(c + "´Â ´ë¹®ÀÚÀÔ´Ï´Ù.");
+      		System.out.println(c + "ëŠ” ëŒ€ë¬¸ìì…ë‹ˆë‹¤.");
       	}
       	if(c >= 'a' && c <= 'z') {
-      		System.out.println(c + "´Â ¼Ò¹®ÀÚÀÔ´Ï´Ù.");
+      		System.out.println(c + "ëŠ” ì†Œë¬¸ìì…ë‹ˆë‹¤.");
       	}
       	
 		
       	
-      	// 3¹ø ¿¹Á¦.
+      	// 3ë²ˆ ì˜ˆì œ.
       	/*
-      	int first = second = third = 0;
+      	
+	// 3ê°œì˜ ì •ìˆ˜ ì„ ì–¸ ì´ˆê¸°í™”
+	int first, second, third = 0;
+	// í‰ê· ê°’ ì„ ì–¸ , ì´ˆê¸°í™”
       	int ave = (first+second+third)/3;
       
       	
-      	System.out.println("Ã¹¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+      	System.out.println("ì²«ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
       	first = scan.nextInt();
       	
-      	System.out.println("µÎ¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+      	System.out.println("ë‘ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
       	second = scan.nextInt();
       	
-      	System.out.println("¼¼¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+      	System.out.println("ì„¸ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
       	third = scan.nextInt();
       	
       	if(ave >= 90 && ave <= 100 ){
