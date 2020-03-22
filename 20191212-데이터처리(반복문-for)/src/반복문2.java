@@ -1,8 +1,8 @@
 /*
  * 1-2+3-4+5.......-10
  * 
- * ¾×ÅÍ = 1. user
- *       2. manager  // °ü¸®ÀÚÆäÀÌÁö À¯Àú ÆäÀÌÁö µû·Î ÀÖ´Ù.
+ * ì•¡í„° = 1. user
+ *       2. manager  // ê´€ë¦¬ìí˜ì´ì§€ ìœ ì € í˜ì´ì§€ ë”°ë¡œ ìˆë‹¤.
  * 
  * 2019 0.5
  * 2020 1
@@ -11,19 +11,18 @@
  * 
  * 
  */
-public class ¹İº¹¹®2 {
+public class ë°˜ë³µë¬¸2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-        int sum=0;
+        	int sum=0;
 		for(int i=1;i<=10;i++) {
-			
-			
+				
 			if(i%2 ==0)
-				sum-= i;  // '-'¸¦ ºÙ¿©ÁÜ 
+				sum-= i;  // '-'ë¥¼ ë¶™ì—¬ì¤Œ 
 			else
-				sum+=i;   // '+'¸¦ ºÙ¿©ÁÜ
+				sum+=i;   // '+'ë¥¼ ë¶™ì—¬ì¤Œ
 			
 		}
         	System.out.println("sum=" + sum);
