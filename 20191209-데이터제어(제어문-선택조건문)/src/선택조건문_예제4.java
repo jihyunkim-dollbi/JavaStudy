@@ -1,61 +1,104 @@
 import java.util.Scanner;
-public class �������ǹ�_����4 {
+public class 선택조건문_예제4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-       
-		int year = 0;
+
+		// 년,월,일을 입력받아  =>  일번 연도 2월이 윤년의 달(29일)인지 아닌지 구하기
+
+		// 년,월,일의 선언/초기화 
+		int year = 0; 
 		int month = 0;
 		int day = 0;
-		
+
+		// scan 객체 생성
 		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("�⵵�� �Է����ּ��� : ");
+
+		//원하는 년,월,일을 scan객체로 입력받기
+		System.out.println("년도를 입력해주세요 : ");
 		year = scan.nextInt();
-		
-		System.out.println("���� �Է����ּ��� : ");
-	    month = scan.nextInt();
-		
-		System.out.println("���� �Է����ּ��� : ");
+
+		System.out.println("월을 입력해주세요 : ");
+		month = scan.nextInt();
+
+		System.out.println("일을 입력해주세요 : ");
 		day = scan.nextInt();
+
+
 		
-				
-		// 2018 �⵵���� ��.
-		 int total=(year-1)*365+(year-1)/4-(year-1)/100+(year-1)/400;
-        			
-	    //���ޱ����� ��
-		 
+		// 윤년은 4년 만에 한번씩 있고(+), 100 년 마다는 아니며(-), 400년마다 한번씩 있다.(+) 
+		// 따라서 윤년에 해당하는 2019 년도까지 일수의 합을 구한다.
+		
+		// 0~2019년까지의 365일을 곱한 값에서 -> (2020-1)*365
+		//1. 4로 나누어지는 년도는 365일이 아니고 366일이나까  년도 만큼 1을  더하고  +(2020-1)/4
+		//2. 100으로 나누어지는 년도는 빼고(100은 4로 나누어지기 때문에 따로 100년마다 하루를 더 + 해줘야한다.)  -(year-1)/100
+		//3. 400으로 나누어지는 년도는 365일이 아니고 366일이나까 년도 만큼 1을  더한다  +(year-1)/400
+	
+		int total=(year-1)*365+(year-1)/4-(year-1)/100+(year-1)/400;
+		int total2020=(2020-1)*365+(2020-1)/4-(2020-1)/100+(2020-1)/400; 
+		//   377425 = 376935      + 505(4년에 하루를 +1) - 20(100년만다 없고(4년에서 나눌때 +1되었기때문에 -1 해주기)) + 5(400년마다 있고)         
+		//   따라서 377,425는 1년 1월 1일부터 2019년 12월 31일까지 윤년인 해의 일수를 추가/삭제하여 모두 합한 일수 이다.
+		
+		//전달까지의 합 구하기
+		
+		//1월~12월의 마지막일수를 배열로 초기화한다.
 		int[] lastDay={31,28,31,30,31,30,31,31,30,31,30,31};
+		//윤년 정의 : 4년으로 나누어 떨어지지만, 100년 마다 나누어 떨어진다면 아니고, 400년으로 떨어지면 윤년
+		//따라서 4년마다 윤년으로 2월은 4년에 한번씩 29일까지 있지만 그해 연도가 100으로 나누어지면 평년(28일)이고, 400으로 나누어 떨어지면 윤년이다!
+		// 4년마다는 맞지만 100년은 포함 안되고 400년은 포함된다.
 		
-		if((year%4 == 0) && (year%100 != 0) || (year%400 == 0))
+		//해당 년도가 윤년의 경우라면 2월(인덱스 1번)에 29일을 넣고 아니라면 28일을 대입하라.
+		if((year%4 == 0) && (year%100 != 0) || (year%400 == 0)) {
 			lastDay[1]=29;
-		else
+			System.out.println("해당 년도" +year +"년도는 윤년입니다.");
+		}
+		else {
 			lastDay[1]=28;
-		for(int i = 0; i<month-1;i++)
+			System.out.println("해당 년도" +year +"년도는 윤년이 아닙니다.");
+		}
+		//month는 배열인 lastday[]부터 값이 대입될 것이기 때문에  -1을 하여 배열의 인덱스를 맞춰야한다.
+		// 0부터 입력받은 월-1까지 for문을 돌린다. 
+		//만약 4월을 입력받았다면 0,1,2,3까지 => 즉 1월,2월,3월,4월까지 
+		//for문이 돌면서 lastday에 0,1,2,3의 인덱스 값을 total에 합하게 된다.! 그러면 1~2019까지의 일수 + 올해의 저번달까지의 일수 를 구할 수 있다.
+		
+		for(int i=0; i<month-1; i++)
 		{
 			total+=lastDay[i];
-			
+			//1년도부터 저번달까지의 총 일수
+
 		}
-		total+=day;
-		int week = total%7;
+		total+=day; // 1년도부터 저번달까지의 일 수에 오늘 날짜 day를 구하기 => 1년도부터~ 2020년 3월 22일까지의 일 수 구하다.!
 		
-		char strWeek ='��';
-		 if(week == 0)
-			    strWeek='��';
-		 if(week == 1)
-				strWeek='��';
-		 if(week == 2)
-				strWeek='ȭ';
-		 if(week == 3)
-				strWeek='��';
-		 if(week == 4)
-				strWeek='��';
-		 if(week == 5)
-				strWeek='��';
-		 if(week == 6)
-				strWeek='��';
-		 
-		System.out.println(year + "�⵵" + month + "��" + day + "����" + strWeek + "�����Դϴ�.");
+		
+		//요일 구하기 - 총 일수는 일~토의 순으로 매겨진다!
+		//1년 1월 1일은 일요일부터 시작한다는 가정하에 일,월,화,수,목,금,토
+		//총 일수를 7로 나누고 나눈 값이 0이라면 '일'을 대입함! 
+		//week을 total에서 7로 나눈 나머지 값으로 저장! 따라서 0,1,2,3,4,5,6 의 값 들이 될 것이다.
+		int week = total%7;
+
+		//int 값인 week은 0,1,2,3,4,5,6 으로 값을 정해놓고
+		//char로 월화수목금토일을 주기 위해 char strweek을 설정해놓음!!
+		
+		//week의 값에따라 strweek에 값을 대입한다!
+		char strWeek =' ';
+		
+		if(week == 0)
+			strWeek='일';
+		if(week == 1)
+			strWeek='월';
+		if(week == 2)
+			strWeek='화';
+		if(week == 3)
+			strWeek='수';
+		if(week == 4)
+			strWeek='목';
+		if(week == 5)
+			strWeek='금';
+		if(week == 6)
+			strWeek='토';
+
+		System.out.println(year + "년도 " + month + "월 " + day + "일은 " + strWeek + "요일입니다.");
+	
 		
 	}
 
