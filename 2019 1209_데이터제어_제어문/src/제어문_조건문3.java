@@ -1,50 +1,43 @@
 /*
- * ¾ËÆÄºª => ÀúÀå => ´ë¹®ÀÚ? or ¼Ò¹®ÀÚ?
- * 
- * 
- * 
- * 
- * 
- * 
- * 
-
- * 
- * 
+ * ì•ŒíŒŒë²³ => ì €ìž¥ => ëŒ€ë¬¸ìž? or ì†Œë¬¸ìž? êµ¬í•˜ê¸° í”„ë¡œê·¸ëž¨!
  */
-public class Á¦¾î¹®_Á¶°Ç¹®3 {
+public class ì œì–´ë¬¸_ì¡°ê±´ë¬¸3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
         char alpha = 'a';
         char beta = 'A';
-        // »çÀÌ, ±â°£ ==> &&
-        // ¿¬»êÀÚ => char´Â ¸ðµç ¿¬»êÀÌ µÇ¸é ==> Á¤¼öº¯È¯(ÀÚµ¿Çüº¯È¯), ±»ÀÌ Á¤¼ö·Î º¯È¯ÇØ¼­ ½á ³õÀ» ÇÊ¿ä ¾ø´Ù.
-        if(beta >= 'A' && beta <='Z') 
-        	System.out.println(beta + "´Â(Àº) ´ë¹®ÀÚÀÔ´Ï´Ù.");
+		
+        // ì‚¬ì´, ê¸°ê°„ ==> && ë¥¼ ì´ìš©! 
+		
+        // ì—°ì‚°ìž => charëŠ” ëª¨ë“  ì—°ì‚°ì‹œ==> ì •ìˆ˜ë³€í™˜(ìžë™í˜•ë³€í™˜), êµ³ì´ ì •ìˆ˜ë¡œ ë³€í™˜í•´ì„œ ì¨ ë†“ì„ í•„ìš” ì—†ë‹¤.
+		
+        if(beta >= 'A' && beta <='Z')  // betaê°€ Aì™€ Z ì‚¬ì´ì— ìžˆë‹¤ë©´
+        	System.out.println(beta + "ëŠ”(ì€) ëŒ€ë¬¸ìžìž…ë‹ˆë‹¤.");
         		
-        if(alpha >= 'a' && alpha <= 'z')
-        	System.out.println(alpha + "´Â(Àº) ¼Ò¹®ÀÚÀÔ´Ï´Ù.");
+        if(alpha >= 'a' && alpha <= 'z') // alphaê°€ a ì™€ z ì‚¬ì´ì— ìžˆë‹¤ë©´
+        	System.out.println(alpha + "ëŠ”(ì€) ì†Œë¬¸ìžìž…ë‹ˆë‹¤.");
         	
         ////////////////////////////////////////////////
         
-        
-        int value = 150;
-        
-        if(value < 200) {
-        	System.out.println("value is less than 200");
-        }
-        else if (value >= 50 && value <= 200) {
-        	System.out.println("value is between 50 to 200");
-        }
-        
-        System.out.println("value is less50");
-        
-        
-        
-        
-        
-      
-	    
-	}       
+        // if, if, if~~~ ë‹¤ì¤‘ì¡°ê±´ë¬¸ì„ ì‚¬ìš©í•  ê²½ìš° ëª¨ë“  ê²½ìš°ì˜ ìˆ˜ë¥¼ ê±°ì¹˜ê¸° ë•Œë¬¸ì— ëª¨ë“  ê²½ìš°ì— ìˆ˜ë¥¼ ë§Œì¡±í•  ê²½ìš°ì— ì—¬ëŸ¬ê°œì˜ ì‹¤í–‰ë¬¸ìž¥ì„ ì²˜ë¦¬í•  ìˆ˜ ìžˆë‹¤.
+	// but if, else if, else if , else~  ì„ íƒì¡°ê±´ë¬¸ì˜ ê²½ìš° ì—¬ëŸ¬ ì¡°ê±´ë¬¸ì¤‘ ì¼ì¹˜í•˜ëŠ” ë‹¨ í•œê°œì˜ ì¡°ê±´ë¬¸ë§Œ ì‹¤í–‰ì„ í•œë‹¤!
+	int value = 150;
+
+	if(value > 200) {
+		System.out.println("value is bigger than 200");
+	}
+	else if (value >= 50 && value < 200 ) {
+		System.out.println("value is between 50 to 200");
+	}
+	else {
+		System.out.println("value is less50");
+	}
+		
+		
+		
+		
+    }       
 
 }
