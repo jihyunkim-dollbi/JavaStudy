@@ -1,13 +1,15 @@
 
-public class º±≈√πÆ2 {
+public class ÏÑ†ÌÉùÎ¨∏2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		int score = 99;
 		switch(score/10) {
+		//     Ï°∞Í±¥Î¨∏
 		
 		case 10:
+			
 		case 9:
 			System.out.println("A");
 			break;
