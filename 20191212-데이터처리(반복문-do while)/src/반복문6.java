@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ¹İº¹¹®6 {
+public class ë°˜ë³µë¬¸6 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,42 +14,38 @@ public class ¹İº¹¹®6 {
 		int i = 1;
 		
 
-		System.out.println("Ã¹¹øÂ° Á¤¼ö ÀÔ·Â: ");
+		System.out.println("ì²«ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥: ");
 		num1 = scan.nextInt();
 		
-		System.out.println("µÎ¹øÂ° Á¤¼ö ÀÔ·Â: ");
+		System.out.println("ë‘ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥: ");
 		num2 = scan.nextInt();
 		
 		do {
 			
 			if(num1 > num2)
 				
-				System.out.println("ÃÖ´ë°ª: " + num1+ ", ÃÖ¼Ò°ª: " + num2);
+				System.out.println("ìµœëŒ€ê°’: " + num1+ ", ìµœì†Œê°’: " + num2);
 				
 			
 			else 
 				
-				System.out.println("ÃÖ´ë°ª: " + num2 + ", ÃÖ¼Ò°ª: " + num1);
+				System.out.println("ìµœëŒ€ê°’: " + num2 + ", ìµœì†Œê°’: " + num1);
 			
-			System.out.println("ÃÖ´ë°ª: " + (num1>num2?num1:num2) + ", ÃÖ¼Ò°ª: " + (num1>num2?num2:num1));
+			System.out.println("ìµœëŒ€ê°’: " + (num1>num2?num1:num2) + ", ìµœì†Œê°’: " + (num1>num2?num2:num1));
 
 			
-			System.out.println("ÃÖ´ë°ª: " + (Math.max(num1, num2)) + ", ÃÖ¼Ò°ª: " + (Math.min(num1, num2)));
+			System.out.println("ìµœëŒ€ê°’: " + (Math.max(num1, num2)) + ", ìµœì†Œê°’: " + (Math.min(num1, num2)));
 			
 			
 			i++;
 			
-		}while(i<=1);   // 1·Î ¹Ù²ãÁÖ¾ú´Ù.  2·Î ½ÇÇàÇßÀ»°æ¿ì µÎ¹øÀ» ½ÇÇàÇÏ¿© 6ÁÙÀÇ ¹®ÀåÀÌ ³ª¿È.
+		}while(i<=1);   // 1ë¡œ ë°”ê¿”ì£¼ì—ˆë‹¤.  2ë¡œ ì‹¤í–‰í–ˆì„ê²½ìš° ë‘ë²ˆì„ ì‹¤í–‰í•˜ì—¬ 6ì¤„ì˜ ë¬¸ì¥ì´ ë‚˜ì˜´.
 		
-		 /*    "¹İº¹¹®4"¿¡¼­ Ã³À½ÀÇ ½Ç¼ö´Â do ¾È¿¡ ¹Ù·Î ½ÇÇà¹®À» ¾²´Ï Ã¹¹øÂ° , µÎ¹øÂ° Á¤¼ö°¡ µ¿½Ã¿¡ ³ª¿À°í,
-                "¹İº¹¹®5"¿¡¼­´Â if else¸¦ ¸¸µé¾î¼­ ½ÇÇà¹®À» Àû¿ëÇß´Ù.-- but ±×·²ÇÊ¿ä¾øÀÌ
-                "¹İº¹¹® 6"¿¡¼­ Á¤¼öÀÔ·Â ½ÇÇà¹®À» do ¹Û¿¡ Ã³À½¿¡ Àû¾î¼­ ÈÎ¾¿ °£°áÇÏ°Ô Ã³¸®ÇÏ¿´´Ù.
+		 /*    "ë°˜ë³µë¬¸4"ì—ì„œ ì²˜ìŒì˜ ì‹¤ìˆ˜ëŠ” do ì•ˆì— ë°”ë¡œ ì‹¤í–‰ë¬¸ì„ ì“°ë‹ˆ ì²«ë²ˆì§¸ , ë‘ë²ˆì§¸ ì •ìˆ˜ê°€ ë™ì‹œì— ë‚˜ì˜¤ê³ ,
+                "ë°˜ë³µë¬¸5"ì—ì„œëŠ” if elseë¥¼ ë§Œë“¤ì–´ì„œ ì‹¤í–‰ë¬¸ì„ ì ìš©í–ˆë‹¤.-- but ê·¸ëŸ´í•„ìš”ì—†ì´
+                "ë°˜ë³µë¬¸ 6"ì—ì„œ ì •ìˆ˜ì…ë ¥ ì‹¤í–‰ë¬¸ì„ do ë°–ì— ì²˜ìŒì— ì ì–´ì„œ í›¨ì”© ê°„ê²°í•˜ê²Œ ì²˜ë¦¬í•˜ì˜€ë‹¤.
          */
-
-
-		
-		
-		
+	
 	}
 
 }
