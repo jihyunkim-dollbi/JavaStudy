@@ -1,5 +1,6 @@
 import java.util.Scanner;
-public class ¹İº¹¹®3 {
+
+public class ë°˜ë³µë¬¸3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -20,15 +21,15 @@ public class ¹İº¹¹®3 {
 		
 		do {
 			
-			if(i == 1) {    // Ã¹¹øÂ° ÇĞ»ı
+			if(i == 1) {    // ì²«ë²ˆì§¸ í•™ìƒ
 				
-				System.out.print("±¹¾î : ");
+				System.out.print("êµ­ì–´ : ");
 				 kor  = scan.nextInt();
 				
-				 System.out.print("¿µ¾î : ");
+				 System.out.print("ì˜ì–´ : ");
 				 eng  = scan.nextInt();
 				 
-				 System.out.print("¼öÇĞ : ");
+				 System.out.print("ìˆ˜í•™ : ");
 				 math  = scan.nextInt();
 				 
 			     total=kor+eng+math;
@@ -56,16 +57,14 @@ public class ¹İº¹¹®3 {
 			    		       
 		        	}
 			    		 
-			    		 System.out.println("¼ºÀû °á°ú - ÃÑÁ¡: " + total + " Æò±Õ: " + avg + " ÇĞÁ¡: " + score);     
+			    		 System.out.println("ì„±ì  ê²°ê³¼ - ì´ì : " + total + " í‰ê· : " + avg + " í•™ì : " + score);     
 			    		 
 			}
-			else if(i == 2) { // µÎ¹øÂ° ÇĞ»ı
+			else if(i == 2) { // ë‘ë²ˆì§¸ í•™ìƒ
 				
-				
-				
+		
 			}
-			else if(i == 3) {  // ¼¼¹øÂ° ÇĞ»ı
-				
+			else if(i == 3) {  // ì„¸ë²ˆì§¸ í•™ìƒ
 				
 				
 			}
@@ -77,11 +76,7 @@ public class ¹İº¹¹®3 {
 		}while(i<=3);
 		
 		
-		
-		
-		
-		
-		
+
 		
 		
 	}
