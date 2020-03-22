@@ -1,10 +1,4 @@
-/*
- * A ~ Z  5ÁÙ¾¿
- * 
- * 
- * 
- * 
- */
+
 public class 반복문2 {
 
 	public static void main(String[] args) {
