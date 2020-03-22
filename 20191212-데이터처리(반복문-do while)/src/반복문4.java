@@ -56,20 +56,28 @@ public class 반복문4 {
 		Scanner scan = new Scanner(System.in);
 		
 		
+			Scanner scan = new Scanner(System.in);
+		int num1=0;
+		int num2=0;
+		
 		int i=1;
 		do{
 			
+			if(i==1) {
 			System.out.println("첫번째 수를 입력하세요");
-			int num1=scan.nextInt();
+			num1=scan.nextInt();
+			}else {
 			System.out.println("두번째 수를 입력하세요.");
-			int num2=scan.nextInt();
+			num2=scan.nextInt();
+			}
 			
-			String result=num1>num2?num1+"이 더 큽니다.":num2+"가 더 큽니다.";
-			System.out.println(result);
-			
+
 			i++;
 			
-		}while(i<=1);
+		}while(i<=2);
+		
+		String result=num1>num2?num1+"이 더 큽니다.":num2+"가 더 큽니다.";
+		System.out.println(result);		
 		
 		/*  "반복문4"에서 처음의 실수는 do 안에 바로 실행문을 쓰니 첫번째 , 두번째 정수가 동시에 나오고,
             "반복문5"에서는 if else를 만들어서 실행문을 적용했다.-- but 그럴필요없이
