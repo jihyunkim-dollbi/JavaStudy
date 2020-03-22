@@ -1,47 +1,49 @@
 import java.util.Scanner;
 
-/*  ´ÙÁßif <==> switch
- *  Servlet <==> JSP  ==> ÀÚ¹Ù¿Í HTML À» ºĞ¸® -> MVC ==> Æ²(SPRING)
- *                                         ======
- *                                         ±¸Á¶, ÀÛµ¿¹ı ½ºÇÁ¸µ±â¹İ?
+/*  ë‹¤ì¤‘if <==> switch
+ *  Servlet <==> JSP  ==> ìë°”ì™€ HTML ì„ ë¶„ë¦¬ -> MVC ==> í‹€(SPRING)
+ *                                            ======
+ *                                         êµ¬ì¡°, ì‘ë™ë²• ìŠ¤í”„ë§ê¸°ë°˜?
  * 
- *  ¼±ÅÃ¹® : ÇÑ °³ÀÇ °ªÀ» ¹Ş¾Æ¼­ Ã³¸®(ÇÑ ¹ø¸¸ ¼öÇà ==> break °É±â)
- *         °ÔÀÓ, ³×Æ®¿öÅ©... 
- *  Çü½Ä)
+ *  ì„ íƒë¬¸ : í•œ ê°œì˜ ê°’ì„ ë°›ì•„ì„œ ì²˜ë¦¬(í•œ ë²ˆë§Œ ìˆ˜í–‰ ==> break ê±¸ê¸°)
+ *          ê²Œì„, ë„¤íŠ¸ì›Œí¬... 
+ *  
+    í˜•ì‹)
  *     
- *      switch(°ª)   ==> °ª, ¹®ÀÚ, ¹®ÀÚ¿­
+ *      switch(ê°’)   ==> ê°’, ë¬¸ì, ë¬¸ìì—´
  *  	{
  *       case 1:
- *           Ã³¸®
+ *           ì²˜ë¦¬
  *           break;
  *       case 2:
- *           Ã³¸®
+ *           ì²˜ë¦¬
  *       case 3:
- *           Ã³¸®
+ *           ì²˜ë¦¬
  *           break;
  *       =========    
- *       default:(ÇØ´çµÇÁö ¾Ê´Â °ª)
- *           Ã³¸®
- *       =========>  »ı·«°¡´É
+ *       default:(í•´ë‹¹ë˜ì§€ ì•ŠëŠ” ê°’)
+ *           ì²˜ë¦¬
+ *       =========>  ìƒëµê°€ëŠ¥
  *       
  *     }
  *  
  */
-public class ¼±ÅÃ¹® {
+public class ì„ íƒë¬¸ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Ã¹¹øÂ° Á¤¼ö:");
+		System.out.println("ì²«ë²ˆì§¸ ì •ìˆ˜:");
 		int num1 = scan.nextInt();
 	    
-		System.out.println("µÎ¹øÂ° Á¤¼ö:");
+		System.out.println("ë‘ë²ˆì§¸ ì •ìˆ˜:");
 		int num2 = scan.nextInt();
  	    
-		System.out.println("¿¬»êÀÚ(+,-,*,/):");
+		System.out.println("ì—°ì‚°ì(+,-,*,/):");
 		String op = scan.next();
 		
-		// Ã³¸® ==> int, char, String
+		// ì²˜ë¦¬ ==> int, char, String
 		
 		switch(op) {
 		case "+":
@@ -55,13 +57,14 @@ public class ¼±ÅÃ¹® {
 			break;
 		case "/":
 			if(num2 == 0) 
-				System.out.println("0À¸·Î ³ª´­ ¼ö¾ø½À´Ï´Ù");
+				System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ì—†ìŠµë‹ˆë‹¤");
 			
 			else
 				System.out.printf("%d/%d=%.2f\n", num1, num2, num1/(double)num2);
 			break;
 			
-			default:System.out.println("Àß¸øµÈ ¿¬»êÀÚÀÔ´Ï´Ù!");
+		default:
+			System.out.println("ì˜ëª»ëœ ì—°ì‚°ìì…ë‹ˆë‹¤!");
 		}
 		
 		
