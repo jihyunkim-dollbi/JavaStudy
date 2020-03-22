@@ -1,27 +1,39 @@
 
-public class ¹Ýº¹¹®6 {
+public class ë°˜ë³µë¬¸6 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
        
-		
+		// ë¬´í•œ ë£¨í”„
+		/*
+		ì»´í“¨í„°ì°¨ë¡€
+		ë³¸ì¸ì°¨ë¡€
+		ì»´í“¨í„°ì°¨ë¡€
+		ë³¸ì¸ì°¨ë¡€	
+		ì»´í“¨í„°ì°¨ë¡€
+		ë³¸ì¸ì°¨ë¡€
+		.
+		.
+		.
+		*/
 		boolean bCheck=false;
-        while(true) {
+		
+      		while(true) {
         	
-        	bCheck=!bCheck;
-        	if(bCheck == true) {
+        	bCheck=!bCheck; //trueë¥¼ falseì— ëŒ€ìž…í•˜ì—¬ trueê°€ ë¨. ë¬´í•œë£¨í”„ ë¨
+        	if(bCheck == true) { // trueë¼ë©´
         		
-        		System.out.println("º»ÀÎÂ÷·Ê");
+        		System.out.println("ë³¸ì¸ì°¨ë¡€");
         	}
         	else {
         		
-        		System.out.println("ÄÄÇ»ÅÍÂ÷·Ê");
+        		System.out.println("ì»´í“¨í„°ì°¨ë¡€");
         	}
         }
         
         
 		
-		/// 6¸íÀÌ¼­ °°ÀÌ °ÔÀÓ - ÅÏ µ¹¾Æ°¡´Â °Ç 0ºÎÅÍ °è¼Ó 1¾¿ Áõ°¡½ÃÅ°°í 6°³·Î ³ª´«°ªÀÇ ³ª¸ÓÁö·Î ¼ø¼­¸¦ ÀúÀåÇÒ ¼ö ÀÖ´Ù.--> ¹«ÇÑ·çÇÁ.
+		/// 6ëª…ì´ì„œ ê°™ì´ ê²Œìž„ - í„´ ëŒì•„ê°€ëŠ” ê±´ 0ë¶€í„° ê³„ì† 1ì”© ì¦ê°€ì‹œí‚¤ê³  6ê°œë¡œ ë‚˜ëˆˆê°’ì˜ ë‚˜ë¨¸ì§€ë¡œ ìˆœì„œë¥¼ ì €ìž¥í•  ìˆ˜ ìžˆë‹¤.--> ë¬´í•œë£¨í”„.
 		/*
 		
 		int i =0;
@@ -32,10 +44,6 @@ public class ¹Ýº¹¹®6 {
 			
 		}
 		*/
-		
-					
-			
-			
 	
 		
 	}
