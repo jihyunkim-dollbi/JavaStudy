@@ -1,40 +1,37 @@
 import java.util.Scanner;
 
 /*
- * ¾ËÆÄºªÀ» ´ë¹®ÀÚ·Î ÀÔ·Â
- * DDD ==> AAA·Î Ãâ·ÂµÇµµ·Ï!
+ * ì•ŒíŒŒë²³ì„ ëŒ€ë¬¸ìë¡œ ì…ë ¥
+ * DDD ==> AAAë¡œ ì¶œë ¥ë˜ë„ë¡!
  * 
  * ZZZ ==> WWW
  * 
- * ½ÃÀú½º¾ÏÈ£È­
- * 
- * 
+ * ì‹œì €ìŠ¤ì•”í˜¸í™”
+
  */
 
-public class ¹İº¹¹®5 {
+public class ë°˜ë³µë¬¸5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		Scanner scan = new Scanner(System.in);  
 		
-		System.out.println("´ë¹®ÀÚ¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");   // ÀÔ·Â¸Ş½ÃÁö
-		String data = scan.next();      // ¹®ÀÚÇü µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ´Â °÷     
+		System.out.println("ëŒ€ë¬¸ìë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");   // ì…ë ¥ë©”ì‹œì§€
+		String data = scan.next();      // ë¬¸ìí˜• ë°ì´í„°ë¥¼ ì…ë ¥í•˜ëŠ” ê³³     
 		
 			
-		for(int i = 0; i<data.length(); i++) {   // .length() ¿¡¼­´Â ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ±¸ÇÏ´Â °ÍÀÌ´Ù. 
-			                                     //  0ºÎÅÍ ½ÃÀÛÇÏ±â ¶§¹®¿¡ ' = ' À» Æ÷ÇÔÁö½ÃÁö ¾È¾Æµµ µÈ´Ù.
+		for(int i = 0; i<data.length(); i++) {   // .length() ì—ì„œëŠ” ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ êµ¬í•˜ëŠ” ê²ƒì´ë‹¤. 
+			                                     //  0ë¶€í„° ì‹œì‘í•˜ê¸° ë•Œë¬¸ì— ' = ' ì„ í¬í•¨ì§€ì‹œì§€ ì•ˆì•„ë„ ëœë‹¤.
 			                                     //
 			
-			char c = data.charAt(i);   //ÇÏ³ª¾¿ µ¥¸®°í ¿Â´Ù
+			char c = data.charAt(i);   //í•˜ë‚˜ì”© ë°ë¦¬ê³  ì˜¨ë‹¤
 
 			System.out.print((char)(c-3));
 			
 			
 		}
-		
-			
-		
+
 		
 	}
 
