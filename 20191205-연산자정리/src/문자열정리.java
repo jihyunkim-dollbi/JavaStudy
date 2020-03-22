@@ -1,66 +1,70 @@
 /*
- * 
- * String : ¹®ÀÚ¿­ ÀúÀå, Å¬·¡½º´Ù?
+ * utf-8
+ * String : ë¬¸ìì—´ ì €ì¥, í´ë˜ìŠ¤ë‹¤
  * ======
- *   ±â´É    ¿øÇÏ´Â Á¤º¸¸¦ ²ø¾î¿À°Å³ª µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÒ¶§ Æí¸®ÇÏ°Ô »ç¿ëÇÏµµ·Ï. ¹®ÀÚ¿­ ÇÊÅÍ¸µ ±â´Éµé. 
+ *   ê¸°ëŠ¥    ì›í•˜ëŠ” ì •ë³´ë¥¼ ëŒì–´ì˜¤ê±°ë‚˜ ë°ì´í„°ë¥¼ ì…ë ¥í• ë•Œ í¸ë¦¬í•˜ê²Œ ì‚¬ìš©í•˜ë„ë¡. ë¬¸ìì—´ í•„í„°ë§ ê¸°ëŠ¥ë“¤. 
  *   
- *   1) ¹®ÀÚ¿­À» ºĞ¸®      substring()
+ *   1) ë¬¸ìì—´ì„ ë¶„ë¦¬      substring()
  *   
- *   2) ¹®ÀÚ Ã£±â           indexof() ¾Õ¿¡°Í Ã£À»¶§, lastIndexof()
+ *   2) ë¬¸ì ì°¾ê¸°           indexof() ì•ì—ê²ƒ ì°¾ì„ë•Œ, lastIndexof()
  *                   c:\javaDev\javaStudy
  *                   
- *   3) ¹®ÀÚ ºñ±³            equals()   - ´ë¼Ò¹®ÀÚ ±¸ºĞ
- *                   equalsIgnoreCase()   - ´ë¼Ò¹®ÀÚ ±¸ºĞÀÌ ¾ø´Â °æ¿ì
+ *   3) ë¬¸ì ë¹„êµ            equals()   - ëŒ€ì†Œë¬¸ì êµ¬ë¶„
+ *                   equalsIgnoreCase()   - ëŒ€ì†Œë¬¸ì êµ¬ë¶„ì´ ì—†ëŠ” ê²½ìš°
  *   
- *   4) °ø¹é ¹®ÀÚ Á¦°Å      trim()
+ *   4) ê³µë°± ë¬¸ì ì œê±°      trim()
  *   
- *   5) ´ë¼Ò¹®ÀÚ º¯°æ       toUpperCase, toLowerCase
+ *   5) ëŒ€ì†Œë¬¸ì ë³€ê²½       toUpperCase, toLowerCase
  *   
- *   6) ¸ğµç µ¥ÀÌÅÍÇüÀ» ¹®ÀÚ¿­·Î º¯°æ valueof()
+ *   6) ëª¨ë“  ë°ì´í„°í˜•ì„ ë¬¸ìì—´ë¡œ ë³€ê²½ valueof()
  *   
- *   7) ¹®ÀÚÀÇ °¹¼ö         length()
+ *   7) ë¬¸ìì˜ ê°¯ìˆ˜         length()
  *   
- *   8) º¯°æ => replace() , replaceAll()
+ *   8) ë³€ê²½ => replace() , replaceAll()
 
  * 
  * 
  * 
- *    String => char[ ] C¿¡´Â ¾ø´Ù!
+ *    String => char[ ] Cì—ëŠ” ì—†ë‹¤!
  *    
  *    
- *    ½ºÆ®¸µÀº ³»°¡ Ã¤¿ì´Â ¸¸Å­¸¸ ¸Ş¸ğ¸®°ªÀÌ Á¤ÇØÁø´Ù. 
- *    ¸ğµç Å¬·¡½º´Â 4¹ÙÀÌÆ® ¸Ş¸ğ¸®´Ù. ÁÖ¼ÒÀÌ±â ¶§¹®¿¡. ¸ğµç ¸Ş¼Òµåµµ. ÁÖ¼Ò¸¸ ÀúÀåµÊ.
+ *    ìŠ¤íŠ¸ë§ì€ ë‚´ê°€ ì±„ìš°ëŠ” ë§Œí¼ë§Œ ë©”ëª¨ë¦¬ê°’ì´ ì •í•´ì§„ë‹¤. 
+ *    ëª¨ë“  í´ë˜ìŠ¤ëŠ” 4ë°”ì´íŠ¸ ë©”ëª¨ë¦¬ë‹¤. ì£¼ì†Œì´ê¸° ë•Œë¬¸ì—. ëª¨ë“  ë©”ì†Œë“œë„. ì£¼ì†Œë§Œ ì €ì¥ë¨.
  */
-public class ¹®ÀÚ¿­Á¤¸® {
+public class ë¬¸ìì—´ì •ë¦¬ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         
-		String s=" Hello Java!! ";   //°ø¹éµµ ¹®ÀÚ´Ù µû¶ó¼­ 12°³ ±ÛÀÚ
+		String s=" Hello Java!! ";   //ê³µë°±ë„ ë¬¸ìë‹¤ ë”°ë¼ì„œ 0~13ê°œ ê¸€ì
                // 012345678910111213
-		System.out.println("±ÛÀÚ¼ö:"+s.length());
-		//                           ========
-		//                           ¸Ş¼Òµå
-		System.out.println(s.substring(0,9));   // 9´Â Á¦¿Ü. endindex´Â Á¦¿ÜµÊ
-		System.out.println(s.replace("l","k")); // sÀÇ °ªÀ» ~ÇØ¶ó
-		System.out.println(s.toUpperCase());
-		System.out.println(s.toLowerCase());     // ¿øº»Àº ±×´ë·Î ÀÖ°í,Ãâ·ÂÇÒ¶§¸¸ º¯°æµÈ´Ù.
-		System.out.println(s);
-	//	System.out.println(s=s.toUpperCase());   // ÀÌ·¸°Ô s¸¦  ¿ÏÀüÈ÷ ¹Ù²ÙÁö ¾Ê´Â ÇÑ  ÀúÀåÇØ ³õÁö ¾ÊÀ¸¸é ¿øº»Àº ¹Ù²îÁö ¾ÊÀ½.
 		
-		System.out.println(s.trim());    //¸Ç³¡°ú ¸Ç ¾Õ¸¸!³×ÀÌ¹ö´Â ¾ÆÀÌµğ¶õ¿¡ Æ®¸²Àû¿ë ¾ÈµÊ , ³×ÀÌÆ® ¾ÆÀÌµğ¶õ¿¡´Â Æ®¸² Àû¿ëµÊ.	¿À¶óÅ¬Àº °ø¹éÀ» Çã¿ë¾ÈÇÑ´Ù. »ç¿ëÀÚ½Ç¼ö·Î µÇÁö ¾Êµµ·Ï Æ®¸²À» ³Ö¾îÁÜ
-		System.out.println(s.indexOf("hello"));
-		System.out.println(s.lastIndexOf("l"));
+		System.out.println("ê¸€ììˆ˜:"+s.length());  
+		//                           ========
+		//                           ë©”ì†Œë“œ
+		System.out.println(s.substring(0,9));   // 9ëŠ” ì œì™¸. endindexëŠ” ì œì™¸ë¨
+		System.out.println(s.replace("l","k")); // sì˜ ê°’ ì¤‘ lì„ kìœ¼ë¡œ ë°”ê¾¸ì–´ë¼
+		System.out.println(s.toUpperCase());
+		System.out.println(s.toLowerCase());     // ì›ë³¸ì€ ê·¸ëŒ€ë¡œ ìˆê³ ,ì¶œë ¥í• ë•Œë§Œ ë³€ê²½ëœë‹¤.
+		System.out.println(s);
+	//	System.out.println(s=s.toUpperCase());   // ì´ë ‡ê²Œ së¥¼  ì™„ì „íˆ ë°”ê¾¸ì§€ ì•ŠëŠ” í•œ  ì €ì¥í•´ ë†“ì§€ ì•Šìœ¼ë©´ ì›ë³¸ì€ ë°”ë€Œì§€ ì•ŠìŒ.
+		
+		System.out.println(s.trim());    
+		// ë§¨ëê³¼ ë§¨ ì•ë§Œ!ë„¤ì´ë²„ëŠ” ì•„ì´ë””ë€ì— íŠ¸ë¦¼ì ìš© ì•ˆë¨ , ë„¤ì´íŠ¸ ì•„ì´ë””ë€ì—ëŠ” íŠ¸ë¦¼ ì ìš©ë¨. 
+		// ì˜¤ë¼í´ì€ ê³µë°±ì„ í—ˆìš©ì•ˆí•œë‹¤. ì‚¬ìš©ì ì‹¤ìˆ˜ë¡œ ë˜ì§€ ì•Šë„ë¡ íŠ¸ë¦¼ì„ ë„£ì–´ì¤Œ
+		System.out.println(s.indexOf("hello"));  // ë¬¸ìì—´ ì•ˆì— helloê°€ ìˆëŠ”ì§€ ì°¾ì•„ì¤Œ ì—†ìœ¼ë©´ -1 ì¶œë ¥!
+		System.out.println(s.indexOf("lo"));     // 4 => loê°€ ìˆëŠ” ì¸ë±ìŠ¤ ì¶œë ¥í•¨!
+		System.out.println(s.lastIndexOf("l"));  //  ì—¬ëŸ¬ lì¤‘ ê°€ì¥ ë§ˆì§€ë§‰ì— ìˆëŠ” ì¸ë±ìŠ¤ ì¶œë ¥í•´ì¤Œ!
 		
 		String s1="Hello";
 		String s2="hello";
 
-		String res=s1.equals(s2)?"°°´Ù":"´Ù¸£´Ù";
+		String res=s1.equals(s2)?"ê°™ë‹¤":"ë‹¤ë¥´ë‹¤";
 		          // =======
-		          //  ´ë¼Ò¹®ÀÚ ±¸ºĞ °¡´É		   
+		          //  ëŒ€ì†Œë¬¸ì êµ¬ë¶„ ê°€ëŠ¥		   
 		System.out.println(res);
 		
-		String res1=s1.equalsIgnoreCase(s2)?"°°´Ù":"´Ù¸£´Ù";
+		String res1=s1.equalsIgnoreCase(s2)?"ê°™ë‹¤":"ë‹¤ë¥´ë‹¤";
 		
 		System.out.println(res1);
 			
