@@ -1,35 +1,39 @@
 /*
  * 
- * ==> ¹®ÀÚ ==> charAt(0)   --> ¹®ÀÚ¿­¿¡¼­ 0¹øÂ° ´Ü¾î
+ * ==> ë¬¸ì ==> ë¬¸ìì—´.charAt(0)   --> ë¬¸ìì—´ì—ì„œ 0ë²ˆì§¸ ë‹¨ì–´
  * 
- * String s = "abnmddjjdkfkfjjkfkf"  --> ¹®¼­¿¡¼­ ¿øÇÏ´Â ¹®ÀÚ °³¼ö Ã£À»¶§. while¹®Àº °Ë»ö¿£Áø. µû¶ó¼­ ¼ıÀÚ ¸»°í ¹®ÀÚ¿­ ¸¹ÀÌ »ç¿ë.
- * 
- *  
- * 
+ * String s = "abnmddjjdkfkfjjkfkf"  --> ë¬¸ì„œì—ì„œ ì›í•˜ëŠ” ë¬¸ì ê°œìˆ˜ ì°¾ì„ë•Œ. whileë¬¸ì€ ê²€ìƒ‰ì—”ì§„. ë”°ë¼ì„œ ìˆ«ì ë§ê³  ë¬¸ìì—´ ë§ì´ ì‚¬ìš©.
+
  */
-public class ¹İº¹¹® {
+public class ë°˜ë³µë¬¸ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        String s="dskaamapplefjdiaadlfsdlf,<";
-        System.out.println("s="+s);
+		
+		String ss = "ì•ˆë…•í•˜ì„¸ìš”!";
+		char c = ss.charAt(2);  //ssë¬¸ìì—´ì˜ ì¸ë±ìŠ¤ 2ë²ˆì§¸ ê°’ì„ í˜¸ì¶œ
+		System.out.println(c); // ê²°ê³¼ : í•˜
+		
+		
+      		  String s="dskaamapplefjdiaadlfsdlf,<";
+        	  System.out.println("s="+s);
         
-        int i=0;  // --length ÇØ´ç ¹®ÀÚÀÇ °³¼ö ±¸ÇÏ±â, µû¶ó¼­ Ã¹¹øÂ° °³¼ö´Â 0ÀÌ µÇ¹Ç·Î ±×°Í±îÁö °è»êÇØ¾ßÇÔ. > >= Á¶Àı.
-        int count=0;
-        while(i < s.length()) {
+        	  int i=0;  // --length í•´ë‹¹ ë¬¸ìì˜ ê°œìˆ˜ êµ¬í•˜ê¸°, ë”°ë¼ì„œ ì²«ë²ˆì§¸ ê°œìˆ˜ëŠ” 0ì´ ë˜ë¯€ë¡œ ê·¸ê²ƒê¹Œì§€ ê³„ì‚°í•´ì•¼í•¨. > >= ì¡°ì ˆ.
+        	  int count=0;
+        	  while(i < s.length()) {
         	
-        	System.out.println((i+1)+"¹øÂ° ¹®ÀÚ: " +s.charAt(i));
+  	      	  System.out.println((i+1)+"ë²ˆì§¸ ë¬¸ì: " +s.charAt(i));
         	
-        	char c=s.charAt(i);
-        	if(c == 'a' || c == 'A')
-        	count++;
+        	  char c=s.charAt(i);
+        	  if(c == 'a' || c == 'A')
+        	  count++;
         	
-        	i++;
+          	  i++;
         	
                   	
         }
         
-        System.out.println("a¿Í AÀÇ °³¼ö´Â: " + count);		
+        System.out.println("aì™€ Aì˜ ê°œìˆ˜ëŠ”: " + count);		
 	}
 
 }
