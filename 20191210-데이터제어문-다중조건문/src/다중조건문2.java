@@ -1,49 +1,51 @@
 /*
- *    ¿ùÀ» ÀÔ·Â => ¸¶Áö¸· ³¯ÀÌ ¸îÀÏÀÎÁö È®ÀÎÀ» ÇØÁÖ´Â ÇÁ·Î±×·¥!
+ *    ì›”ì„ ì…ë ¥ => ë§ˆì§€ë§‰ ë‚ ì´ ëª‡ì¼ì¸ì§€ í™•ì¸ì„ í•´ì£¼ëŠ” í”„ë¡œê·¸ë¨!
  *    
  *    
  *	  31 28(29) 31 30 31 30
  *    31 31 30 31 30 31        
  *    
- *    1 3 5 7 8 10 12 --> 31  --> Á¶°ÇÀÌ °¡Àå ¸¹À¸´Ï±î else ·Î Ã³¸®ÇÑ´Ù. µğÆúÆ®·Î 31ÀÏ Àâ±â!
+ *    1 3 5 7 8 10 12 --> 31  --> ì¡°ê±´ì´ ê°€ì¥ ë§ìœ¼ë‹ˆê¹Œ else ë¡œ ì²˜ë¦¬í•œë‹¤. ë””í´íŠ¸ë¡œ 31ì¼ ì¡ê¸°!
  *    4 6 9 11 , 2(28,29)        --> 30
  *    
- *    ==> ÃÑº¯¼ö´Â 3°¡Áö. ¿¬,¿ù,ÀÏ.==> º¯ÇÒ¼ö ÀÖ´Â¼ö.
+ *    ==> ì´ë³€ìˆ˜ëŠ” 3ê°€ì§€. ì—°,ì›”,ì¼.==> ë³€í• ìˆ˜ ìˆëŠ”ìˆ˜.
  */
 
 
 import java.util.Scanner;
-public class ´ÙÁßÁ¶°Ç¹®2 {
+public class ë‹¤ì¤‘ì¡°ê±´ë¬¸2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("³âµµ ÀÔ·Â:");
-		int year = scan.nextInt();  // À±³â°è»ê
+		System.out.print("ë…„ë„ ì…ë ¥:");
+		int year = scan.nextInt();  // ìœ¤ë…„ê³„ì‚°
 		
-		System.out.println("¿ù ÀÔ·Â:");
-		int month = scan.nextInt(); // ¸¶Áö¸· ³¯Â¥?
+		System.out.println("ì›” ì…ë ¥:");
+		int month = scan.nextInt(); // ë§ˆì§€ë§‰ ë‚ ì§œ?
 		
-		int lastday = 0; // ÃÊ±âÈ­
+		int lastday = 0; // ì´ˆê¸°í™”
 		
 		
 		
 		if(month == 4 || month == 6 || month == 9 || month == 11) {
+			
 			lastday = 30;
 		}
 		else if (month == 2) {
+			
 			if((year%4 == 0 && year%100 !=0) || (year%400 == 0))
-              lastday =29;
-              else
-            	  lastday =28;
+              			lastday =29;
+             		 else
+            	  		lastday =28;
 		}
 		else {
 			lastday = 31;
 		}
 		
-		// °á°ú
-		System.out.println(year +"³â" + month + "¿ùÀº " + lastday+ "ÀÏ±îÁö ÀÖ½À´Ï´Ù.");
+		// ê²°ê³¼
+		System.out.println(year +"ë…„" + month + "ì›”ì€ " + lastday+ "ì¼ê¹Œì§€ ìˆìŠµë‹ˆë‹¤.");
 		
 		
 		
