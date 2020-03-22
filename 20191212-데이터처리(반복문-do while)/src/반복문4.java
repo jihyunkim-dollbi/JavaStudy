@@ -1,63 +1,79 @@
 import java.util.Scanner;
 
 /*
- *  µÎ°³ÀÇ Á¤¼ö¸¦ ÀÔ·Â ¹Ş¾Æ¼­
- *  ÃÖ´ë°ª, ÃÖ¼Ò°ª
+ *  ë‘ê°œì˜ ì •ìˆ˜ë¥¼ ì…ë ¥ ë°›ì•„ì„œ
+ *  ìµœëŒ€ê°’, ìµœì†Œê°’
  *  do-while 
  * 
- * 10 , 30 ==> ÃÖ´ëÇÕ 30 ÃÖ¼Ò°ªÀº 10!
+ * 10 , 30 ==> ìµœëŒ€í•© 30 ìµœì†Œê°’ì€ 10!
  * 
  */
 
 import java.util.Scanner;
-public class ¹İº¹¹®4 {
+public class ë°˜ë³µë¬¸4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
        
 		int num1 = 0;
 		int num2 = 0;
-		
-		
+
 		Scanner scan = new Scanner(System.in);
 		
 		int i = 1;
 		
 		do {
 			
-			System.out.println("Ã¹¹øÂ° Á¤¼ö ÀÔ·Â: ");
+			System.out.println("ì²«ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥: ");
 			num1 = scan.nextInt();
 						
-			System.out.println("µÎ¹øÂ° Á¤¼ö ÀÔ·Â: ");
+			System.out.println("ë‘ë²ˆì§¸ ì •ìˆ˜ ì…ë ¥: ");
 			num2 = scan.nextInt();
 			
 			if(num1 > num2) {
 				
-				System.out.println("ÃÖ´ë°ªÀº: " +num1 + "ÃÖ¼Ò°ªÀº: " + num2);
+				System.out.println("ìµœëŒ€ê°’ì€: " +num1 + "ìµœì†Œê°’ì€: " + num2);
 				
 			}
 			else if(num2 > num1) { 
 				
-				System.out.println("ÃÖ´ë°ªÀº: " + num2 + "ÃÖ¼Ò°ªÀº: " + num1);
+				System.out.println("ìµœëŒ€ê°’ì€: " + num2 + "ìµœì†Œê°’ì€: " + num1);
 			}
 			
 		     else {
 		    	 
-		    	 System.out.println("¼­·Î ´Ù¸¥ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+		    	 System.out.println("ì„œë¡œ ë‹¤ë¥¸ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”.");
 		    	 
 		       }
-		    
-			
-		     
+		   
 			i++;
 			
 		}while(i <= 2);
 			
-			
+		///////////////////////////
 		
-		/*  "¹İº¹¹®4"¿¡¼­ Ã³À½ÀÇ ½Ç¼ö´Â do ¾È¿¡ ¹Ù·Î ½ÇÇà¹®À» ¾²´Ï Ã¹¹øÂ° , µÎ¹øÂ° Á¤¼ö°¡ µ¿½Ã¿¡ ³ª¿À°í,
-            "¹İº¹¹®5"¿¡¼­´Â if else¸¦ ¸¸µé¾î¼­ ½ÇÇà¹®À» Àû¿ëÇß´Ù.-- but ±×·²ÇÊ¿ä¾øÀÌ
-            "¹İº¹¹® 6"¿¡¼­ Á¤¼öÀÔ·Â ½ÇÇà¹®À» do ¹Û¿¡ Ã³À½¿¡ Àû¾î¼­ ÈÎ¾¿ °£°áÇÏ°Ô Ã³¸®ÇÏ¿´´Ù.
+		
+		Scanner scan = new Scanner(System.in);
+		
+		
+		int i=1;
+		do{
+			
+			System.out.println("ì²«ë²ˆì§¸ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+			int num1=scan.nextInt();
+			System.out.println("ë‘ë²ˆì§¸ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+			int num2=scan.nextInt();
+			
+			String result=num1>num2?num1+"ì´ ë” í½ë‹ˆë‹¤.":num2+"ê°€ ë” í½ë‹ˆë‹¤.";
+			System.out.println(result);
+			
+			i++;
+			
+		}while(i<=1);
+		
+		/*  "ë°˜ë³µë¬¸4"ì—ì„œ ì²˜ìŒì˜ ì‹¤ìˆ˜ëŠ” do ì•ˆì— ë°”ë¡œ ì‹¤í–‰ë¬¸ì„ ì“°ë‹ˆ ì²«ë²ˆì§¸ , ë‘ë²ˆì§¸ ì •ìˆ˜ê°€ ë™ì‹œì— ë‚˜ì˜¤ê³ ,
+            "ë°˜ë³µë¬¸5"ì—ì„œëŠ” if elseë¥¼ ë§Œë“¤ì–´ì„œ ì‹¤í–‰ë¬¸ì„ ì ìš©í–ˆë‹¤.-- but ê·¸ëŸ´í•„ìš”ì—†ì´
+            "ë°˜ë³µë¬¸ 6"ì—ì„œ ì •ìˆ˜ì…ë ¥ ì‹¤í–‰ë¬¸ì„ do ë°–ì— ì²˜ìŒì— ì ì–´ì„œ í›¨ì”© ê°„ê²°í•˜ê²Œ ì²˜ë¦¬í•˜ì˜€ë‹¤.
         */
 		
 		
