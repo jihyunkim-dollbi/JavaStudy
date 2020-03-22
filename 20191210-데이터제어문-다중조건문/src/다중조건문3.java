@@ -1,19 +1,19 @@
 /*
- *    Á¤¼ö 2°³¸¦ ÀÔ·Â ¹Ş¾Æ¼­ ==> ¿¬»êÀÚ 1°³ ==> »çÄ¢¿¬»ê
+ *    ì •ìˆ˜ 2ê°œë¥¼ ì…ë ¥ ë°›ì•„ì„œ ==> ì—°ì‚°ì 1ê°œ ==> ì‚¬ì¹™ì—°ì‚°
  *    
- *    ÀÚ¹Ù => ÀÔ·Â ¹Ş´Â °æ¿ì¿¡ => char x ==> ¹«Á¶°Ç StringÀ¸·Î ¹Ş¾Æ¾ßÇÑ´Ù.
+ *    ìë°” => ì…ë ¥ ë°›ëŠ” ê²½ìš°ì— => char x ==> ë¬´ì¡°ê±´ Stringìœ¼ë¡œ ë°›ì•„ì•¼í•œë‹¤.
  * 		
- *     String ==> == (x), ==> equals¸¦ ½á¾ßÇÔ.    
+ *     String ==> == (x), ==> equalsë¥¼ ì¨ì•¼í•¨.    
  * 
  * 
  */
 import java.util.Scanner;
-public class ´ÙÁßÁ¶°Ç¹®3 {
+public class ë‹¤ì¤‘ì¡°ê±´ë¬¸3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*
-		String s1 = new String("hello");
+	    /*
+	    String s1 = new String("hello");
 	    String s2 = new String("hello");
 	    
 	    if(s1.equals(s2)) {
@@ -24,22 +24,22 @@ public class ´ÙÁßÁ¶°Ç¹®3 {
 	    }
 	    
 	     */
-	     // Integer.parseInt("10")  // ¼ıÀÚ³¢¸®¸¸ Çüº¯È¯ °¡´ÉÇÑ´Ù. ¹®ÀÚÇüÀ¸·Î ¹Ù²Ù·Á¸é Æ¯Á¤ Å¬·¡½º¸¦ ¾Ë°íÀÖ¾î¾ßÇÔ.
+	     // Integer.parseInt("10")  // ìˆ«ìë¼ë¦¬ë§Œ í˜•ë³€í™˜ ê°€ëŠ¥í•œë‹¤. ë¬¸ìí˜•ìœ¼ë¡œ ë°”ê¾¸ë ¤ë©´ íŠ¹ì • í´ë˜ìŠ¤ë¥¼ ì•Œê³ ìˆì–´ì•¼í•¨.
 		 
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Ã¹¹øÂ° Á¤¼ö:");
+		System.out.println("ì²«ë²ˆì§¸ ì •ìˆ˜:");
 		int num1 = scan.nextInt();
 	    
-		System.out.println("µÎ¹øÂ° Á¤¼ö:");
+		System.out.println("ë‘ë²ˆì§¸ ì •ìˆ˜:");
 		int num2 = scan.nextInt();
  	    
-		System.out.println("¿¬»êÀÚ(+,-,*,/):");
-		String op =scan.next();// ¸®ÅÏÇü - °ªÀ» º¸³»ÁÖ°í ´Ù½Ã ¹ŞÀ½. 
+		System.out.println("ì—°ì‚°ì(+,-,*,/):");
+		String op =scan.next();// ë¦¬í„´í˜• - ê°’ì„ ë³´ë‚´ì£¼ê³  ë‹¤ì‹œ ë°›ìŒ. 
 	    
-		//Ã³¸®
-		// °á°ú°ª Ãâ·Â	
+		//ì²˜ë¦¬
+		// ê²°ê³¼ê°’ ì¶œë ¥	
 		
 		if(op.equals("+")) {
 			System.out.printf("%d+%d=%d\n", num1, num2, num1+num2);
@@ -53,13 +53,13 @@ public class ´ÙÁßÁ¶°Ç¹®3 {
 		}
 		else if(op.equals("/")) {
 			if(num2 == 0) 
-				System.out.println("0À¸·Î ³ª´­ ¼ö¾ø½À´Ï´Ù");
+				System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ì—†ìŠµë‹ˆë‹¤");
 			
 			else
 				System.out.printf("%d/%d=%.2f\n", num1, num2, num1/(double)num2);
 		}
 		else {
-			System.out.println("Àß¸øµÈ ¿¬»êÀÚÀÔ´Ï´Ù!");  //µğÆúÆ®¹®Àå ¸¸µé¾îÁÖ±â
+			System.out.println("ì˜ëª»ëœ ì—°ì‚°ìì…ë‹ˆë‹¤!");  //ë””í´íŠ¸ë¬¸ì¥ ë§Œë“¤ì–´ì£¼ê¸°
 		}
 			
 	}
