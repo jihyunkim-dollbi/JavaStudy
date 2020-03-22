@@ -1,66 +1,74 @@
- /*  while  Çü½Ä
+ /*  while  í˜•ì‹
  *  ==========
  *  
- *  ÃÊ±â°ª
- *  while(Á¶°Ç¹®)
+ *  ì´ˆê¸°ê°’ // ë³€ìˆ˜ ì„ ì–¸+ì´ˆê¸°ê°’ì„¤ì •
+ *  while(ì¡°ê±´ë¬¸) ~ê°€ ë ë•Œê¹Œì§€, ~ì¸ ë™ì•ˆ
  *  {
  *    ============
- *     ¹İº¹ ½ÇÇà¹®Àå
+ *     ë°˜ë³µ ì‹¤í–‰ë¬¸ì¥
  *     
  *    ============
- *     Áõ°¨½Ä 
+ *     ì¦ê°ì‹ 
  *    ===========
  */   
 
 
 
 import java.util.Scanner;
-import org.jsoup.Jsoup;     // import ºÙÀÌ±â --> Scan ¾Æ·¡¿¡ ¾²°í->  ctrl+space
+import org.jsoup.Jsoup;     // import ë¶™ì´ê¸° --> Scanì“°ê³ ->  ctrl+space í•˜ë©´ importíš¨ê³¼!
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-public class ¹İº¹¹®7 {
+public class ë°˜ë³µë¬¸7 {
 
-	public static void main(String[] args) throws Exception {  //throws Exception ¿¹¿ÜÃ³¸®
+	public static void main(String[] args) throws Exception {  //throws Exception ì˜ˆì™¸ì²˜ë¦¬
 		// TODO Auto-generated method stub
 		
-        Scanner scan = new Scanner(System.in);
-        System.out.println("°Ë»ö¾î ÀÔ·Â: ");
-        String fd = scan.next();  //find data
-        
-        
-        int k=1;
-        while(k<=4) {
-        	
-        
-		Document doc=Jsoup.connect("https://www.genie.co.kr/chart/top200?ditc=D&ymd=20191211&hh=15&rtm=Y&pg="+k).get();
-		
-		// System.out.println(doc);
-		
-		Elements title=doc.select("td.info a.title");   // Å¸ÀÌÆ²ÀÌ µé¾î°£ Tag¸¦ ºÒ·¯¿È   // td.info´Â  
-		Elements singer=doc.select("td.info a.artist");
-		
-		int i = 0;
-		while(i<title.size())  /// ?? 
-		{
-			String data=title.get(i).text(); // °¡Á®¿Â ³ë·¡µé ¾È¿¡ ³»°¡ °Ë»öÇÑ ³ë·¡°¡ ÀÖ³ª? -> ÇÑµÎ±ÛÀÚ¸¸ ½áµµ ¾Æ·¡¿¡ ¹Ì¸®º¸±â ¶ß°Ô ÇÏ·Á°í.
-			//if(data.contains(fd))   // ÀÌ ³ë·¡ ¾È¿¡ ³»°¡ ÀÔ·ÂÇÑ ¹øÈ£°¡ Æ÷ÇÔµÇ¾îÀÖ³ª?
-				 ///contains ´Â boolean ÀÌ±â¶§¹®¿¡ ÀÖÀ¸¸é true ¾øÀ¸¸é false ·Î ±â´ÉÇÑ´Ù.
-			//{
+       Scanner scan = new Scanner(System.in);
+	        System.out.println("ê²€ìƒ‰ì–´ ì…ë ¥: ");
+	        String fd = scan.next();  //find data
+	        
+	       try { 
+	    	   
+	        int k=1; // í˜ì´ì§€ ë£¨í”„ ë³€ìˆ˜
+	        while(k<=4) { // 
+	        	
+	        // í•´ë‹¹ ì›¹ì‚¬ì´íŠ¸ì˜ kë²ˆì§¸ í˜ì´ì§€ì—ì„œ ì–»ëŠ” ëª¨ë“  ì •ë³´ë¥¼ docì— ì €ì¥!
+			Document doc=Jsoup.connect("https://www.genie.co.kr/chart/top200?ditc=D&ymd=20200322&hh=18&rtm=Y&pg="+k).get();
+			
+			// System.out.println(doc);
+			
+			//docì—ì„œ ì œëª©ê³¼ ê°€ìˆ˜ì˜ ì •ë³´ë¥¼ ê°€ì§„tagë¥¼ title, singerì— ì €ì¥!
+			Elements title=doc.select("td.info a.title");   // ì œëª© ì •ë³´ ë“¤ì–´ê°„ Tagë¥¼ ë¶ˆëŸ¬ì˜´    
+			Elements singer=doc.select("td.info a.artist");  // ê°€ìˆ˜ ì •ë³´ ë“¤ì–´ê°„ Tagë¥¼ ë¶ˆëŸ¬ì˜´
+			
+			int i = 0; //ë£¨í”„ ë³€ìˆ˜
+			while(i<title.size())  // ê°€ì ¸ì˜¨ ì œëª©ì„ ë¬¸ìì—´ ê¸¸ì´ë§Œí¼ ì½ëŠ”ë‹¤
+			{
+				String data=title.get(i).text(); 
+				//ê°€ì ¸ì˜¨ ë…¸ë˜ë“¤ ì•ˆì— ë‚´ê°€ ê²€ìƒ‰í•œ ë…¸ë˜ê°€ ìˆë‚˜? -> í•œë‘ê¸€ìë§Œ ì¨ë„ ì•„ë˜ì— ë¯¸ë¦¬ë³´ê¸° ëœ¨ê²Œ í•˜ë ¤ê³ .
+				if(data.contains(fd))   
+				//ì´ ë…¸ë˜ ì•ˆì— ë‚´ê°€ ì…ë ¥í•œ ë²ˆí˜¸ê°€ í¬í•¨ë˜ì–´ìˆë‚˜?
+				//containsëŠ” boolean ì´ê¸°ë•Œë¬¸ì— ìˆìœ¼ë©´ true ì—†ìœ¼ë©´ false ë¡œ ê¸°ëŠ¥í•œë‹¤.
+				{
+					
 				
+				  //(i+1)+"."ì•ì— ë„˜ë²„ë§ ë¶™
+				System.out.println((i+1)+"."+singer.get(i).text());
+				System.out.println(data);
+				System.out.println("--------------------------------\n");
+				}
+				
+				i++;
 			
-			  //(i+1)+"."¾Õ¿¡ ³Ñ¹ö¸µ ºÙ
-			System.out.println((i+1)+"."+singer.get(i).text());
-			System.out.println(data);
-			System.out.println("--------------------------------\n");
-			//}
+			 }
 			
-			i++;
+			 k++;
+	        }
 		
-		}
+	       }catch(Exception ex) {}
 		
-		 k++;
-        }
+		
 	}
 
 }
