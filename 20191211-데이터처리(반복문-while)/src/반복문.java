@@ -26,7 +26,7 @@ public class 반복문 {
         	
         	  char c=s.charAt(i);
         	  if(c == 'a' || c == 'A')
-        	  count++;
+        	  count++;   // 'a'혹은 'A'가 있는 경우 count를 증자시켜라 // 밖에서 count출력하여 확인!!
         	
           	  i++;
         	
