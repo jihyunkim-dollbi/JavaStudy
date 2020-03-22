@@ -1,32 +1,31 @@
 
-public class ¼±ÅÃÁ¶°Ç¹®_¿¹Á¦3 {
+public class ì„ íƒì¡°ê±´ë¬¸_ì˜ˆì œ3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
-		
-		//´ÜÀÏ if
+		//ë‹¨ì¼ if
 		int a = (int)(Math.random()*100)+1;
 				//   ============->0~99
 		int b = (int)(Math.random()*100)+1;
-		//Å«°ª, ÀÛÀº °ª
+		//í°ê°’, ì‘ì€ ê°’
 		System.out.println("a= "+ a+", b= "+b);
 		
 		
 		if(a>b) {
-			System.out.println("Å«°ªÀº "+ a +"ÀÔ´Ï´Ù");
-			System.out.println("ÀÛÀº °ªÀº "+ b + "ÀÔ´Ï´Ù");
+			System.out.println("í°ê°’ì€ "+ a +"ì…ë‹ˆë‹¤");
+			System.out.println("ì‘ì€ ê°’ì€ "+ b + "ì…ë‹ˆë‹¤");
 		}
 		if(a<b) {
-			System.out.println("Å«°ªÀº " + b + "ÀÔ´Ï´Ù");
-			System.out.println("ÀÛÀº °ªÀº " + a + "ÀÔ´Ï´Ù");
+			System.out.println("í°ê°’ì€ " + b + "ì…ë‹ˆë‹¤");
+			System.out.println("ì‘ì€ ê°’ì€ " + a + "ì…ë‹ˆë‹¤");
 		}
 		if(a == b) {
-			System.out.println("°°´Ù.");
+			System.out.println("ê°™ë‹¤.");
 		}
 		
-	    // if¹®ÀÇ °æ¿ì °æ¿ìÀÇ ¼ö¸¦ °¡Àå ¸ÕÀú »ı°¢ÇØº¸°í Á¶°ÇÀ» ÁÖ¾î¾ßÇÑ´Ù.	
+	    // ifë¬¸ì˜ ê²½ìš° ê²½ìš°ì˜ ìˆ˜ë¥¼ ê°€ì¥ ë¨¼ì € ìƒê°í•´ë³´ê³  ì¡°ê±´ì„ ì£¼ì–´ì•¼í•œë‹¤.	
+		
 		
 	
 	}
