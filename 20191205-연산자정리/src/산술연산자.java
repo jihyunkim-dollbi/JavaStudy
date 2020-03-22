@@ -1,16 +1,18 @@
 /*
  * 1. /
  * 
- *    0À¸·Î ³ª´­ ¼ö°¡ ¾ø´Ù.
+ *    0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ê°€ ì—†ë‹¤.
  * 
  * 2. %
+ 
+    ë‚˜ë¨¸ì§€ êµ¬í• ë•Œ!
  *   
- * 3. Çüº¯È¯
+ * 3. í˜•ë³€í™˜
  * 
 
  *  
  */
-public class »ê¼ú¿¬»êÀÚ {
+public class ì‚°ìˆ ì—°ì‚°ì {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
