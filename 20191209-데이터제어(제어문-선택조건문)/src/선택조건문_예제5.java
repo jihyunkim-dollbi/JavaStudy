@@ -62,10 +62,14 @@ public class 선택조건문_예제5 {
 			System.out.println(num1-num2);
 		if(op.equals("*"))
 			System.out.println(num1*num2);
-		if(op.equals("/"))
-			System.out.println((int)num1/num2);
-		
-		
+		if(op.equals("/")) {
+			
+			if(num2 ==0)
+				System.out.println("0으로 나눌 수 없습니다.");
+			else
+				System.out.println((int)num1/num2);
+		}
+			
 		
 		
 		
