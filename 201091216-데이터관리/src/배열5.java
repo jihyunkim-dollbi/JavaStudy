@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class ¹è¿­5 {
+public class ë°°ì—´5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -9,26 +9,22 @@ public class ¹è¿­5 {
 		 int year;
 		 int month;  // int[] data = new int[2]
 		 
-		 System.out.println("³âµµ ÀÔ·Â: ");
+		 System.out.println("ë…„ë„ ì…ë ¥: ");
 		 year = scan.nextInt();
 		 
-		 System.out.println("¿ù ÀÔ·Â: ");
+		 System.out.println("ì›” ì…ë ¥: ");
 		 month = scan.nextInt();
 		 
 		
 		 
-		 int[] lastday= {31,28,31,30,31,30,31,31,30,31,30,31};   // ÀÏ°ıÃ³¸® ÇÏ±â À§ÇØ 
+		 int[] lastday= {31,28,31,30,31,30,31,31,30,31,30,31};   // ì¼ê´„ì²˜ë¦¬ í•˜ê¸° ìœ„í•´ 
 				 
 		 if((year%4 == 0 && year%100 != 0) || (year%400 == 0))
 		      lastday[1] = 29;
 		 else 
 			 lastday[1] = 28;
 		 
-		 System.out.println(month + "´ŞÀÇ ¸¶Áö¸· ³¯Àº" + lastday[month-1]+ "ÀÔ´Ï´Ù.");
-		 
-		
-		
-		
+		 System.out.println(month + "ë‹¬ì˜ ë§ˆì§€ë§‰ ë‚ ì€" + lastday[month-1]+ "ì…ë‹ˆë‹¤.");
 	}
 
 }
