@@ -24,7 +24,7 @@ public class 배열6 {
 		
 		/*
 		 *  출력
-		 *  for each => 배열, 집합체(collection)
+		 *  for each => 배열, list 집합체(collection)
 		 *   int[] data= {1,2,3,4,5}
 		 *   {
 		 *   
@@ -36,19 +36,12 @@ public class 배열6 {
 		 *   {
 		 *      System.out.println(i)
 		 *   }
-		 * 
-		 * 
 		 */
 		for(String name:names)
 		{
 			
 			System.out.println(name);
 		}
-
-		
-		
-		
-		
 
 	}
 
