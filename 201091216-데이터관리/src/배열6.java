@@ -1,12 +1,12 @@
 import java.util.Scanner;
-
-public class ¹è¿­6 {
+//utf-8
+public class ë°°ì—´6 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 
-		// 5¸íÀÇ ÀÌ¸§À» ÀÔ·Â¹Þ¾Æ¼­ ÀúÀåÇÏ°í => Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼º
+		// 5ëª…ì˜ ì´ë¦„ì„ ìž…ë ¥ë°›ì•„ì„œ ì €ìž¥í•˜ê³  => ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±
 		
 		
 		String[] names = new String[5];
@@ -18,13 +18,13 @@ public class ¹è¿­6 {
 		
 			
 		{
-			System.out.println((i+1) + "¹øÂ° ÀÌ¸§ ÀÔ·Â:");
+			System.out.println((i+1) + "ë²ˆì§¸ ì´ë¦„ ìž…ë ¥:");
 			names[i] = scan.next();
 		}
 		
 		/*
-		 *  Ãâ·Â
-		 *  for each => ¹è¿­, ÁýÇÕÃ¼(collection)
+		 *  ì¶œë ¥
+		 *  for each => ë°°ì—´, ì§‘í•©ì²´(collection)
 		 *   int[] data= {1,2,3,4,5}
 		 *   {
 		 *   
