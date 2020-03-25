@@ -20,6 +20,7 @@ public class 배열2 {
 			System.out.println((i+1)+"번째 정수 입력: ");
 		   
 			arr[i] = scan.nextInt();
+			
 		    if(arr[i]>max)
 			   max=arr[i];
 		 
