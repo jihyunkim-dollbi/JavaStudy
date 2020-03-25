@@ -1,31 +1,31 @@
 import java.util.Scanner;
 
-public class ¹è¿­7 {
+public class ë°°ì—´7 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		// ´Ù¼¸°³ÀÇ Á¤¼ö¸¦ ÀÔ·Â ¹Ş¾Æ¼­ => 5°³ÀÇ Á¤¼ö¸¦ Ãâ·Â.==> ÇÕÀ» Ãâ·Â, Æò±Õ Ãâ·Â
+		// ë‹¤ì„¯ê°œì˜ ì •ìˆ˜ë¥¼ ì…ë ¥ ë°›ì•„ì„œ => 5ê°œì˜ ì •ìˆ˜ë¥¼ ì¶œë ¥.==> í•©ì„ ì¶œë ¥, í‰ê·  ì¶œë ¥
 		
 		Scanner scan = new Scanner(System.in);
 		
-		int[] num = new int[5];    //5°³ÀÇ ¹è¿­ ¹æÀ» ¸¸µé¾îÁÜ
+		int[] num = new int[5];    //5ê°œì˜ ë°°ì—´ ë°©ì„ ë§Œë“¤ì–´ì¤Œ
 		
 		int total = 0; 
-		double avg = 0.0;          //ÃÑÁ¡°ú Æò±ÕÀº ÀÏ°ıÃ³¸®(¹è¿­
+		double avg = 0.0;          //ì´ì ê³¼ í‰ê· ì€ ì¼ê´„ì²˜ë¦¬(ë°°ì—´
 		
 		for( int i = 0; i<num.length; i++) 
 		
 		{
 			
-			System.out.println((i+1) + "¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			
 			num[i] = scan.nextInt();
 		
 
 		}
-		// Ãâ·Â 
-		for(double score:num)   // doubleÀÇ µ¥ÀÌÅÍ ÇüÀÌ ´õ Ä¿¾ßÇÑ´Ù. num°ªÀ» ´õºí·Î ³Ñ°ÜÁÙ °ÍÀÌ±â ¶§¹®¿¡.
+		// ì¶œë ¥ 
+		for(double score:num)   // doubleì˜ ë°ì´í„° í˜•ì´ ë” ì»¤ì•¼í•œë‹¤. numê°’ì„ ë”ë¸”ë¡œ ë„˜ê²¨ì¤„ ê²ƒì´ê¸° ë•Œë¬¸ì—.
 		{
 			total+=score;
 			System.out.println(score);
@@ -33,9 +33,35 @@ public class ¹è¿­7 {
 
 	    avg=total/(double)num.length;
 	      
-		System.out.println("ÃÑÁ¡: " + total);
-		System.out.printf("Æò±Õ: %.1f\n", avg);
+		System.out.println("ì´ì : " + total);
+		System.out.printf("í‰ê· : %.1f\n", avg);
+		
+	
+	
+	
+	//2020 03 26
+	//ì²˜ë¦¬ì™€ ì¶œë ¥ì„ í•œë²ˆì— í•´ë´„..	
+	Scanner scan=new Scanner(System.in);
+		
+		int[] student=new int[5];
+		int total=0;
+		int avg=0;
+		int k=0;
+		for(int s:student)
+		{
+			++k;
+			System.out.println(k+"ë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
+			
+			s=scan.nextInt();
+			total+=s;
+			avg=(int)(total/student.length);
+			
+		}
+		
+		System.out.println("ì´ì ìˆ˜ëŠ” "+ total + "ì  ì´ë©°, í‰ê· ì ìˆ˜ëŠ” " + avg + "ì  ì…ë‹ˆë‹¤.");
 		
 	}
+	
+		
 
 }
