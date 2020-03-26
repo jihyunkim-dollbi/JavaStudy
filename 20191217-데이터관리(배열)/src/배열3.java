@@ -1,37 +1,36 @@
 /*
- * Å¬·¡½º³ª ¹è¿­À» ¸¸µé¶§ °íÀ¯¹øÈ£¸¦ ÁÖ°í ÇÑ¹ø¿¡ °¡Á®¿È.
+ * í´ë˜ìŠ¤ë‚˜ ë°°ì—´ì„ ë§Œë“¤ë•Œ ê³ ìœ ë²ˆí˜¸ë¥¼ ì£¼ê³  í•œë²ˆì— ê°€ì ¸ì˜´.
  *
  * 
  * 	<div class="wrap_movie">
 			<div class="info_tit">
 			 ===        ========           
-						<em class="ico_movie ico_12rating">12¼¼ÀÌ»ó°ü¶÷°¡</em>
-							<a href="/moviedb/main?movieId=124806" class="name_movie #title">82³â»ı ±èÁö¿µ</a>
-							==                                            ===========
-								</div>
-								
- *  
+						<em class="ico_movie ico_12rating">12ì„¸ì´ìƒê´€ëŒê°€</em>
+							<a href="/moviedb/main?movieId=124806" class="name_movie #title">82ë…„ìƒ ê¹€ì§€ì˜</a>
+							==                                            ==========							</div> 
  */
 
 import java.util.Scanner;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
+
 import org.jsoup.select.Elements;
 
-public class ¹è¿­3 {
+public class ë°°ì—´3 {
 
 	public static void main(String[] args) throws Exception	{
 		// TODO Auto-generated method stub
-        // ¹«ºñ Å¬·¡½º¸¦ ¸¸µé¾î¼­ °¡Á®¿À±â
-		// ¹è¿­
+		
+        	// ë¬´ë¹„ í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ì–´ì„œ ê°€ì ¸ì˜¤ê¸°
+		// ë°°ì—´
 		
 		Movie[] m=new Movie[16];
 			
 		
-		Document doc=Jsoup.connect("https://movie.daum.net/premovie/released").get();   // ´ÙÀ½ ÇöÀç»ó¿µ ÆäÀÌÁö
-		                       //   ====================== + /moviedb/main?movieId=93004  ÀÌ·¸°Ô ÇØ¾ß ÆäÀÌÁö ³ª¿È.
-		                       //    ¼­¹ö ÁÖ¼Ò°¡ ÀÖ¾î¾ß ³ª¿Â´Ù. / ÇÏ³ª¸é https: ¼­¹ö ºÙ¿©¾ßÇÔ, // µÎ°³¸é ¼­¹öÁÖ¼Ò »ı·«°¡´É
+		Document doc=Jsoup.connect("https://movie.daum.net/premovie/released").get();   // ë‹¤ìŒ í˜„ì¬ìƒì˜ í˜ì´ì§€
+		                       //   ====================== + /moviedb/main?movieId=93004  ì´ë ‡ê²Œ í•´ì•¼ í˜ì´ì§€ ë‚˜ì˜´.
+		                       //    ì„œë²„ ì£¼ì†Œê°€ ìˆì–´ì•¼ ë‚˜ì˜¨ë‹¤. / í•˜ë‚˜ë©´ https: ì„œë²„ ë¶™ì—¬ì•¼í•¨, // ë‘ê°œë©´ ì„œë²„ì£¼ì†Œ ìƒëµê°€ëŠ¥
 		Elements link=doc.select("div.info_tit a.name_movie");                    
 		int k=1;
 		
@@ -42,32 +41,32 @@ public class ¹è¿­3 {
 			
 		//	System.out.println(link.get(i).attr("href"));
 			String link_data="https://movie.daum.net"+link.get(i).attr("href");
-					System.out.println(link_data);
+			System.out.println(link_data);
 					
 					
 					
-					Document doc2=Jsoup.connect(link_data).get();   //https://movie.daum.net/moviedb/main?movieId=93004  Ã¹¹øÂ° for¹®ÀÌ µé¾î°¬À»¶§ Ã¹¹øÂ° ¿µÈ­. ÁÖ¼Ò°¡ Â÷·Ê·Î µé¾î°¡º½.
-					// ÀÎµ¦½º ¹øÈ£¸¦ °¡Áö°í Ãâ·ÂÇÒ ¿¹Á¤.
+					Document doc2=Jsoup.connect(link_data).get();   //https://movie.daum.net/moviedb/main?movieId=93004  ì²«ë²ˆì§¸ forë¬¸ì´ ë“¤ì–´ê°”ì„ë•Œ ì²«ë²ˆì§¸ ì˜í™”. ì£¼ì†Œê°€ ì°¨ë¡€ë¡œ ë“¤ì–´ê°€ë´„.
+					// ì¸ë±ìŠ¤ ë²ˆí˜¸ë¥¼ ê°€ì§€ê³  ì¶œë ¥í•  ì˜ˆì •.
 					/*
 					 * <div class="subject_movie">
 					 *  ===        ==============
-								<strong class="tit_movie">°Ü¿ï¿Õ±¹ 2 (2019)</strong>
+								<strong class="tit_movie">ê²¨ìš¸ì™•êµ­ 2 (2019)</strong>
 								========       ==========
-								<span class="txt_origin">Frozen II</span><!-- 2016-04-12 Ãß°¡ -->
+								<span class="txt_origin">Frozen II</span><!-- 2016-04-12 ì¶”ê°€ -->
 					 * 
 					 * 
 					 * <a href="/moviedb/grade?movieId=93004" class="raking_grade">
 					 * ==                                            ==============       
-									<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:74.15000081062317%">ÆòÁ¡</span></span> <!-- 116pxÀÌ 100%, % °è»ê¿¡¼­ width°ª¿¡ Àû¿ë-->
+									<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:74.15000081062317%">í‰ì </span></span> <!-- 116pxì´ 100%, % ê³„ì‚°ì—ì„œ widthê°’ì— ì ìš©-->
 									<em class="emph_grade">7.4</em><span class="txt_grade">/10</span>
 								</a>
 					 * 
 					 * 
 					 * <dl class="list_movie list_main">
-								<dt class="screen_out">Àå¸£|³ª¶ó</dt>
+								<dt class="screen_out">ì¥ë¥´|ë‚˜ë¼</dt>
 
 																								
-								<dd class="txt_main">¾Ö´Ï¸ŞÀÌ¼Ç/¾îµåº¥Ã³/ÄÚ¹Ìµğ/ÆÇÅ¸Áö/¹ÂÁöÄÃ</dd>
+								<dd class="txt_main">ì• ë‹ˆë©”ì´ì…˜/ì–´ë“œë²¤ì²˜/ì½”ë¯¸ë””/íŒíƒ€ì§€/ë®¤ì§€ì»¬</dd>
 					 * 
 					 * 
 					 * 
@@ -77,11 +76,11 @@ public class ¹è¿­3 {
 					Element title_kr=doc2.selectFirst("div.subject_movie strong.tit_movie");
 					Element title_en=doc2.selectFirst("div.subject_movie span.txt_origin");
 					Element score=doc2.selectFirst("a.raking_grade em.emph_grade");
-					Element genre=doc2.select("dl.list_movie dd.txt_main").get(0);    // dl Ã¹¹øÂ°
+					Element genre=doc2.select("dl.list_movie dd.txt_main").get(0);    // dl ì²«ë²ˆì§¸
 					Element regdate=doc2.select("dl.list_movie dd.txt_main").get(1);
 					Element grade=doc2.select("dl.list_movie dd").get(3);
 					Element director=doc2.select("dl.list_movie dd").get(4);
-					Element actor=doc2.select("dl.list_movie dd").get(5);  // dl 5¹øÂ°
+					Element actor=doc2.select("dl.list_movie dd").get(5);  // dl 5ë²ˆì§¸
 			/*		
 					System.out.println("count: " + (k));
 					
@@ -98,11 +97,11 @@ public class ¹è¿­3 {
 					System.out.println("=====================================");
 			*/	
 					
-					// ¹è¿­ m¾È¿¡ ´Ù Ã¤¿ì±â
-					m[i]= new Movie(); // ÀÌ ¹®±¸°¡ ÇÊ¿äÇÑ ÀÌÀ¯´Â Å¬·¡½º¿¡ ¸Ş¸ğ¸®¿¡ ½ÇÁ¦·Î ÀúÀåÇÏ½Ã ½ÃÀÛÇÏ±â À§ÇØ.
+					// ë°°ì—´ mì•ˆì— ë‹¤ ì±„ìš°ê¸°
+					m[i]= new Movie(); // ì´ ë¬¸êµ¬ê°€ í•„ìš”í•œ ì´ìœ ëŠ” í´ë˜ìŠ¤ì— ë©”ëª¨ë¦¬ì— ì‹¤ì œë¡œ ì €ì¥í•˜ì‹œ ì‹œì‘í•˜ê¸° ìœ„í•´.
 					m[i].title_kr=title_kr.text();
 					m[i].title_en=title_en.text();
-					m[i].score=Double.parseDouble(score.text()); //½ºÆ®¸µÀ» ´õºí·Î ¹Ù²Ş
+					m[i].score=Double.parseDouble(score.text()); //ìŠ¤íŠ¸ë§ì„ ë”ë¸”ë¡œ ë°”ê¿ˆ
 					m[i].grade=grade.text();
 					m[i].genre=genre.text();
 					m[i].regdate=regdate.text();
@@ -110,20 +109,20 @@ public class ¹è¿­3 {
 					m[i].actor=actor.text();
 					
 					k++;
-			}catch(Exception ex ) {k--;}  // try catch¸¦ ÁÖ´Ï±î ¿À·ù°¡ ÀÖ´Â ºÎºĞÀ» ½ºÅµÇÏ°í ´ÙÀ½À¸·Î ³Ñ¾î°¨.
-		      // https://movie.daum.net/moviedb/main?movieId=135061 ÀÌ ¿µÈ­´Â ÁÖ¿¬ÀÌ µû·Î ¾ø±â ¶§¹®¿¡ ¿¡·¯°¡ ¹ß»ıÇß¾úÀ½.
+			}catch(Exception ex ) {k--;}  // try catchë¥¼ ì£¼ë‹ˆê¹Œ ì˜¤ë¥˜ê°€ ìˆëŠ” ë¶€ë¶„ì„ ìŠ¤í‚µí•˜ê³  ë‹¤ìŒìœ¼ë¡œ ë„˜ì–´ê°.
+		      // https://movie.daum.net/moviedb/main?movieId=135061 ì´ ì˜í™”ëŠ” ì£¼ì—°ì´ ë”°ë¡œ ì—†ê¸° ë•Œë¬¸ì— ì—ëŸ¬ê°€ ë°œìƒí–ˆì—ˆìŒ.
 		}
 		
 		
 	/*	Scanner scan = new Scanner(System.in);
-		System.out.print("¿µÈ­¹øÈ£ ¼±ÅÃ(0~15): ");
+		System.out.print("ì˜í™”ë²ˆí˜¸ ì„ íƒ(0~15): ");
 		int index=scan.nextInt();
-		System.out.println("============°á°ú Ãâ·Â ===========");
-        System.out.println("¿µÈ­¸í: " + m[index].title_kr);
-        System.out.println("°¨µ¶: " + m[index].director);
-        System.out.println("Ãâ¿¬: " + m[index].actor);
-        System.out.println("°³ºÀÀÏ: " + m[index].regdate);
-        System.out.println("Àå¸£: " + m[index].genre);
+		System.out.println("============ê²°ê³¼ ì¶œë ¥ ===========");
+        System.out.println("ì˜í™”ëª…: " + m[index].title_kr);
+        System.out.println("ê°ë…: " + m[index].director);
+        System.out.println("ì¶œì—°: " + m[index].actor);
+        System.out.println("ê°œë´‰ì¼: " + m[index].regdate);
+        System.out.println("ì¥ë¥´: " + m[index].genre);
 	*/	
 		
 		
@@ -136,51 +135,38 @@ public class ¹è¿­3 {
           	            	
           }
           
-          // Ãâ·Â
+          // ì¶œë ¥
           for(int i:m.score)
           {
           	
           	System.out.println(i + "  ");
           }
 		*/
+		 
+		double max=0.0;
 		
-		
-		
-		
-		
-		
-		  double max=0.0;
-		   for(int i = 0; i<m.length; i++)
-		   {
-			   if(m[i]!=null)
-			   {
-			   
-			   
+		for(int i = 0; i<m.length; i++)
+		{
+			if(m[i]!=null)
+			{   
 			   if(max < m[i].score)
 			   {
 				   max=m[i].score;
 			   }
-			   
-			
-		   }
-		
+			   			
+		   	 }
 	
-		
 		   }
-		   
-		   
-		   
-		 
+		
+		   	 		
 		   for(int i=0;i<m.length;i++)
 		   {
 			   if(m[i]!=null)
-			   {
-				   
+			   {		   
 				   if(m[i].score == max)
 				   {
 					   System.out.println(m[i].title_kr);
-				   }
-				   
+				   }   
 			   }
 		   }
 		
