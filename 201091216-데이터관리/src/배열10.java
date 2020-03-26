@@ -1,28 +1,19 @@
 /*
  * 
- *    1) º¯¼ö
- *       int a,b,c,d,e =>°ª´Ù (ÇÑ°³·Î ¸ğ¾ÆÃ³ Ã³¸®) => ¹è¿­
- *       int max, min ==> ¹è¿­ÀÌ ¾ÈµÉ¼öµµ ÀÖ´Ù. 
- * 
- * 
- * 
- * 
+ *    1) ë³€ìˆ˜
+ *       int a,b,c,d,e =>ê°’ë‹¤ (í•œê°œë¡œ ëª¨ì•„ì²˜ ì²˜ë¦¬) => ë°°ì—´
+ *       int max, min ==> ë°°ì—´ì´ ì•ˆë ìˆ˜ë„ ìˆë‹¤. 
  */
-
-
-
-
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ¹è¿­10 {
+public class ë°°ì—´10 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
              
-		//´Ù¼¸°³ÀÇ Á¤¼ö¸¦ ¹Ş¾Æ¼­ ÃÖ´ë°ª°ú ÃÖ¼Ò°ªÀ» Ãâ·ÂÇÔ.
-	
+		//ë‹¤ì„¯ê°œì˜ ì •ìˆ˜ë¥¼ ë°›ì•„ì„œ ìµœëŒ€ê°’ê³¼ ìµœì†Œê°’ì„ ì¶œë ¥í•¨.
 /*
 		
 		Scanner scan = new Scanner(System.in);
@@ -35,7 +26,7 @@ public class ¹è¿­10 {
 		
 		{
 			
-			System.out.println((i+1) + "¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			score[i]= scan.nextInt();
 			
 			if(score[i] > max)
@@ -45,11 +36,10 @@ public class ¹è¿­10 {
 			
 			
 			else 
-				min = score[i];  // else ¹®À» »ç¿ëÇßÀ»¶§ Ã³¸® °¡´ÉÇØÁü.
+				min = score[i];  // else ë¬¸ì„ ì‚¬ìš©í–ˆì„ë•Œ ì²˜ë¦¬ ê°€ëŠ¥í•´ì§.
 			
-						
 			/*
-			if else(score[i] < min)   //if else ¸¦ ¾²¸é ¾È¸ÔÈû.
+			if else(score[i] < min)   //if else ë¥¼ ì“°ë©´ ì•ˆë¨¹í˜.
 			{
 				min = score[i];
 			}
@@ -58,33 +48,28 @@ public class ¹è¿­10 {
 	//	}
 		
 			
-	//	System.out.println("°¡Àå Å« °ª: " + max);
-	//	System.out.println("°¡Àå ÀÛÀº °ª: " + min);
+	//	System.out.println("ê°€ì¥ í° ê°’: " + max);
+	//	System.out.println("ê°€ì¥ ì‘ì€ ê°’: " + min);
 	
 			Scanner scan = new Scanner(System.in);
 		
 			int[] arr = new int[5];
 			
-			
-			
-			
 			 for(int i=0; i<5; i++)
 			 {
-				 
-				 arr[i] = (int)(Math.random()*100)+1;
-				 		 
+			    arr[i] = (int)(Math.random()*100)+1;	 		 
 			 }
 			
-            int max = arr[0];    // ·£´ıÀ» »ç¿ëÇßÀ¸´Ï ±×³É ¸Æ½º´Â 100 ¹ÎÀº 0À¸·Î ±×³É Àâ¾Æµµ µÈ´Ù.
-            int min = arr[0];    // 0À» ´ëÀÔÇÏ°Ô µÇ¸é ¸Æ½º´Â °¡´ÉÇÏÁö¸¸ min°ªÀº °ªÀ» ±¸ÇÏÁö ¸øÇÑ´Ù. µû¶ó¼­ ¸ÕÀú °ªÀ» ±¸ÇÏ°í ´ÙÀ½¿¡ ±¸ÇÏ±â.
+         		   int max = arr[0];    // ëœë¤ì„ ì‚¬ìš©í–ˆìœ¼ë‹ˆ ê·¸ëƒ¥ ë§¥ìŠ¤ëŠ” 100 ë¯¼ì€ 0ìœ¼ë¡œ ê·¸ëƒ¥ ì¡ì•„ë„ ëœë‹¤.
+            		   int min = arr[0];    // 0ì„ ëŒ€ì…í•˜ê²Œ ë˜ë©´ ë§¥ìŠ¤ëŠ” ê°€ëŠ¥í•˜ì§€ë§Œ minê°’ì€ ê°’ì„ êµ¬í•˜ì§€ ëª»í•œë‹¤. ë”°ë¼ì„œ ë¨¼ì € ê°’ì„ êµ¬í•˜ê³  ë‹¤ìŒì— êµ¬í•˜ê¸°.
 
-            //ÃÖ´ë°ª, ÃÖ¼Ò°ªÃ³¸®ÇÏ±â 
+            		   //ìµœëŒ€ê°’, ìµœì†Œê°’ì²˜ë¦¬í•˜ê¸° 
             
-            //   Arrays.sort(arr);  --> ÀÌ·¸°Ô ÇßÀ»¶§,ÀÛÀº°ªºÎÅÍ Å«°ª±îÁö ³ª¿Â´Ù!
+            		   //Arrays.sort(arr);  --> ì´ë ‡ê²Œ í–ˆì„ë•Œ,ì‘ì€ê°’ë¶€í„° í°ê°’ê¹Œì§€ ë‚˜ì˜¨ë‹¤!
             
             
             
-            //Ã³¸®
+            //ì²˜ë¦¬
             for(int i:arr)
             {
             	
@@ -95,7 +80,7 @@ public class ¹è¿­10 {
             	            	
             }
             
-            // Ãâ·Â
+            // ì¶œë ¥
             for(int i:arr)
             {
             	
