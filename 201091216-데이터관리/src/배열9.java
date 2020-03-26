@@ -1,34 +1,32 @@
 /*
- * static º¯¼ö
- * instance º¯¼ö
+ * static ë³€ìˆ˜
+ * instance ë³€ìˆ˜
  * 
  */
 
 
 import java.util.Scanner;
 
-public class ¹è¿­9 {
+public class ë°°ì—´9 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		// TODO Auto-generated method stub
-        // 3¸íÀÇ ÇĞ»ı => ±¹¾î, ¿µ¾î, ¼öÇĞ Á¡¼ö¸¦ ÀÔ·Â¹Ş´Â´Ù. => Ãâ·Â 
+        // 3ëª…ì˜ í•™ìƒ => êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ì…ë ¥ë°›ëŠ”ë‹¤. => ì¶œë ¥ 
 	
 		//80 80 80 240 B 2  80.0
 		//90 90 90 270 A 1  90.0
 		//70 70 70 210 C 3  70.0
 		
 		Scanner scan = new Scanner(System.in);
-		
-		
 
 		int[] kor = new int[3];
 		int[] eng = new int[3];
 		int[] math = new int[3];
 		int[] total = new int[3];
 		double[] avg = new double[3];
-	    char[] score=new char[3];
+	   	char[] score=new char[3];
 		
 		int max = 0;
 		int min = 0;
@@ -36,19 +34,15 @@ public class ¹è¿­9 {
 		
 		for(int i = 0; i < 3; i++)
 		{
-			
-			
-			System.out.println((i+1) + "¹øÂ° ±¹¾î Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ êµ­ì–´ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			kor[i] = scan.nextInt();
-			System.out.println((i+1) + "¹øÂ° ¿µ¾î Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ ì˜ì–´ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			eng[i] = scan.nextInt();
-			System.out.println((i+1) + "¹øÂ° ¼öÇĞ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ ìˆ˜í•™ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			math[i]= scan.nextInt();
 			
 			total[i] = kor[i] + eng[i] + math[i];
 			avg[i] = total[i] / (int)3.0;
-	
-			
 			
 			/*	
 			if(avg[i] > 90)
@@ -79,65 +73,52 @@ public class ¹è¿­9 {
 		
 		*/
 			
-			
-			
-		switch((int)avg[i]/10) // Á¤¼ö,¹®ÀÚ,¹®ÀÚ¿­ ,½Ç¼ö(X)
+		switch((int)avg[i]/10) // ì •ìˆ˜,ë¬¸ì,ë¬¸ìì—´ ,ì‹¤ìˆ˜(X)
 
-    	{
+	    	{
 
-    	case 10:
+    		case 10:
 
-    	case 9:
+    		case 9:
 
-    		score[i]='A';
+    			score[i]='A';
 
-    		break;
+    			break;
 
-    	case 8:
+    		case 8:
 
-    		score[i]='B';
+    			score[i]='B';
 
-    		break;
+    			break;
 
-    	case 7:
+    		case 7:
 
-    		score[i]='C';
+    			score[i]='C';
 
-    		break;
+    			break;
 
-    	case 6:
+    		case 6:
 
-    		score[i]='D';
+    			score[i]='D';
 
-    		break;
+    			break;
 
-    	default:
+    		default:
 
-    		score[i]='F';
-    	}
+    			score[i]='F';
+	    	}
 			
 			
 			
 	}		
-			
-			
-			
-			//Ãâ·Â
-		  for(int i=0; i<3; i++)    // Ãâ·ÂÇÏ´Â °÷!
-			  
-		  {
-			  
-			  System.out.println(kor[i]+" "+eng[i]+ " " + math[i] + " " + total[i] + " " + avg[i] + " "+ score[i]);
-			  
 
+		//ì¶œë ¥
+		for(int i=0; i<3; i++)    // ì¶œë ¥í•˜ëŠ” ê³³!
+		{
+		  
+		  System.out.println(kor[i]+" "+eng[i]+ " " + math[i] + " " + total[i] + " " + avg[i] + " "+ score[i]);
 			  
-			  
-		  }
-		
-		
-		
-		
-		
+	        }
 		
 	}
 
