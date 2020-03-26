@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ¹è¿­14 {
+public class ë°°ì—´14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -18,7 +18,7 @@ public class ¹è¿­14 {
 				dap[i] = 'X';
 		}
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		/*
 		 for(char c:dap)
 		 {
@@ -30,23 +30,23 @@ public class ¹è¿­14 {
 		for(int i=0; i<user.length;i++)
 		{
 			
-			System.out.print((i+1)+ "¹øÂ° ´ä ÀÔ·Â(O,X): ");
+			System.out.print((i+1)+ "ë²ˆì§¸ ë‹µ ìž…ë ¥(O,X): ");
 			String s = scan.next();
 			
-			user[i]=s.charAt(0);    //   Ã¹±ÛÀÚ °¡Á®¿À±â
+			user[i]=s.charAt(0);    //   ì²«ê¸€ìž ê°€ì ¸ì˜¤ê¸°
 			
 		}
 		
 		  
-		//Ãâ·Â
-		  System.out.println("Á¤´ä: ");
+		//ì¶œë ¥
+		  System.out.println("ì •ë‹µ: ");
 		 for(char c:dap)
 		 {
 	            System.out.print(c+ " ");
 								
 		 }
 		
-			System.out.println("\n»ç¿ëÀÚ ÀÔ·Â°ª: ");
+			System.out.println("\nì‚¬ìš©ìž ìž…ë ¥ê°’: ");
 		  
 		  for(char c:user)
 		  {
@@ -54,7 +54,7 @@ public class ¹è¿­14 {
 		  }
 		  
 		  
-		    System.out.println("\n°á°ú: ");
+		    System.out.println("\nê²°ê³¼: ");
 		    
 		  int count = 0;
 		  
@@ -64,7 +64,7 @@ public class ¹è¿­14 {
 				  count++;
 		   }
 		  
-		   System.out.println("Á¡¼ö:" + (count*10) + "Á¡");
+		   System.out.println("ì ìˆ˜:" + (count*10) + "ì ");
 		
 		
 		
@@ -73,3 +73,4 @@ public class ¹è¿­14 {
 	}
 
 }
+do
