@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class ¹è¿­11 {
+public class ë°°ì—´11 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		
-		// Á¤¼ö 5°³¸¦ ÀÔ·Â - ·£´ıÀ¸·Î ¹Ş¾Æ¼­ µî¼ö¸¦ Ãâ·ÂÇØ¼­ ³ªÅ¸³»±â!
+		// ì •ìˆ˜ 5ê°œë¥¼ ì…ë ¥ - ëœë¤ìœ¼ë¡œ ë°›ì•„ì„œ ë“±ìˆ˜ë¥¼ ì¶œë ¥í•´ì„œ ë‚˜íƒ€ë‚´ê¸°!
 		
 	    Scanner scan = new Scanner(System.in);
 	    
@@ -26,32 +26,24 @@ public class ¹è¿­11 {
 			{
 								
 				if(score[i] < score[j])
-				
 				{
-						rank[i]++;
+					rank[i]++;
 				}
 			
 			}
 					
 		}
 		
-		 for(int i:score)
-          {
+		for(int i:score)
+          	{
           	   System.out.print(i + "  ");
-          }
-		
-		     System.out.println();
+          	}
+		   System.out.println();
 		 
-			for(int i:rank)
-             {
-  				
-              	System.out.print( i + " À§ ");
-          
-             }
-		
-		
-
-		
+		for(int i:rank)
+             	{		
+              	   System.out.print( i + " ìœ„ ");
+         	}
 	}
 
 }
