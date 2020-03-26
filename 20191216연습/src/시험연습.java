@@ -1,10 +1,10 @@
 
-public class ½ÃÇè¿¬½À {
+public class ì‹œí—˜ì—°ìŠµ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
  
-/*		// ¹®Á¦ 4-2
+/*		// ë¬¸ì œ 4-2
 		int sum = 0;
 		for(int i = 1; i <= 20; i++)
 		{
@@ -20,7 +20,7 @@ public class ½ÃÇè¿¬½À {
 	*/
 		
 		
-		// ¹®Á¦ 4-3  ´ä //1100
+		// ë¬¸ì œ 4-3  ë‹µ //1100
 	/*	
 		int n = 0;
 		for(int i =1; i <= 10; i++)
@@ -56,7 +56,7 @@ public class ½ÃÇè¿¬½À {
 	*/	
 		
 		
-		// ¹®Á¦ 4-4
+		// ë¬¸ì œ 4-4
 		
 /*	       
 		int sum=0;
@@ -80,7 +80,7 @@ public class ½ÃÇè¿¬½À {
 				
 		
 		
-		// ¹®Á¦ 4-6
+		// ë¬¸ì œ 4-6
 
 		
 	/*	
@@ -99,7 +99,7 @@ public class ½ÃÇè¿¬½À {
 		
 */		
 		
-		//¹®Á¦ 4-5
+		//ë¬¸ì œ 4-5
 		
 	/*	
 		for(int i = 0; i <=10; i++) {
@@ -113,7 +113,7 @@ public class ½ÃÇè¿¬½À {
 		
 		
 	*/	
-		//while¹®À¸·Î ¹Ù²Û °Í.
+		//whileë¬¸ìœ¼ë¡œ ë°”ê¾¼ ê²ƒ.
 /*		
 		int i = 0;
 		while(i<=10) {
@@ -131,16 +131,6 @@ public class ½ÃÇè¿¬½À {
 		
 		
 	*/
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 
