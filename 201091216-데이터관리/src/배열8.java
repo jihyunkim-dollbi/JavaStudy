@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class ¹è¿­8 {
+public class ë°°ì—´8 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        // 3¸íÀÇ ÇÐ»ý => ±¹¾î, ¿µ¾î, ¼öÇÐ Á¡¼ö¸¦ ÀÔ·Â¹Þ´Â´Ù. => Ãâ·Â 
+       		// 3ëª…ì˜ í•™ìƒ => êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ìž…ë ¥ë°›ëŠ”ë‹¤. => ì¶œë ¥ 
 		//80 80 80 240 80.0
 		//90 90 90 270 90.0
 		//70 70 70 210 70.0
@@ -18,20 +18,20 @@ public class ¹è¿­8 {
 		for(int i = 0; i < kor.length; i++)
 		{
 			
-			System.out.println((i+1) + "¹øÂ° ÇÐ»ýÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 			kor[i] = scan.nextInt();
 		}
 		
 		for(int j = 0; j < eng.length; j++)
 		{
 			
-			System.out.println((j+1) + "¹øÂ° ÇÐ»ýÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((j+1) + "ë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 			eng[j] = scan.nextInt();
 		}
 		for(int h = 0; h < math.length; h++)
 		{
 			
-			System.out.println((h+1) + "¹øÂ° ÇÐ»ýÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((h+1) + "ë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 			math[h]= scan.nextInt();
 		}
 		 */
@@ -48,11 +48,11 @@ public class ¹è¿­8 {
 		{
 			
 			
-			System.out.println((i+1) + "¹øÂ° ±¹¾î Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ êµ­ì–´ ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 			kor[i] = scan.nextInt();
-			System.out.println((i+1) + "¹øÂ° ¿µ¾î Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ ì˜ì–´ ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 			eng[i] = scan.nextInt();
-			System.out.println((i+1) + "¹øÂ° ¼öÇÐ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println((i+1) + "ë²ˆì§¸ ìˆ˜í•™ ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 			math[i]= scan.nextInt();
 			
 			total[i] = kor[i] + eng[i] + math[i];
@@ -70,7 +70,35 @@ public class ¹è¿­8 {
 		
 		
 		
+		//2020 03 26
 		
+		//ë‹¤ì„¯ëª…ì˜ í•™ìƒì˜ êµ­ì–´,ì˜ì–´,ìˆ˜í•™ ì ìˆ˜ë¥¼ ìž…ë ¥ ë°›ê³ 
+		//í•œ í•™ìƒ ë‹¹ ì´í•©ê³¼ í‰ê· ì„ ì¶œë ¥í•œë‹¤.
+		Scanner scan=new Scanner(System.in);
+		
+		int[] student=new int[3];
+		
+		int total=0;
+		double avg=0;
+		int k=0;
+		
+		for(int i=1; i <= 3; i++)
+		{
+			k=0;
+		   for(int s:student)
+		   {
+			   ++k;
+			   System.out.println(i + "ë²ˆì§¸ í•™ìƒì˜ " + k +"ë²ˆì§¸ ì ìˆ˜ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”: ");
+			   s=scan.nextInt();
+			   total+=s;
+			   avg=total/student.length;
+			   
+		   }
+				
+		   System.out.printf(i+"ë²ˆì§¸ í•™ìƒì˜ ì´ í•©ì€ " + total + "ì ì´ë©°, í‰ê· ì€ " + (int)avg + "ì  ìž…ë‹ˆë‹¤.");
+		   System.out.println();
+		   
+		}
 	}
 
 }
