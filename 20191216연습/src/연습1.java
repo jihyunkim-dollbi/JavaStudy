@@ -1,18 +1,18 @@
 
-public class ¿¬½À1 {
+public class ì—°ìŠµ1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		
-		   String s="dskaamapplefjdiaadlfsdlf,<";
+		String s="dskaamapplefjdiaadlfsdlf,<";
 	        System.out.println("s="+s);
 	        
-	        int i=0;  // --length ÇØ´ç ¹®ÀÚÀÇ °³¼ö ±¸ÇÏ±â, µû¶ó¼­ Ã¹¹øÂ° °³¼ö´Â 0ÀÌ µÇ¹Ç·Î ±×°Í±îÁö °è»êÇØ¾ßÇÔ. > >= Á¶Àý.
+	        int i=0;  // --length í•´ë‹¹ ë¬¸ìžì˜ ê°œìˆ˜ êµ¬í•˜ê¸°, ë”°ë¼ì„œ ì²«ë²ˆì§¸ ê°œìˆ˜ëŠ” 0ì´ ë˜ë¯€ë¡œ ê·¸ê²ƒê¹Œì§€ ê³„ì‚°í•´ì•¼í•¨. > >= ì¡°ì ˆ.
 	        int count=0;
 	        while(i < s.length()) {
 	        	
-	        	System.out.println((i+1)+"¹øÂ° ¹®ÀÚ: " +s.charAt(i));
+	        	System.out.println((i+1)+"ë²ˆì§¸ ë¬¸ìž: " +s.charAt(i));
 	        	
 	        	char c=s.charAt(i);
 	        	if(c == 'a' || c == 'A')
@@ -22,17 +22,26 @@ public class ¿¬½À1 {
 	        	
 	                  	
 	        }
-	        
-	        System.out.println("a¿Í AÀÇ °³¼ö´Â: " + count);		
+	        System.out.println("aì™€ Aì˜ ê°œìˆ˜ëŠ”: " + count);		
     
+		//2020 03 26
 		
+		//ë¬¸ìžì—´ ê°œìˆ˜ êµ¬í•˜ê¸°
+		//ë¬¸ìžì—´ 1ê°œì”© ìžë¥´ê¸°
+		String s="hellowkdsweadvknsodkfnqlwekfasldkhuf";
 		
-		
-		
-		
-		
-		
-		
+		int i=0;
+		int count=0;
+		while(i<s.length())
+		{
+			char cha= s.charAt(i);
+			
+			System.out.print(cha+" ");
+			count++;
+			
+			i++;
+		}
+		System.out.println(count);
 		
 	}
 
