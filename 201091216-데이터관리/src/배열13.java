@@ -7,12 +7,12 @@ import java.util.Arrays;
  *  3 4   5
  */
 
-// Áßº¹ÀÌ ¾ÈµÇ°Ô »Ì±â
+// ì¤‘ë³µì´ ì•ˆë˜ê²Œ ë½‘ê¸°
 
 
 
 
-public class ¹è¿­13 {
+public class ë°°ì—´13 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,18 +21,16 @@ public class ¹è¿­13 {
 		// Select Sort!
 		
 		
-		// Á¤¼öÀúÀå
+		// ì •ìˆ˜ì €ì¥
          int[] arr = new int[5];
          
-		// ÃÊ±â°ª
+		// ì´ˆê¸°ê°’
          for(int i = 0; i < arr.length; i++)
          {
-        	 
-        	 arr[i] = (int)(Math.random()*100)+1;
-        	 
+        	arr[i] = (int)(Math.random()*100)+1; 
          }
 		
-		System.out.println("Á¤·ÄÀü : ");
+		System.out.println("ì •ë ¬ì „ : ");
 		
 		for(int i:arr)
 		{
@@ -41,15 +39,19 @@ public class ¹è¿­13 {
 		
 		
 		System.out.println();
-		System.out.println("Á¤·ÄÈÄ: ");
+		System.out.println("ì •ë ¬í›„: ");
 		
-	//	Arrays.sort(arr);  // asc¸¸ Á¦°øµÊ
+	//	Arrays.sort(arr);  // ascë§Œ ì œê³µë¨
 		
-		for(int i = 0; i < arr.length-1; i++)    //arr.length-1 ÀÌ¶õ ÃÑ ÀÚ¸´¼ö°¡ 5°³ÀÎµ¥ ÀÚ±â ÀÚ½ÅÀº ºñ±³ÇÏÁö ¾ÊÀ¸´Ï±î -1À» ÇØ¼­ 4¹ø¸¸ ºñ±³ÇÏ°ÔµÊ.
+		for(int i = 0; i < arr.length-1; i++)    //arr.length-1 ì´ë€ ì´ ìë¦¿ìˆ˜ê°€ 5ê°œì¸ë° ìê¸° ìì‹ ì€ ë¹„êµí•˜ì§€ ì•Šìœ¼ë‹ˆê¹Œ -1ì„ í•´ì„œ 4ë²ˆë§Œ ë¹„êµí•˜ê²Œë¨.
 		{
-			for(int j=i+1; j < arr.length; j++)   // j=i+1 ÀÎ ÀÌÀ¯´Â i°¡ ÀÚ±âÀÚ½Å°ú ºñ±³ÇÏ°í ³ª¸é
-			{
-			  	if(arr[i]<arr[j])     //  < ¿À¸§Â÷¼ø , > ³»¸²Â÷¼ø
+			for(int j=i+1; j < arr.length; j++)   
+			{ //
+			  // j=i+1 ì¸ ì´ìœ ëŠ” iê°€ ìê¸°ìì‹ ê³¼ ë¹„êµí•˜ê³  ë‚˜ë©´
+			  // 	
+				
+				
+			  	if(arr[i]<arr[j])     //  < ì˜¤ë¦„ì°¨ìˆœ , > ë‚´ë¦¼ì°¨ìˆœ
 				{
 					int temp = arr[i];
 					arr[i] = arr[j];
