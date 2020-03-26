@@ -1,12 +1,12 @@
 
-public class ¿¬½À¿Ï·á {
+public class ì—°ìŠµì™„ë£Œ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		
 /*
- * ¿¬½À¹®Á¦ 1 )  ¾Æ·¡ ±¸±¸´Ü ¸¸µé±â 
+ * ì—°ìŠµë¬¸ì œ 1 )  ì•„ëž˜ êµ¬êµ¬ë‹¨ ë§Œë“¤ê¸° 
  *
  * 
  8 * 9 = 72	 7 * 9 = 63	 6 * 9 = 54	 5 * 9 = 45	 4 * 9 = 36	 3 * 9 = 27	 2 * 9 = 18	
@@ -32,14 +32,6 @@ public class ¿¬½À¿Ï·á {
 		   System.out.println();
 		
 		}
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 	}
