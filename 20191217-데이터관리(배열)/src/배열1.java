@@ -1,86 +1,84 @@
 import java.util.Scanner;
 
-/*  ¹Ýº¹ÇÏ±â 1. while 2. for 3. method
+/*  ë°˜ë³µí•˜ê¸° 1. while 2. for 3. method
  * 
- *  ¹è¿­ÀÌ¶õ ¿©·¯°³ÀÇ µ¥ÀÌÅÍ¸¦ ÇÑ °³ÀÇ ÀÌ¸§À¸·Î ¹­¾î Á¦¾î¸¦ ÇÔ²² ÇÏ´Â °Í. => ÀÎµ¦½º¸¦ ÀÌ¿ë
- *        												**0ºÎÅÍ ½ÃÀÛ
- *  1) Çü½Ä
+ *  ë°°ì—´ì´ëž€ ì—¬ëŸ¬ê°œì˜ ë°ì´í„°ë¥¼ í•œ ê°œì˜ ì´ë¦„ìœ¼ë¡œ ë¬¶ì–´ ì œì–´ë¥¼ í•¨ê»˜ í•˜ëŠ” ê²ƒ. => ì¸ë±ìŠ¤ë¥¼ ì´ìš©
+ *        												**0ë¶€í„° ì‹œìž‘
+ *  1) í˜•ì‹
  *  
- *      1. ¼±¾ð
- *         µ¥ÀÌÅÍÇü[] ºñ¿­¸í
- *         = ±âº»Å¸ÀÔ: int, long, short .. (ÀÚ¹Ù¿¡¼­ Á¦°ø) 
+ *      1. ì„ ì–¸
+ *         ë°ì´í„°í˜•[] ë¹„ì—´ëª…
+ *         = ê¸°ë³¸íƒ€ìž…: int, long, short .. (ìžë°”ì—ì„œ ì œê³µ) 
  *            int[]
  *            char[]
  *            double[]
- *         = »ç¿ëÀÚ Á¤ÀÇ Å¸ÀÔ: class..(Å¬·¡½ºµµ ¹è¿­Ã³¸® °¡´ÉÇÏ´Ù.)
+ *         = ì‚¬ìš©ìž ì •ì˜ íƒ€ìž…: class..(í´ëž˜ìŠ¤ë„ ë°°ì—´ì²˜ë¦¬ ê°€ëŠ¥í•˜ë‹¤.)
  *           class Moive
  *           Moive[] arr
  *           String[] names
  *           =======
- *           »ç¿ëÀÚÁ¤ÀÇ
+ *           ì‚¬ìš©ìžì •ì˜
  *           
  *           
- *      2. ÃÊ±â°ª
+ *      2. ì´ˆê¸°ê°’
  * 		   
  *   	 = arr={1,2,3,4,5,6}
- *       = arr=new int[6] => ÀÚÃ¼ ÃÊ±â°ª (int:0, long:0, String:null)    
- *         **null  == > ¸Þ¸ð¸®¿¡ ÀúÀåµÈ ÁÖ¼Ò°ªÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù.
- *         **new ==> ÁÖ¼Ò°ªÀ» °¡Á®¿Â´Ù´Â °Í. ¸Þ¸ð¸®ÁÖ¼Ò¸¦ ¸¸µë. ¹è¿­ °ø°£À» ¼³°èÇØ³õ±â.
- *           new¸¦ ½èÀ»¶§ ¸ðµÎ¿¡°Ô ¿µÇâÀÌ °£´Ù. µû¶ó¼­ spring ¿¡¼­´Â new¸¦ ÁÖ·Î »ç¿ëÇÏÁö ¾Ê´Â´Ù.
+ *       = arr=new int[6] => ìžì²´ ì´ˆê¸°ê°’ (int:0, long:0, String:null)    
+ *         **null  == > ë©”ëª¨ë¦¬ì— ì €ìž¥ëœ ì£¼ì†Œê°’ì´ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ”ë‹¤.
+ *         **new ==> ì£¼ì†Œê°’ì„ ê°€ì ¸ì˜¨ë‹¤ëŠ” ê²ƒ. ë©”ëª¨ë¦¬ì£¼ì†Œë¥¼ ë§Œë“¬. ë°°ì—´ ê³µê°„ì„ ì„¤ê³„í•´ë†“ê¸°.
+ *           newë¥¼ ì¼ì„ë•Œ ëª¨ë‘ì—ê²Œ ì˜í–¥ì´ ê°„ë‹¤. ë”°ë¼ì„œ spring ì—ì„œëŠ” newë¥¼ ì£¼ë¡œ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.
  *           
- *         ??? reflection : (but, reflectionÀ» ¾²¸é new¸¦ »ý¼ºÇÏÁö ¾Ê¾Æµµ ¹è¿­À» ¼±¾ðÇÒ ¼ö ÀÖ´Ù.)
+ *         ??? reflection : (but, reflectionì„ ì“°ë©´ newë¥¼ ìƒì„±í•˜ì§€ ì•Šì•„ë„ ë°°ì—´ì„ ì„ ì–¸í•  ìˆ˜ ìžˆë‹¤.)
  *             spring / new
  *             
- *                    losely public? °´Ã¼ÁöÇâÀûÀ¸·Î °áÇÕ¼ºÀ» ³·°Ô, ¿µÇâ·ÂÀ» ³·°ÔÇÏ±â.
+ *                    losely public? ê°ì²´ì§€í–¥ì ìœ¼ë¡œ ê²°í•©ì„±ì„ ë‚®ê²Œ, ì˜í–¥ë ¥ì„ ë‚®ê²Œí•˜ê¸°.
  *      
  *      
- *      3. µ¥ÀÌÅÍ ÀÐ±â
+ *      3. ë°ì´í„° ì½ê¸°
  *      
- *         = arr[index] ==> °¹¼öº¸´Ù ÇÑ°³°¡ Àû´Ù
+ *         = arr[index] ==> ê°¯ìˆ˜ë³´ë‹¤ í•œê°œê°€ ì ë‹¤
  *      
  *      
- *      4. µ¥ÀÌÅÍ ÀúÀå
+ *      4. ë°ì´í„° ì €ìž¥
  *      
  *        == arr[1] = 10
  * 
  * 
  */
-public class ¹è¿­1 {
+public class ë°°ì—´1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         
 		
-		// ¼ýÀÚ ¾ß±¸ °ÔÀÓ ¸¸µé±â
-        // 3°³ÀÇ ÀÚ¸®¼ö¸¦ ¸ÂÃç³ª°¡±â.	
+		// ìˆ«ìž ì•¼êµ¬ ê²Œìž„ ë§Œë“¤ê¸°
+        	// 3ê°œì˜ ìžë¦¬ìˆ˜ë¥¼ ë§žì¶°ë‚˜ê°€ê¸°.	
 		// ==================
-		// ³­¼ö = >729 ¸ÂÃç °¡³ª±â
-		// »ç¿ëÀÚ ÀÔ·Â => 567 ==>0s-1b   
+		// ë‚œìˆ˜ = >729 ë§žì¶° ê°€ë‚˜ê¸°
+		// ì‚¬ìš©ìž ìž…ë ¥ => 567 ==>0s-1b   
 		//             785   1s-0b
 		             //793   1s 1b
 		             
-/*                     279  1s-2b      s´Â °°Àº ÀÚ¸®   b´Â °°Àº °³¼ö
+/*                     279  1s-2b      sëŠ” ê°™ì€ ìžë¦¬   bëŠ” ê°™ì€ ê°œìˆ˜
  *                     729  3s 0b     ==> break
  * 
- * 		1. Áßº¹¾ø´Â ³­¼ö ¹ß»ý ==>com[] 
- * 		2. »ç¿ëÀÚ ÀÔ·Â ==>user[]
- *  		ºñ±³ com[], user[] µÑ´Ù ÇÊ¿ä!  ¸®ÅÏÇüÀ¸·Î ¸¸µé¼ö¾ø´Ù. °ªÀÌ µÎ°³ÀÌ±â¶§¹®¿¡.! ÀÌ¶§ ¸Å°³º¯¼ö¸¦ ÅëÇØ °ªÀ» ³Ñ°ÜÁà¾ßÇÔ.
- * 		3. ÈùÆ®   s, b
- * 		4. Á¾·á¿©ºÎ È®ÀÎ
- * 		5. 3s => Á¾·áÇÑ´Ù
- *       =============> ¹Ýº¹  È½¼öÁöÁ¤ ¾ÈµÇ¹Ç·Î, ¸ÂÈú¶§±îÁö °è¼Ó µ¹·Á¾ßÇÏ¹Ç·Î while¹® »ç¿ë
+ * 		1. ì¤‘ë³µì—†ëŠ” ë‚œìˆ˜ ë°œìƒ ==>com[] 
+ * 		2. ì‚¬ìš©ìž ìž…ë ¥ ==>user[]
+ *  		ë¹„êµ com[], user[] ë‘˜ë‹¤ í•„ìš”!  ë¦¬í„´í˜•ìœ¼ë¡œ ë§Œë“¤ ìˆ˜ ì—†ë‹¤. ê°’ì´ ë‘ê°œì´ê¸°ë•Œë¬¸ì—.! ì´ë•Œ ë§¤ê°œë³€ìˆ˜ë¥¼ í†µí•´ ê°’ì„ ë„˜ê²¨ì¤˜ì•¼í•¨.
+ * 		3. ížŒíŠ¸   s, b
+ * 		4. ì¢…ë£Œì—¬ë¶€ í™•ì¸
+ * 		5. 3s => ì¢…ë£Œí•œë‹¤
+ 
+ *       	=============> ë°˜ë³µ:  íšŸìˆ˜ì§€ì • ì•ˆë˜ë¯€ë¡œ, ë§žížë•Œê¹Œì§€ ê³„ì† ëŒë ¤ì•¼í•˜ë¯€ë¡œ whileë¬¸ ì‚¬ìš©
  */
-		// Áßº¹µÇ´Â º¯¼ö user, com, s,b ==> Áßº¹º¯¼ö´Â Àü¿ªº¯¼ö·Î Àâ±â
-		// Áßº¹ÀÌ ¾øÀ¸¸é Áö¿ªº¯¼ö·Î Àâ±â
-		// for¹®¾È¿¡¼­´Â Áö¿ªº¯¼ö..
-		
-		
-		    
+		// ì¤‘ë³µë˜ëŠ” ë³€ìˆ˜ user, com, s,b ==> ì¤‘ë³µë³€ìˆ˜ëŠ” ì „ì—­ë³€ìˆ˜ë¡œ ìž¡ê¸°
+		// ì¤‘ë³µì´ ì—†ìœ¼ë©´ ì§€ì—­ë³€ìˆ˜ë¡œ ìž¡ê¸°
+		// forë¬¸ì•ˆì—ì„œëŠ” ì§€ì—­ë³€ìˆ˜..
+	  
 /*		       
 		       for(int i = 0; i < 3 ; i++)
 		       {
-		    	   com[i]=(int)(Math.random()*5)+1;
-		    	   
+		    	   com[i]=(int)(Math.random()*5)+1;   
 		       }
 		
 		       for(int i:com)
@@ -91,29 +89,29 @@ public class ¹è¿­1 {
 		
 				Scanner scan  = new Scanner(System.in);
 				
-				 //ÃÑ 5°³ÀÇ ¸Þ¼Òµå¸¦ ¸¸µé±â.
-				 //ÇÁ·ÎÁ§Æ® ½Ã Áß¿ä. 
-//// µ¡±Û!
+				 //ì´ 5ê°œì˜ ë©”ì†Œë“œë¥¼ ë§Œë“¤ê¸°.
+				 //í”„ë¡œì íŠ¸ ì‹œ ì¤‘ìš”. 
+//// ë§ê¸€!
 				int[] com = new int[9];
 				
-				int su=0; // ³­¼ö ¹ß»ý½Ã ÀúÀåÇÒ ³Ñ¹ö(com ³Ñ¹ö¿Í ºñ±³ÇÏ¿© Áßº¹ÀÌ ¾Æ´Ò½Ã ÀúÀåµÉ °ÍÀÓ.) 
-				boolean bCheck=false; // Áßº¹¿©ºÎ È®ÀÎ Áßº¹;true Áßº¹ ¾Æ´Ò½Ã;false ³ª¿È
+				int su=0; // ë‚œìˆ˜ ë°œìƒì‹œ ì €ìž¥í•  ë„˜ë²„(com ë„˜ë²„ì™€ ë¹„êµí•˜ì—¬ ì¤‘ë³µì´ ì•„ë‹ì‹œ ì €ìž¥ë  ê²ƒìž„.) 
+				boolean bCheck=false; // ì¤‘ë³µì—¬ë¶€ í™•ì¸ ì¤‘ë³µ;true ì¤‘ë³µ ì•„ë‹ì‹œ;false ë‚˜ì˜´
 				
-				for(int i=0; i<com.length;i++) /// Á¤È®ÇÑ È½¼ö ÀÖÀ½ - 9
+				for(int i=0; i<com.length;i++) /// ì •í™•í•œ íšŸìˆ˜ ìžˆìŒ - 9
 				{
 					bCheck=true;
 					
-					//==========================Áßº¹¾ÈµÈ ³­¼ö¹ß»ý
-					  while(bCheck) // Á¤È®ÇÑ È½¼ö¸ðÀ½ for¹® (;;)´Â »ç¿ë ¸øÇÔ.
+					//==========================ì¤‘ë³µì•ˆëœ ë‚œìˆ˜ë°œìƒ
+					  while(bCheck) // ì •í™•í•œ íšŸìˆ˜ëª¨ìŒ forë¬¸ (;;)ëŠ” ì‚¬ìš© ëª»í•¨.
 					  {
-						  // ³­¼ö ¹ß»ý
+						  // ë‚œìˆ˜ ë°œìƒ
 						  su=(int)(Math.random()*9)+1;
-						  bCheck=false; // default°ªÀ» ÁÜ.
-						  // Áßº¹¿©ºÎ È®ÀÎ i´Â ÀúÀåµÈ °³¼ö, i°¡ 3°³ °Ë»öÇÏ¸é 3°³¸¸ °Ë»öÇÏ¸é µÊ, < ÀÌÀ¯´Â Ã¹¹øÂ° °ÍÀº °Ë»öÇÒ ÇÊ¿ä x
+						  bCheck=false; // defaultê°’ì„ ì¤Œ.
+						  // ì¤‘ë³µì—¬ë¶€ í™•ì¸ iëŠ” ì €ìž¥ëœ ê°œìˆ˜, iê°€ 3ê°œ ê²€ìƒ‰í•˜ë©´ 3ê°œë§Œ ê²€ìƒ‰í•˜ë©´ ë¨, < ì´ìœ ëŠ” ì²«ë²ˆì§¸ ê²ƒì€ ê²€ìƒ‰í•  í•„ìš” x
 						  for(int j=0; j<i; j++) 
 						  {
-							  if(com[j] == su)   // else¸¦ ¿©±â¼­ °É¸é ¾ÈµÇ´Â ÀÌÀ¯´Â for¹ÈÀÌ¶ó´Â °ÍÀº Ç×»ó 0ºÎÅÍ ½ÃÀÛÇÏ±â ¶§¹®¿¡.
-								                 // ¾î¶² ¼ö°¡ ³ª¿ÔÀ»¶§ ±× ÀÎµ¦½º ÀÚ¸®ÀÇ ¼ýÀÚ¿Í¸¸ ¸ÂÇôº¸°í ¸ÂÀ¸¸é ³¡³­´Ù. ±×·¸±â ¶§¹®¿¡ ¸Ç À§¿¡ ÁÖ¾î¾ßÇÑ´Ù. 
+							  if(com[j] == su)   // elseë¥¼ ì—¬ê¸°ì„œ ê±¸ë©´ ì•ˆë˜ëŠ” ì´ìœ ëŠ” forë¯„ì´ë¼ëŠ” ê²ƒì€ í•­ìƒ 0ë¶€í„° ì‹œìž‘í•˜ê¸° ë•Œë¬¸ì—.
+								                 // ì–´ë–¤ ìˆ˜ê°€ ë‚˜ì™”ì„ë•Œ ê·¸ ì¸ë±ìŠ¤ ìžë¦¬ì˜ ìˆ«ìžì™€ë§Œ ë§ží˜€ë³´ê³  ë§žìœ¼ë©´ ëë‚œë‹¤. ê·¸ë ‡ê¸° ë•Œë¬¸ì— ë§¨ ìœ„ì— ì£¼ì–´ì•¼í•œë‹¤. 
 							  {
 								  bCheck = true;
 								  break;
@@ -127,55 +125,55 @@ public class ¹è¿­1 {
 			        com[i]=su;
 				}
 				
-	// µ¡ºÙ³¡							
+	// ë§ë¶™ë							
 				 
 				int[] user = new int[3];
 		
 		        while(true)
 		        {
 		        	
-		        	System.out.print("3ÀÚ¸® Á¤¼ö¸¦ ÀÔ·Â:");
+		        	System.out.print("3ìžë¦¬ ì •ìˆ˜ë¥¼ ìž…ë ¥:");
 		        	int input=scan.nextInt();
 		        	
-		        	// ÀÔ·Â¹ÞÀº °ª¿¡ ´ëÇÑ ¿À·ùÃ³¸®¿Í À¯È¿¼º°Ë»ç°¡ Áß¿äÇÏ´Ù.
-		        	// ¿À·ù Ã³¸® 1
-		        	if(input < 100 || input >999)  //99º¸´Ù ÀÛ°Å³ª 999º¸´Ù Å©°Å³ª´Â ¿À·ù
+		        	// ìž…ë ¥ë°›ì€ ê°’ì— ëŒ€í•œ ì˜¤ë¥˜ì²˜ë¦¬ì™€ ìœ íš¨ì„±ê²€ì‚¬ê°€ ì¤‘ìš”í•˜ë‹¤.
+		        	// ì˜¤ë¥˜ ì²˜ë¦¬ 1
+		        	if(input < 100 || input >999)  //99ë³´ë‹¤ ìž‘ê±°ë‚˜ 999ë³´ë‹¤ í¬ê±°ë‚˜ëŠ” ì˜¤ë¥˜
 		        	{
 		        		
-		        		System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.´Ù½Ã ÀÔ·ÂÇÏ½Ã¿À.");
-		        		// ¿À·ù Ã³¸®ÀÓ¿¡µµ Á¾·á°¡ ¾Æ´Ï¶ó ´Ù½Ã ½ÃÀÛÇØ¾ßÇÔ
+		        		System.out.println("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤.ë‹¤ì‹œ ìž…ë ¥í•˜ì‹œì˜¤.");
+		        		// ì˜¤ë¥˜ ì²˜ë¦¬ìž„ì—ë„ ì¢…ë£Œê°€ ì•„ë‹ˆë¼ ë‹¤ì‹œ ì‹œìž‘í•´ì•¼í•¨
 		        		continue;
 		        	}
 		        	
 		        	
-		        	// ¹è¿­ÀÇ °ªÀ» º¯°æ  //567   5¸¦ ÀúÀåÇÏ·Á¸é 100À¸·Î ³ª´²¾ß ¾Ë¼öÀÖ´Ù.
+		        	// ë°°ì—´ì˜ ê°’ì„ ë³€ê²½  //567   5ë¥¼ ì €ìž¥í•˜ë ¤ë©´ 100ìœ¼ë¡œ ë‚˜ëˆ ì•¼ ì•Œìˆ˜ìžˆë‹¤.
 		        	user[0]=input/100;
 		        	user[1]=(input%100)/10; //6
 		        	user[2]=input%10; //7
 		        	
 		        	
-		        	// ¿À·ùÃ³¸® => Áßº¹µÈ ¼ö¸¦ »ç¿ëÇÒ ¼ö ¾ø´Ù, 0À» »ç¿ëÇÒ ¼ö ¾ø´Ù.--> 0ÀÌ ¾Õ¿¡ ºÙÀ¸¸é 8Áø¹ýÀÌ±â ¶§¹®¿¡.
-		        	// ¿À·ù Ã³¸® 2
+		        	// ì˜¤ë¥˜ì²˜ë¦¬ => ì¤‘ë³µëœ ìˆ˜ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤, 0ì„ ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤.--> 0ì´ ì•žì— ë¶™ìœ¼ë©´ 8ì§„ë²•ì´ê¸° ë•Œë¬¸ì—.
+		        	// ì˜¤ë¥˜ ì²˜ë¦¬ 2
 		        	if(user[0] == user[1] || user[1] == user[2] || user[0] == user[2])
 		        	
 		        	{
 		        		
-		        		System.out.println("Áßº¹µÈ ¼ö´Â »ç¿ë ¸øÇÕ´Ï´Ù."); // °°Àº ¼ö°¡ ³ª¿À¸é ÈùÆ®°¡ ¾î·Æ°Ô µÈ´Ù.729-777 1s 2b
+		        		System.out.println("ì¤‘ë³µëœ ìˆ˜ëŠ” ì‚¬ìš© ëª»í•©ë‹ˆë‹¤."); // ê°™ì€ ìˆ˜ê°€ ë‚˜ì˜¤ë©´ ížŒíŠ¸ê°€ ì–´ë µê²Œ ëœë‹¤.729-777 1s 2b
 		        		continue;
 		        	}
 		        	
-		        	// ¿À·ù Ã³¸® 3
+		        	// ì˜¤ë¥˜ ì²˜ë¦¬ 3
 		        	if(user[0] == 0 || user[1] == 0 || user[2] == 0)
 		        	{
 		        		
-		        		System.out.println("0Àº »ç¿ëÇÒ ¼ö¾ø½À´Ï´Ù.");
+		        		System.out.println("0ì€ ì‚¬ìš©í•  ìˆ˜ì—†ìŠµë‹ˆë‹¤.");
 		        		continue;
 		        	}
 		        	
-		        	// ·ÎÄÃ È£½ºÆ® - °³ÀÎ, µû¶ó¼­ ip¸¦ ÁÖ°í ½ÃÀÛÇØ¾ß ÄÄÇ»ÅÍ°¡ ¿¬°á‰Þ¤±.
+		        	// ë¡œì»¬ í˜¸ìŠ¤íŠ¸ - ê°œì¸, ë”°ë¼ì„œ ipë¥¼ ì£¼ê³  ì‹œìž‘í•´ì•¼ ì»´í“¨í„°ê°€ ì—°ê²°Â‰èœš.
 		        	
-		        	// °ª 2°³¸¦ °¡Áö°í ºñ·á¸¦ ÇÒ °æ¿ì ¹«Á¶°Ç 2Â÷ Æ÷¹®
-		        	// ºñ±³ ½ÃÀÛ   - ÃÑ1-3, 2-3, 3-3 ÃÑ 9¹ø µ¹¸²
+		        	// ê°’ 2ê°œë¥¼ ê°€ì§€ê³  ë¹„ë£Œë¥¼ í•  ê²½ìš° ë¬´ì¡°ê±´ 2ì°¨ í¬ë¬¸
+		        	// ë¹„êµ ì‹œìž‘   - ì´1-3, 2-3, 3-3 ì´ 9ë²ˆ ëŒë¦¼
 		              int s = 0, b = 0;
 		              for(int i = 0; i<3; i++)   // i ==> com
 		              {
@@ -183,7 +181,7 @@ public class ¹è¿­1 {
 		            	  for(int j = 0; j < 3; j++) //j ==user
 		            	  {
 		            		  
-		            		  if(com[i] ==user[j])  // °°Àº ¼ö¸¸ ÀÖ´ÂÁö Á¶»ç
+		            		  if(com[i] ==user[j])  // ê°™ì€ ìˆ˜ë§Œ ìžˆëŠ”ì§€ ì¡°ì‚¬
 		            		  {
 		            			  
 		            			 if(i == j)
@@ -194,24 +192,24 @@ public class ¹è¿­1 {
 		            	  }
 		              }
 		        	
-		        	// ÈùÆ®
+		        	// ížŒíŠ¸
 		        	System.out.printf("Input Number: %d, Result:%dS-%dB\n",
 		        			input,s,b);
 		        	System.out.println("=====================================");
 		        	System.out.print("S: ");
 		        	for(int i=0; i<s;i++)
 		        	{
-		        		System.out.print("¡Ü");
+		        		System.out.print("â—");
 		        	}
 		        	System.out.print("\nB: ");
 		        	for(int i=0; i<b;i++)
 		        	{
-		        		System.out.print("¡Û");
+		        		System.out.print("â—‹");
 		        	}
 		        	
 		        	System.out.println("\n=====================================");
 		        	
-		        	// Á¾·á¿©ºÎ È®ÀÎ
+		        	// ì¢…ë£Œì—¬ë¶€ í™•ì¸
 		        	if(s==3)
 		        	{
 		        		System.out.println("Game Over");
@@ -219,17 +217,6 @@ public class ¹è¿­1 {
 		        	}
 		        	
 		        } 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
